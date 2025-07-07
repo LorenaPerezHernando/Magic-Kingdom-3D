@@ -73,6 +73,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9155864837919917765}
   - component: {fileID: 1593926229788402739}
+  - component: {fileID: 7036194725510829262}
+  - component: {fileID: 6044793065251694954}
   m_Layer: 0
   m_Name: Boss1-Guardian de los Recuerdos
   m_TagString: Untagged
@@ -90,7 +92,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 58.088882, y: 56.40433, z: -127.0899}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.7619, y: 2.7619, z: 2.7619}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6280043180604526996}
@@ -119,6 +121,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7036194725510829262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409562697576586968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfcb3103ac6206d42b642de0fae2fa21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distance: 0
+  _player: {fileID: 0}
+--- !u!136 &6044793065251694954
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409562697576586968}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.53
+  m_Height: 2.72
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.04, z: 0}
 --- !u!1 &492026475408897045
 GameObject:
   m_ObjectHideFlags: 0
