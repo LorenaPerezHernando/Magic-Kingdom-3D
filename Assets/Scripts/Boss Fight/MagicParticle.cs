@@ -19,4 +19,13 @@ public class MagicParticle : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            print("Collision con el player");
+            //TODO HEALTH SYSTEM DAÑO 
+        }
+    }
+
 }
