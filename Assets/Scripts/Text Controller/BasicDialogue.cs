@@ -10,6 +10,7 @@ public class BasicDialogue : MonoBehaviour
     [SerializeField] private GameObject _messagePanel;
     [SerializeField] private TextMeshProUGUI _messageText;
     [Header("Learning Conversation")]
+    [SerializeField] private bool _hasPlayed;
     [SerializeField] private string[] _learningMensajesIniciales;
     private int _learningCurrentMessageIndex = 0;
     [Header("Reward")]
@@ -30,12 +31,9 @@ public class BasicDialogue : MonoBehaviour
 
     void Update()
     {
-        if (!_requiresKeyboard)
-            return;
-
-        if(_requiresKeyboard && (Input.GetMouseButtonDown(0) || Input.GetKeyUp(KeyCode.Return)))
+        if((Input.GetMouseButtonDown(0) || Input.GetKeyUp(KeyCode.Return)))
         {
-            BasicConversation();
+            LearningConversation();
         }
     }
     #endregion
@@ -50,23 +48,28 @@ public class BasicDialogue : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             print("Trigger Enter");
-            if (_requiresKeyboard)
+            if(!_hasPlayed)
             {
-                _messagePanel.SetActive(true);
-                BasicConversation();
+            //TODO Bloquear el movimiento y animacion de conversacion 
+                _messagePanel?.SetActive(true);
+                LearningConversation();
             }
             else
             {
-                _messagePanel?.SetActive(true);
-                LearningConversation();
+                _messagePanel.SetActive(true);
+                BasicConversation();
             }
         }    
 
     }
     private void OnTriggerExit(Collider other)
     {
-        _messagePanel.SetActive(false);
-        _basicCurrentMessageIndex = 0;
+        if (!_hasPlayed)
+        {
+            _messagePanel.SetActive(false);
+            _basicCurrentMessageIndex = 0;
+
+        }
     }
 
     IEnumerator NextAutomaticMessage()
@@ -91,8 +94,8 @@ public class BasicDialogue : MonoBehaviour
 
         else
         {
-            _requiresKeyboard = true; //Flag for next conversation 
             _messagePanel.SetActive(false);
+            _hasPlayed = true; //Flag for next conversation
             //TODO Reward for talking
         }
     }
