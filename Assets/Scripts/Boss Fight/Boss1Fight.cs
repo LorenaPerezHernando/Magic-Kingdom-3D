@@ -50,19 +50,17 @@ public class Boss1Fight : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _speed * Time.deltaTime);
             }
             else
+            {
                 _anim.SetBool("Walk", false);
-
-            if (_distance < 2.5)
-            {
-                _anim.SetTrigger("Short Attack");
-                _shortDistanceAttackParticle.SetActive(true);
-                _shortDistanceAttackParticle.GetComponent<ParticleSystem>().Play();
-                print("Particle Played");
             }
+
             if (!_isAttacking)
-            {
-                
+            {               
                 StartCoroutine(AttackCorrutine());
+            }
+            else
+            {
+                _anim.SetTrigger("Idle2");
             }
             //TODO else con otra animación idle (pero furiosa)
         }
@@ -74,8 +72,9 @@ public class Boss1Fight : MonoBehaviour
         _isAttacking = true;
 
         yield return new WaitForSeconds(_timeToAttack);
-        if (_distance >= 2.5 && _distance < 10)
+        if (_distance > 2.5 && _distance < 10)
         {
+            //TODO AUDIO VFX 
             _anim.SetTrigger("Magic Attack");
             _sphereInHand.SetActive(true);
             StartCoroutine(RelayShoot(2));

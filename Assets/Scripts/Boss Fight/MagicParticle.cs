@@ -7,6 +7,7 @@ public class MagicParticle : MonoBehaviour
     [SerializeField] private Transform _playerPos;
     void Start()
     {
+        //TODO WIND AUDIO o Electric 
         _playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         transform.LookAt(_playerPos);
     }
