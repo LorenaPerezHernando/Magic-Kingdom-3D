@@ -16,7 +16,6 @@ public class BasicDialogue : MonoBehaviour
     [Header("Reward")]
     [SerializeField] private GameObject _reward;
     [Header("Basic Conversation")]
-    [SerializeField] private bool _requiresKeyboard = true;
     [SerializeField] private string[] _basicMensajesIniciales;
     private int _basicCurrentMessageIndex = 0;
     #endregion
