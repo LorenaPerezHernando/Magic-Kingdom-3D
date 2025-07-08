@@ -1,15 +1,13 @@
-using Magic.Interaction;
 using UnityEngine;
-using Magic.Interaction;
-using UnityEngine.Rendering;
+
 
 namespace Magic.ClockPuzzle
 {
 
 
-    public class PuzzleClock : MonoBehaviour, IInteractable
+    public class PuzzleClock : MonoBehaviour
     {
-         private InteractableInfo _info;
+
         [SerializeField] private Transform _targetToRotate;
         [Header("Mecanic")]
         [SerializeField] private float _rotationSpeed = 2f;
@@ -27,25 +25,16 @@ namespace Magic.ClockPuzzle
             _targetToRotate = transform.parent;
         }
 
-        public InteractableInfo GetInfo()
-        {
-            return _info;
-        }
 
         public void Interact()
         {
             Debug.Log("Interacting");
-            if (!_isRotating)
-            {
-                _startAngle = _targetToRotate.eulerAngles.y;
-                _targetAngle = _startAngle + _rotationAmount;
-                _isRotating = true;
-            }
+            
         }
         private void Update()
         {
-            if (Mathf.Abs(Mathf.DeltaAngle(_targetToRotate.eulerAngles.y, 7f)) < 1f ||
-                    Mathf.Abs(Mathf.DeltaAngle(_targetToRotate.eulerAngles.y, 370f)) < 1f)
+            if (Mathf.Abs(Mathf.DeltaAngle(_targetToRotate.eulerAngles.y, _target1)) < 1f ||
+                    Mathf.Abs(Mathf.DeltaAngle(_targetToRotate.eulerAngles.y, _target2)) < 1f)
             {
                 //TODO OBJETIVO CUMPLIDO
                 Debug.Log("Objetivo Cumplido 1");
@@ -64,6 +53,26 @@ namespace Magic.ClockPuzzle
                 }
                 
             }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+
+            if (other.CompareTag("Player"))
+            {
+
+                if (!_isRotating)
+                {
+                    _startAngle = _targetToRotate.eulerAngles.y;
+                    _targetAngle = _startAngle + _rotationAmount;
+                    _isRotating = true;
+                }
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            _isRotating = false;
         }
 
     }
