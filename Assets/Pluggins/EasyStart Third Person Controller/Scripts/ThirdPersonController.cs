@@ -17,16 +17,16 @@ public class ThirdPersonController : MonoBehaviour
 {
 
     [Tooltip("Speed ​​at which the character moves. It is not affected by gravity or jumping.")]
-    [SerializeField] private float _velocity = 5f;
+    public float velocity = 5f;
     [Tooltip("This value is added to the speed value while the character is sprinting.")]
-    [SerializeField] private float _sprintAdittion = 3.5f;
+    public float sprintAdittion = 3.5f;
     [Tooltip("The higher the value, the higher the character will jump.")]
-    [SerializeField] private float _jumpForce = 18f;
+    public float jumpForce = 18f;
     [Tooltip("Stay in the air. The higher the value, the longer the character floats before falling.")]
-    [SerializeField] private float _jumpTime = 0.85f;
+    public float jumpTime = 0.85f;
     [Space]
     [Tooltip("Force that pulls the player down. Changing this value causes all movement, jumping and falling to be changed as well.")]
-    [SerializeField] private float _gravity = 9.8f;
+    public float gravity = 9.8f;
 
     float jumpElapsedTime = 0;
 
@@ -42,8 +42,8 @@ public class ThirdPersonController : MonoBehaviour
     bool inputCrouch;
     bool inputSprint;
 
-    [SerializeField] private Animator animator;
-    [SerializeField] private CharacterController cc;
+    Animator animator;
+    CharacterController cc;
 
 
     void Start()
@@ -51,11 +51,13 @@ public class ThirdPersonController : MonoBehaviour
         cc = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
 
+        // Message informing the user that they forgot to add an animator
         if (animator == null)
             Debug.LogWarning("Hey buddy, you don't have the Animator component in your player. Without it, the animations won't work.");
     }
 
 
+    // Update is only being used here to identify keys and trigger animations
     void Update()
     {
 
@@ -64,17 +66,23 @@ public class ThirdPersonController : MonoBehaviour
         inputVertical = Input.GetAxis("Vertical");
         inputJump = Input.GetAxis("Jump") == 1f;
         inputSprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton1);
-
+        //inputSprint = Input.GetAxis("Fire3") == 1f;
         // Unfortunately GetAxis does not work with GetKeyDown, so inputs must be taken individually
         inputCrouch = Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.JoystickButton1);
 
-
+        // Check if you pressed the crouch input key and change the player's state
         if ( inputCrouch )
             isCrouching = !isCrouching;
 
-
+        // Run and Crouch animation
+        // If dont have animator component, this block wont run
         if ( cc.isGrounded && animator != null )
-        {            
+        {
+
+            // Crouch
+            // Note: The crouch animation does not shrink the character's collider
+            animator.SetBool("crouch", isCrouching);
+            
             // Run
             float minimumSpeed = 0.9f;
             animator.SetBool("Walk", cc.velocity.magnitude > minimumSpeed );
@@ -110,25 +118,26 @@ public class ThirdPersonController : MonoBehaviour
         // Sprinting velocity boost or crounching desacelerate
         float velocityAdittion = 0;
         if ( isSprinting )
-            velocityAdittion = _sprintAdittion;
+            velocityAdittion = sprintAdittion;
         if (isCrouching)
-            velocityAdittion =  - (_velocity * 0.50f); // -50% velocity
+            velocityAdittion =  - (velocity * 0.50f); // -50% velocity
 
         // Direction movement
-        float directionX = inputHorizontal * (_velocity + velocityAdittion) * Time.deltaTime;
-        float directionZ = inputVertical * (_velocity + velocityAdittion) * Time.deltaTime;
+        float directionX = inputHorizontal * (velocity + velocityAdittion) * Time.deltaTime;
+        float directionZ = inputVertical * (velocity + velocityAdittion) * Time.deltaTime;
         float directionY = 0;
 
         // Jump handler
         if ( isJumping )
         {
+
             // Apply inertia and smoothness when climbing the jump
             // It is not necessary when descending, as gravity itself will gradually pulls
-            directionY = Mathf.SmoothStep(_jumpForce, _jumpForce * 0.30f, jumpElapsedTime / _jumpTime) * Time.deltaTime;
+            directionY = Mathf.SmoothStep(jumpForce, jumpForce * 0.30f, jumpElapsedTime / jumpTime) * Time.deltaTime;
 
             // Jump timer
             jumpElapsedTime += Time.deltaTime;
-            if (jumpElapsedTime >= _jumpTime)
+            if (jumpElapsedTime >= jumpTime)
             {
                 isJumping = false;
                 jumpElapsedTime = 0;
@@ -136,7 +145,7 @@ public class ThirdPersonController : MonoBehaviour
         }
 
         // Add gravity to Y axis
-        directionY = directionY - _gravity * Time.deltaTime;
+        directionY = directionY - gravity * Time.deltaTime;
 
         
         // --- Character rotation --- 
