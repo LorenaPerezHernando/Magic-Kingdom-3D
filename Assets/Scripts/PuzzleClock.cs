@@ -1,9 +1,4 @@
 using UnityEngine;
-<<<<<<< Updated upstream
-
-=======
-using UnityEngine.Rendering;
->>>>>>> Stashed changes
 
 namespace Magic.ClockPuzzle
 {
