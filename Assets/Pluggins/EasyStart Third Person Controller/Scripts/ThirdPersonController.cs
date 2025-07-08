@@ -65,7 +65,8 @@ public class ThirdPersonController : MonoBehaviour
         inputHorizontal = Input.GetAxis("Horizontal");
         inputVertical = Input.GetAxis("Vertical");
         inputJump = Input.GetAxis("Jump") == 1f;
-        inputSprint = Input.GetAxis("Fire3") == 1f;
+        inputSprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton1);
+        //inputSprint = Input.GetAxis("Fire3") == 1f;
         // Unfortunately GetAxis does not work with GetKeyDown, so inputs must be taken individually
         inputCrouch = Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.JoystickButton1);
 
@@ -84,22 +85,23 @@ public class ThirdPersonController : MonoBehaviour
             
             // Run
             float minimumSpeed = 0.9f;
-            animator.SetBool("run", cc.velocity.magnitude > minimumSpeed );
+            animator.SetBool("Walk", cc.velocity.magnitude > minimumSpeed );
 
             // Sprint
             isSprinting = cc.velocity.magnitude > minimumSpeed && inputSprint;
-            animator.SetBool("sprint", isSprinting );
+            animator.SetBool("Run", isSprinting );
 
         }
 
         // Jump animation
         if( animator != null )
-            animator.SetBool("air", cc.isGrounded == false );
+            animator.SetBool("jump", cc.isGrounded == false );
 
         // Handle can jump or not
         if ( inputJump && cc.isGrounded )
         {
             isJumping = true;
+            animator.SetTrigger("Jump");
             // Disable crounching when jumping
             //isCrouching = false; 
         }
