@@ -1,67 +1,70 @@
+using Magic.Interaction;
 using UnityEngine;
+using Magic.Interaction;
 using UnityEngine.Rendering;
 
 namespace Magic.ClockPuzzle
 {
 
 
-    public class PuzzleClock : MonoBehaviour
+    public class PuzzleClock : MonoBehaviour, IInteractable
     {
+         private InteractableInfo _info;
+        [SerializeField] private Transform _targetToRotate;
+        [Header("Mecanic")]
         [SerializeField] private float _rotationSpeed = 2f;
-        private float _target1 = 7;
-        private float _target2 = 370;
-        //Bool
-        private bool _isInside = false; 
-        private bool _isRotating = false;
-        //Variables
+        [SerializeField] private float _rotationAmount = 30;
+        [Header("Goal")]
+        [SerializeField] private float _target1 = 7;
+        [SerializeField] private float _target2 = 370;
+        [Header("Rotation")]               
+        private bool _isRotating = false;       
         private float _startAngle;
-        private float _nextTargetAngle;
-        private float _rotationAmount = 30;
+        private float _targetAngle;
 
+        private void Awake()
+        {
+            _targetToRotate = transform.parent;
+        }
+
+        public InteractableInfo GetInfo()
+        {
+            return _info;
+        }
+
+        public void Interact()
+        {
+            Debug.Log("Interacting");
+            if (!_isRotating)
+            {
+                _startAngle = _targetToRotate.eulerAngles.y;
+                _targetAngle = _startAngle + _rotationAmount;
+                _isRotating = true;
+            }
+        }
         private void Update()
         {
+            if (Mathf.Abs(Mathf.DeltaAngle(_targetToRotate.eulerAngles.y, 7f)) < 1f ||
+                    Mathf.Abs(Mathf.DeltaAngle(_targetToRotate.eulerAngles.y, 370f)) < 1f)
+            {
+                //TODO OBJETIVO CUMPLIDO
+                Debug.Log("Objetivo Cumplido 1");
+                Destroy(gameObject);
+            }
             if (_isRotating)
             {
-                float currentY = Mathf.LerpAngle(transform.eulerAngles.y, _nextTargetAngle, Time.deltaTime * _rotationSpeed);
-                transform.rotation = Quaternion.Euler(0, currentY, 0);
+                float newY = Mathf.LerpAngle(_targetToRotate.eulerAngles.y, _targetAngle, Time.deltaTime * _rotationSpeed);
+                _targetToRotate.rotation = Quaternion.Euler(0, newY, 0);
 
-                if (Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.y, _nextTargetAngle)) < 0.5f)
+
+                if (Mathf.Abs(Mathf.DeltaAngle(_targetToRotate.eulerAngles.y, _targetAngle)) < 0.5f)
                 {
-                    transform.rotation = Quaternion.Euler(0, _nextTargetAngle, 0);
+                    _targetToRotate.rotation = Quaternion.Euler(0, _targetAngle, 0);
                     _isRotating = false;
                 }
-            }
-        }
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                _isInside = true;
-                //Action in input =  Push();
-            }
-
-        }
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                _isInside = false;
-            }
-        }
-        public void TryPushing()
-        {
-            if( _isInside && !_isRotating)
-            {
-                Push();
+                
             }
         }
 
-        private void Push() 
-        {
-            _startAngle = transform.eulerAngles.y;
-            _nextTargetAngle = _startAngle + _rotationAmount;
-            _isRotating = true;
-
-        }
     }
 }
