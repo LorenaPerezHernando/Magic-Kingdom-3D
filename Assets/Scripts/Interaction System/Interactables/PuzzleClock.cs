@@ -1,10 +1,12 @@
 using Magic.Interact;
+using System;
 using UnityEngine;
 
 namespace Magic.ClockPuzzle
 {
     public class PuzzleClock : MonoBehaviour, IInteractable
     {
+        
         [SerializeField] private InteractableInfo _info;
         [Header("Mecanic")]
         [SerializeField] private float _rotationSpeed = 2f;
@@ -34,6 +36,8 @@ namespace Magic.ClockPuzzle
                 _startAngle = _objectToRotate.eulerAngles.y;
                 _targetAngle = _startAngle + _rotationAmount;
                 _isRotating = true;
+
+                GameController.Instance.TriggerPush();
             }
 
         }
@@ -51,6 +55,7 @@ namespace Magic.ClockPuzzle
                 float currentY = Mathf.LerpAngle(_startAngle, _targetAngle, Time.deltaTime * _rotationSpeed);
                 _objectToRotate.rotation = Quaternion.Euler(0, currentY, 0);
 
+               
 
                 if (_rotationProgress >= 1f)
                 {

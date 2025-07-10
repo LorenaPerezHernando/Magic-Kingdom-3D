@@ -1,4 +1,5 @@
 ﻿
+using Magic;
 using UnityEditor.VersionControl;
 using UnityEngine;
 
@@ -51,8 +52,7 @@ public class ThirdPersonController : MonoBehaviour
         cc = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
 
-        if (animator == null)
-            Debug.LogWarning("Hey buddy, you don't have the Animator component in your player. Without it, the animations won't work.");
+        GameController.Instance.OnPush += TriggerPushAnimation;
     }
 
 
@@ -169,6 +169,10 @@ public class ThirdPersonController : MonoBehaviour
 
     }
 
+    private void TriggerPushAnimation()
+    {
+        animator.SetTrigger("Push");
+    }
 
     //This function makes the character end his jump if he hits his head on something
     void HeadHittingDetect()
