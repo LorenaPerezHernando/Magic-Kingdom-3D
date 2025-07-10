@@ -10,8 +10,7 @@ public class PlayerInteraction : MonoBehaviour
     #endregion
 
     #region Fields
-    [Header("Settings")]
-    private Transform _playerRaycast;
+    [Header("Variables")]
     [SerializeField] private float _radius = 0.5f;
     [SerializeField] private float _distance = 5f;
     [SerializeField] private LayerMask _interactionLayer;
@@ -19,10 +18,7 @@ public class PlayerInteraction : MonoBehaviour
     private IInteractable _currentInteractable;
     private bool _interactableDetected = false;
     #endregion
-    private void Awake()
-    {
-        _playerRaycast = GetComponent<Transform>();
-    }
+
     #region Unity Callbacks
     private void Update()
     {
@@ -35,8 +31,8 @@ public class PlayerInteraction : MonoBehaviour
     private void FixedUpdate()
     {
         RaycastHit hit;
-        Vector3 origin = _playerRaycast.position;
-        Vector3 direction = _playerRaycast.forward;
+        Vector3 origin = transform.position;
+        Vector3 direction = transform.forward;
 
         if (Physics.SphereCast(origin, _radius, direction, out hit, _distance, _interactionLayer))
         {
@@ -67,8 +63,8 @@ public class PlayerInteraction : MonoBehaviour
     private void OnDrawGizmos()
     {       
 
-        Vector3 start = _playerRaycast.position;
-        Vector3 dir = _playerRaycast.forward;
+        Vector3 start = transform.position;
+        Vector3 dir = transform.forward;
 
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(start, _radius);

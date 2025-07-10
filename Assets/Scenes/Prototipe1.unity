@@ -220,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 130680973}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -57.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -530,6 +530,55 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1593926229788402739, guid: 6d6be197f40badd4fa59268bc7937d97, type: 3}
   m_PrefabInstance: {fileID: 2063686541618420587}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &257849295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257849296}
+  - component: {fileID: 257849297}
+  m_Layer: 0
+  m_Name: RaycastStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &257849296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257849295}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02, y: 1.08683, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 548633613}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &257849297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257849295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbdb628df3f3384cabfb5ce9b40a556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0.5
+  _distance: 2
+  _interactionLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,9 +846,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 423624719}
-  - component: {fileID: 423624720}
   - component: {fileID: 423624722}
-  m_Layer: 0
+  - component: {fileID: 423624720}
+  m_Layer: 6
   m_Name: TriggerRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -836,7 +885,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -854,11 +903,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7563e6cd82b8a4292c21d21a87dcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetToRotate: {fileID: 0}
+  _info:
+    Type: Hand Clock
+    Action: Turn
   _rotationSpeed: 2
   _rotationAmount: -30
   _target1: 7
   _target2: 370
+  _isRotating: 0
 --- !u!1 &482511330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,6 +1191,11 @@ Transform:
   - {fileID: 961188345}
   m_Father: {fileID: 868210040}
   m_LocalEulerAnglesHint: {x: 0, y: 97, z: 0.5}
+--- !u!4 &548633613 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6366651309483985827, guid: 04ff46dd95af9e842b33b718665e433c, type: 3}
+  m_PrefabInstance: {fileID: 4193600746185035300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &595043556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1312,6 @@ MonoBehaviour:
   - 3
   - 4
   _reward: {fileID: 0}
-  _requiresKeyboard: 0
   _basicMensajesIniciales:
   - 9
   - 8
@@ -1403,7 +1459,7 @@ GameObject:
   - component: {fileID: 799879082}
   - component: {fileID: 799879085}
   - component: {fileID: 799879084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TriggerLeft (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1419,7 +1475,7 @@ Transform:
   m_GameObject: {fileID: 799879081}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0030441051, y: -0.6976589, z: -0.0031259526, w: 0.7164169}
-  m_LocalPosition: {x: 0.15296, y: 0.1643, z: -0.32832}
+  m_LocalPosition: {x: 0.15296, y: 0, z: -0.32832}
   m_LocalScale: {x: 1.2535, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1440,7 +1496,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1458,11 +1514,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7563e6cd82b8a4292c21d21a87dcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetToRotate: {fileID: 0}
+  _info:
+    Type: Hand Clock
+    Action: Turn
   _rotationSpeed: 2
   _rotationAmount: 30
   _target1: -60
   _target2: 300
+  _isRotating: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1582,7 @@ GameObject:
   - component: {fileID: 851187677}
   - component: {fileID: 851187679}
   - component: {fileID: 851187678}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TriggerLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1560,7 +1619,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1578,11 +1637,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7563e6cd82b8a4292c21d21a87dcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetToRotate: {fileID: 0}
+  _info:
+    Type: Hand Clock
+    Action: Turn
   _rotationSpeed: 2
   _rotationAmount: 30
   _target1: 7
   _target2: 370
+  _isRotating: 0
 --- !u!1 &859495346 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3796413564875353774, guid: 9e4fa371a18f44a47b1f6cfb58ee3322, type: 3}
@@ -1618,7 +1680,7 @@ Transform:
   m_GameObject: {fileID: 868210039}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.118698, y: 0.80278563, z: -1.4377123}
+  m_LocalPosition: {x: -31.781303, y: 0.80278563, z: -1.4377123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2528,9 +2590,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1639314317}
-  - component: {fileID: 1639314320}
   - component: {fileID: 1639314319}
-  m_Layer: 0
+  - component: {fileID: 1639314320}
+  m_Layer: 6
   m_Name: TriggerRight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2564,11 +2626,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7563e6cd82b8a4292c21d21a87dcff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetToRotate: {fileID: 0}
+  _info:
+    Type: Hand Clock
+    Action: Turn
   _rotationSpeed: 2
   _rotationAmount: -30
   _target1: -60
   _target2: 300
+  _isRotating: 0
 --- !u!65 &1639314320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2584,7 +2649,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2770,7 +2835,7 @@ Transform:
   m_GameObject: {fileID: 2117374802}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -57.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3125,7 +3190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6366651309483985827, guid: 04ff46dd95af9e842b33b718665e433c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.72
+      value: -25.18
       objectReference: {fileID: 0}
     - target: {fileID: 6366651309483985827, guid: 04ff46dd95af9e842b33b718665e433c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3165,7 +3230,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6366651309483985827, guid: 04ff46dd95af9e842b33b718665e433c, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 257849296}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04ff46dd95af9e842b33b718665e433c, type: 3}
 --- !u!1660057539 &9223372036854775807
