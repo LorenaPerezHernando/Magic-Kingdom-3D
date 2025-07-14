@@ -16,7 +16,6 @@ namespace Magic.UI
             public int keyNumber => _keyNumber;
             public GameObject panelObject => _panelObject;
         }
-
         [SerializeField] private List<PanelKeyPair> _panelList = new List<PanelKeyPair>();
 
         private void Update()
@@ -26,7 +25,7 @@ namespace Magic.UI
                 if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), "Alpha" + panelPair.keyNumber)))
                 {
                     ActivateOnlyPanelWithKey(panelPair.keyNumber);
-                    break; 
+                    break;
                 }
             }
             if (Input.GetKeyDown(KeyCode.Q))
@@ -53,6 +52,35 @@ namespace Magic.UI
                     panel.panelObject.SetActive(false);
             }
 
+        }
+
+        public void Activate(int keyNumber)
+        {
+            bool isActive = false;
+
+            // Comprobar si ya está activo
+            foreach (var panel in _panelList)
+            {
+                if (panel.keyNumber == keyNumber && panel.panelObject.activeSelf)
+                {
+                    isActive = true;
+                    break;
+                }
+            }
+
+            // Toggle del panel
+            foreach (var panel in _panelList)
+            {
+                if (panel.panelObject != null)
+                {
+                    if (panel.keyNumber == keyNumber)
+                        panel.panelObject.SetActive(!isActive); 
+                    else
+                        panel.panelObject.SetActive(false); 
+                }
+            }
+
+            Debug.Log($"Panel {keyNumber} {(isActive ? "desactivado" : "activado")}");
         }
     }
 }
