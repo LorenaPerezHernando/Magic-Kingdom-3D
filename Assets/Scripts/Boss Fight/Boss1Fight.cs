@@ -1,3 +1,4 @@
+using Magic;
 using System.Collections;
 using UnityEngine;
 
@@ -7,8 +8,6 @@ public class Boss1Fight : MonoBehaviour
     [SerializeField] private GameObject _sphereInHand;
     [SerializeField] private Transform _instantiatePosMagicAttack;
     [SerializeField] private GameObject _prefabMagicSphere;
-    [SerializeField] private Vector3 _targetScale = new Vector3(1f, 1f, 1f);
-    private Vector3 _initialScale = new Vector3(0.2f, 0.2f, 0.2f);
     [SerializeField] private GameObject _shortDistanceAttackParticle;
     [Header("Fighting Variables")]
     [SerializeField] private float _distance;
@@ -24,10 +23,6 @@ public class Boss1Fight : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
         _anim = GetComponent<Animator>();
         _sphereInHand.SetActive(false);
-        
-    }
-    void Start()
-    {
         
     }
 
@@ -83,7 +78,7 @@ public class Boss1Fight : MonoBehaviour
 
         }
         else
-            _shortDistanceAttackParticle.SetActive(false);
+            _shortDistanceAttackParticle.SetActive(true);
 
             _isAttacking = false; 
 
@@ -98,5 +93,6 @@ public class Boss1Fight : MonoBehaviour
 
     }
 
+    
 
 }

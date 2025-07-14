@@ -1,3 +1,4 @@
+using Magic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
@@ -12,6 +13,20 @@ public class SlashAttack : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             CharacterController controller = other.GetComponent<CharacterController>();
+
+                print("Collision con el player");
+
+
+            HealthSystem _playerHealth = other.GetComponent<HealthSystem>();
+
+            if (_playerHealth != null)
+            {
+                _playerHealth.TakeDamage(5f);
+                print("Trigger with Boss Bubbles");
+                //TODO Particulas de sangre cuando impacta
+            }
+            else
+                print("Health Sys Null");
 
             if (_isPushing)
             {

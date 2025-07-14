@@ -13520,6 +13520,24 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!1 &2032014265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 409562697576586968, guid: 6d6be197f40badd4fa59268bc7937d97, type: 3}
+  m_PrefabInstance: {fileID: 2063686541618420587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2032014268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032014265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29221e71d19fd384b941e4f93b737e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
 --- !u!1 &2046053977
 GameObject:
   m_ObjectHideFlags: 0
@@ -14740,6 +14758,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss1-Guardian de los Recuerdos
       objectReference: {fileID: 0}
+    - target: {fileID: 409562697576586968, guid: 6d6be197f40badd4fa59268bc7937d97, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     - target: {fileID: 538853489212512016, guid: 6d6be197f40badd4fa59268bc7937d97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.138
@@ -14889,7 +14911,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 152844469800108097, guid: 6d6be197f40badd4fa59268bc7937d97, type: 3}
       insertIndex: 0
       addedObject: {fileID: 859495347}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 409562697576586968, guid: 6d6be197f40badd4fa59268bc7937d97, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 2032014268}
   m_SourcePrefab: {fileID: 100100000, guid: 6d6be197f40badd4fa59268bc7937d97, type: 3}
 --- !u!1001 &4193600746185035300
 PrefabInstance:
