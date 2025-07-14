@@ -24,6 +24,7 @@ namespace Magic.UI
             {
                 if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), "Alpha" + panelPair.keyNumber)))
                 {
+                    //TODO AUDIO DE ABRIR
                     ActivateOnlyPanelWithKey(panelPair.keyNumber);
                     break;
                 }

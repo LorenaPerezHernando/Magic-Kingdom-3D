@@ -30,7 +30,7 @@ namespace Magic.UI
 
         public void ActivateChild()
         {
-            
+            //TODO AUDIO DE ABRIR
             print("Activate Button");
             _isActive = !_isActive;
             _objectToActivate.SetActive(_isActive);
@@ -39,6 +39,7 @@ namespace Magic.UI
         }
         public void HideAll()
         {
+            //TODO AUDIO DE CERRAR
             foreach (var panel in _panelsToManage)
             {
                 if (panel != null)
