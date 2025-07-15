@@ -16,7 +16,7 @@ using UnityEngine;
 /// </summary>
 public class ThirdPersonController : MonoBehaviour
 {
-
+    [Header("Movement Settings")]
     [Tooltip("Speed ​​at which the character moves. It is not affected by gravity or jumping.")]
     [SerializeField] private float _velocity = 5f;
     [Tooltip("This value is added to the speed value while the character is sprinting.")]
@@ -31,6 +31,10 @@ public class ThirdPersonController : MonoBehaviour
 
     float jumpElapsedTime = 0;
 
+    [Header("References")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private CharacterController cc;
+
     // Player states
     bool isJumping = false;
     bool isSprinting = false;
@@ -42,10 +46,6 @@ public class ThirdPersonController : MonoBehaviour
     bool inputJump;
     bool inputCrouch;
     bool inputSprint;
-
-    [SerializeField] private Animator animator;
-    [SerializeField] private CharacterController cc;
-
 
     void Start()
     {
@@ -64,46 +64,57 @@ public class ThirdPersonController : MonoBehaviour
         inputVertical = Input.GetAxis("Vertical");
         inputJump = Input.GetAxis("Jump") == 1f;
         inputSprint = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton1);
-
-        // Unfortunately GetAxis does not work with GetKeyDown, so inputs must be taken individually
         inputCrouch = Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.JoystickButton1);
 
 
         if ( inputCrouch )
             isCrouching = !isCrouching;
 
-
+        //Animator
         if ( cc.isGrounded && animator != null )
-        {            
-            // Run
-            float minimumSpeed = 0.9f;
-            animator.SetBool("Walk", cc.velocity.magnitude > minimumSpeed );
+        {
+            // Calcular velocidad real (sin Y)
+            Vector3 horizontalVelocity = cc.velocity;
+            horizontalVelocity.y = 0;
+            float speed = horizontalVelocity.magnitude;
+            float inputMagnitude = new Vector2(inputHorizontal, inputVertical).magnitude;
 
-            // Sprint
-            isSprinting = cc.velocity.magnitude > minimumSpeed && inputSprint;
-            animator.SetBool("Run", isSprinting );
+            isSprinting = speed > 0.5f && inputSprint && inputMagnitude > 0.1f;
+            float speedValue = 0f;
+
+            if (inputMagnitude < 0.1f || speed < 0.2f)
+            {
+                speedValue = 0f; // Idle
+            }
+            else if (!isSprinting)
+            {
+                speedValue = 0.5f; // Walk
+            }
+            else
+            {
+                speedValue = 1f; // Run
+            }
+            animator.SetFloat("Speed", speedValue, 0.2f, Time.deltaTime);
 
         }
 
 
-        // Handle can jump or not
+        //Jump
         if ( inputJump && cc.isGrounded )
         {
             isJumping = true;
             animator.SetTrigger("Jump");
-            // Disable crounching when jumping
-            //isCrouching = false; 
         }
 
         HeadHittingDetect();
 
     }
 
-
-    // With the inputs and animations defined, FixedUpdate is responsible for applying movements and actions to the player
     private void FixedUpdate()
     {
-
+        // Direction base
+        Vector3 direction = new Vector3(inputHorizontal, 0, inputVertical);
+        if (direction.magnitude > 1f) direction.Normalize();
         // Sprinting velocity boost or crounching desacelerate
         float velocityAdittion = 0;
         if ( isSprinting )
@@ -115,12 +126,14 @@ public class ThirdPersonController : MonoBehaviour
         float directionX = inputHorizontal * (_velocity + velocityAdittion) * Time.deltaTime;
         float directionZ = inputVertical * (_velocity + velocityAdittion) * Time.deltaTime;
         float directionY = 0;
+        float velocityModifier = 0f;
+        float finalSpeed = _velocity + velocityModifier;
+        Vector3 moveDirection = transform.TransformDirection(direction) * finalSpeed * Time.deltaTime;
 
         // Jump handler
         if ( isJumping )
         {
             // Apply inertia and smoothness when climbing the jump
-            // It is not necessary when descending, as gravity itself will gradually pulls
             directionY = Mathf.SmoothStep(_jumpForce, _jumpForce * 0.30f, jumpElapsedTime / _jumpTime) * Time.deltaTime;
 
             // Jump timer
@@ -135,7 +148,7 @@ public class ThirdPersonController : MonoBehaviour
         // Add gravity to Y axis
         directionY = directionY - _gravity * Time.deltaTime;
 
-        
+
         // --- Character rotation --- 
 
         Vector3 forward = Camera.main.transform.forward;
