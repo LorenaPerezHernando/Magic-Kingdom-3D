@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss1Fight : MonoBehaviour
 {
+    #region Fields & Properties
     [Header("Particles")]
     [SerializeField] private GameObject _sphereInHand;
     [SerializeField] private Transform _instantiatePosMagicAttack;
@@ -18,7 +19,8 @@ public class Boss1Fight : MonoBehaviour
     private bool _isPushing = false;
     private GameObject _player;
     private Animator _anim;
-
+    #endregion
+    #region Unity Callbacks
     private void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
@@ -70,8 +72,10 @@ public class Boss1Fight : MonoBehaviour
         }
 
     }
+    #endregion
+    #region Private Methods
 
-    IEnumerator AttackCorrutine()
+    private IEnumerator AttackCorrutine()
     {
         _isAttacking = true;
 
@@ -90,7 +94,7 @@ public class Boss1Fight : MonoBehaviour
             _isAttacking = false; 
 
     }
-    IEnumerator ShortAttack()
+    private IEnumerator ShortAttack()
     {
         yield return new WaitForSeconds(1);
         _shortDistanceAttackParticle.SetActive(true);
@@ -98,7 +102,7 @@ public class Boss1Fight : MonoBehaviour
 
     }
 
-    IEnumerator RelayShoot(float timeToWait)
+    private IEnumerator RelayShoot(float timeToWait)
     {
         
         yield return new WaitForSeconds(timeToWait);
@@ -106,7 +110,8 @@ public class Boss1Fight : MonoBehaviour
         Instantiate(_prefabMagicSphere, _instantiatePosMagicAttack.transform.position, Quaternion.identity);
 
     }
+    #endregion
 
-    
+
 
 }

@@ -6,11 +6,14 @@ using UnityEngine.InputSystem.XR;
 
 public class SlashAttack : MonoBehaviour
 {
+    #region Fields & Properties
     [SerializeField] private float pushForce = 5f;
     private bool _isPushing = true;
     private ParticleSystem _particleSlash;
     private ParticleSystem _particlesChild;
- 
+    #endregion
+    #region Unity Callbacks
+
     private void Start()
     {
         _particleSlash = GetComponent<ParticleSystem>();
@@ -67,8 +70,10 @@ public class SlashAttack : MonoBehaviour
 
         }
     }
+    #endregion
+    #region Private Methods
 
-    IEnumerator Push(CharacterController controller, Transform playerTransform)
+    private IEnumerator Push(CharacterController controller, Transform playerTransform)
     {
         _isPushing = false;
         yield return new WaitForSeconds(0.5f);
@@ -84,4 +89,5 @@ public class SlashAttack : MonoBehaviour
 
 
     }
+    #endregion
 }

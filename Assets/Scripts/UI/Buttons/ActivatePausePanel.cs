@@ -7,22 +7,16 @@ namespace Magic.UI
 {
     public class ActivatePausePanel : MonoBehaviour
     {
+        #region Fields & Propertoes
         public event Action OnGamePause;
         public event Action OnGameResume;
-
+        [Header("Main Panel to Open")]
         [SerializeField] private string _inputKey;
         [SerializeField] private GameObject _objectToActivate;
-        [SerializeField] private bool _isActive = false;
-
+        [Header("Other Panels")]
         [SerializeField] private List<GameObject> _panelsToManage = new List<GameObject>();
-
-        private void Awake()
-        {
-
-        }
-
-
-
+        #endregion
+        #region Unity Callbacks
         private void Update()
         {
             KeyCode key = (KeyCode)System.Enum.Parse(typeof(KeyCode), _inputKey.ToString().ToUpper());
@@ -31,11 +25,12 @@ namespace Magic.UI
                 ActivateChild();
             }
         }
-
+        #endregion
+        #region Public Methods
         public void ActivateChild()
         {
             //TODO AUDIO DE ABRIR
-            print("Activate Button");
+            //print("Activate Button");
             bool newState = !_objectToActivate.activeSelf;
             _objectToActivate.SetActive(newState);
 
@@ -48,7 +43,7 @@ namespace Magic.UI
                 OnGameResume?.Invoke();
             
 
-            print("Activate Button: " + (newState ? "OPEN" : "CLOSE"));
+            //print("Activate Button: " + (newState ? "YES" : "NO"));
 
 
         }
@@ -61,5 +56,6 @@ namespace Magic.UI
                     panel.SetActive(false);
             }
         }
+        #endregion
     }
 }

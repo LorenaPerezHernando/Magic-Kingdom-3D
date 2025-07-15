@@ -82,7 +82,7 @@ public class CameraController : MonoBehaviour
     public void SetBlocked()
     {
         _isBlocked = !_isBlocked;
-        print($"[CameraController] Movement blocked: {(_isBlocked ? "YES" : "NO")}");
+        //print($"[CameraController] Movement blocked: {(_isBlocked ? "YES" : "NO")}");
     }
 
 }

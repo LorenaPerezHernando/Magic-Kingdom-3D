@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace Magic.UI
 {
-
-
     public class ActivateOtherPanels : MonoBehaviour
     {
+        #region Fields & Propertoes
         [System.Serializable]
         public class PanelKeyPair
         {
@@ -17,7 +16,9 @@ namespace Magic.UI
             public GameObject panelObject => _panelObject;
         }
         [SerializeField] private List<PanelKeyPair> _panelList = new List<PanelKeyPair>();
+        #endregion
 
+        #region Unity Callbacks
         private void Update()
         {
             foreach (var panelPair in _panelList)
@@ -34,7 +35,8 @@ namespace Magic.UI
                 DeactivateAllPanels();
             }
         }
-
+        #endregion
+        #region Private Methods
         private void ActivateOnlyPanelWithKey(int activeKey)
         {
             foreach (var panel in _panelList)
@@ -54,6 +56,8 @@ namespace Magic.UI
             }
 
         }
+        #endregion
+        #region Public Methods
 
         public void Activate(int keyNumber)
         {
@@ -81,7 +85,8 @@ namespace Magic.UI
                 }
             }
 
-            Debug.Log($"Panel {keyNumber} {(isActive ? "desactivado" : "activado")}");
+            //Debug.Log($"Panel {keyNumber} {(isActive ? "desactivado" : "activado")}");
         }
+        #endregion
     }
 }

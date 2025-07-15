@@ -6,7 +6,7 @@ namespace Magic.ClockPuzzle
 {
     public class PuzzleClock : MonoBehaviour, IInteractable
     {
-        
+        #region Fields & Properties
         [SerializeField] private InteractableInfo _info;
         [Header("Mecanic")]
         [SerializeField] private float _rotationSpeed = 2f;
@@ -20,12 +20,15 @@ namespace Magic.ClockPuzzle
         private float _rotationProgress = 0f;
         private float _startAngle;
         private float _targetAngle;
-
+        #endregion
+        #region Unity Callbacks
 
         private void Awake()
         {
             _objectToRotate = transform.parent;
         }
+        #endregion
+        #region Public Methods
 
 
         public void Interact()
@@ -45,6 +48,8 @@ namespace Magic.ClockPuzzle
         {
             return _info;
         }
+        #endregion
+        #region Unity Callbacks
         private void Update()
         {
             
@@ -76,5 +81,6 @@ namespace Magic.ClockPuzzle
                 Destroy(gameObject);
             }
         }
+        #endregion
     }
 }
