@@ -47,6 +47,8 @@ public class ThirdPersonController : MonoBehaviour
     bool inputCrouch;
     bool inputSprint;
 
+    public bool IsBlocked = false;
+
     void Start()
     {
         cc = GetComponent<CharacterController>();
@@ -58,7 +60,7 @@ public class ThirdPersonController : MonoBehaviour
 
     void Update()
     {
-
+        if (IsBlocked) return;
         // Input checkers
         inputHorizontal = Input.GetAxis("Horizontal");
         inputVertical = Input.GetAxis("Vertical");
@@ -202,6 +204,12 @@ public class ThirdPersonController : MonoBehaviour
             jumpElapsedTime = 0;
             isJumping = false;
         }
+    }
+
+    public void SetBlocked()
+    {
+        IsBlocked = !IsBlocked;
+        print($"[ThirdPersonController] Movement blocked: {(IsBlocked ? "YES" : "NO")}");
     }
 
 }

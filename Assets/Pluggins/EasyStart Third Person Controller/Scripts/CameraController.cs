@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /*
     This file has a commented version with details about how each line works. 
@@ -31,6 +32,8 @@ public class CameraController : MonoBehaviour
 
     Transform player;
 
+    private bool _isBlocked = false;
+
     void Start()
     {
 
@@ -40,8 +43,8 @@ public class CameraController : MonoBehaviour
         // Lock and hide cursor with option isn't checked
         //if ( ! clickToMoveCamera )
         //{
-        //    UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-        //    UnityEngine.Cursor.visible = false;
+        //UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.visible = false;
         //}
 
     }
@@ -49,7 +52,8 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-
+        if (_isBlocked) return;
+        //if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
         // Follow player - camera offset
         transform.position = player.position + new Vector3(0, offsetDistanceY, 0);
 
@@ -72,4 +76,13 @@ public class CameraController : MonoBehaviour
         transform.rotation = Quaternion.Euler(-mouseY, mouseX, 0);
 
     }
+
+
+
+    public void SetBlocked()
+    {
+        _isBlocked = !_isBlocked;
+        print($"[CameraController] Movement blocked: {(_isBlocked ? "YES" : "NO")}");
+    }
+
 }

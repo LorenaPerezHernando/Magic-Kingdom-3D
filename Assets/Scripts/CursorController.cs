@@ -4,6 +4,7 @@ public class CursorController : MonoBehaviour
 {
     private bool _isCursorVisible = false;
 
+
     private void Start()
     {
         ApplyCursorState();
@@ -24,4 +25,6 @@ public class CursorController : MonoBehaviour
         Cursor.lockState = _isCursorVisible ? CursorLockMode.None : CursorLockMode.Locked;
         Debug.Log("Cursor " + (_isCursorVisible ? "visible" : "oculto"));
     }
+
+    
 }
