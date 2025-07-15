@@ -55,6 +55,8 @@ namespace Magic
             }
             if (gameObject.CompareTag("Player"))
             {
+                Animator _anim = GetComponent<Animator>();
+                _anim.SetTrigger("Die");
                 //TODO logica de morirse del player
                 //¿Tienes objetos para revivir? == Revivir
                 //Todo panel de muerte

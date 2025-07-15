@@ -19,6 +19,7 @@ namespace Magic
         [Header("Player")]
         public PlayerInteraction InteractionSystem => _interactionSystem;
         public HealthSystem PlayerHealthSystem => _playerHealth;
+        public PlayerFight PlayerFight => _playerFight;
         [Header("UI")]
         public UIGameController UIGameController => _uiController;
         #endregion
@@ -27,6 +28,7 @@ namespace Magic
         [Header("Player")]
         [SerializeField] private PlayerInteraction _interactionSystem;
         [SerializeField] private HealthSystem _playerHealth;
+        [SerializeField] private PlayerFight _playerFight;
         [Header("UI")]
         [SerializeField] private UIGameController _uiController;
         [Header("Scene Objects")]
@@ -40,9 +42,12 @@ namespace Magic
             _interactionSystem.OnHideInteraction += () => OnHideInteraction?.Invoke();
 
             _triggerFight.OnStartFight += _uiController.ShowFightPanel;
+            _triggerFight.OnStartFight += _playerFight.Fight;
+
             if (_playerHealth != null)
             {
-                _playerHealth.OnHealthChanged += _uiController.UpdatePlayerHealth;                             
+                _playerHealth.OnHealthChanged += _uiController.UpdatePlayerHealth;
+                _playerHealth.OnDeath += _uiController.ShowDeathPanel;
             }
 
             

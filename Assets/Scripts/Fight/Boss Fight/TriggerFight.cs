@@ -7,6 +7,7 @@ namespace Magic.Boss
 
 public class TriggerFight : MonoBehaviour
 {
+        [SerializeField] private GameObject UIGameController;
     public event Action OnStartFight;
     [SerializeField] private Animator _boss;
 

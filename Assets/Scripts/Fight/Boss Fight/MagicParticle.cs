@@ -32,10 +32,12 @@ public class MagicParticle : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             HealthSystem _playerHealth = other.GetComponent<HealthSystem>();
+            Animator _animator = other.GetComponent<Animator>();
 
             if (_playerHealth != null)
             {
                 _playerHealth.TakeDamage(5f);
+                _animator.SetTrigger("Hit");
 
                 print("Trigger with Boss Bubbles");
                 //TODO Particulas de sangre cuando impacta

@@ -15,6 +15,7 @@ public class Boss1Fight : MonoBehaviour
     [SerializeField] private float _timeToAttack = 10; 
     [SerializeField] private bool _startFight = false;
     [SerializeField] private bool _isAttacking = false;
+    private bool _isPushing = false;
     private GameObject _player;
     private Animator _anim;
 
@@ -57,6 +58,14 @@ public class Boss1Fight : MonoBehaviour
             {
                 _anim.SetTrigger("Idle2");
             }
+
+            if (_distance <= 2.5 && !_isPushing)
+            {
+                _anim.SetTrigger("Attack");
+                StartCoroutine(ShortAttack());
+                _isPushing = true;
+
+            }
             //TODO else con otra animación idle (pero furiosa)
         }
 
@@ -77,10 +86,15 @@ public class Boss1Fight : MonoBehaviour
             StartCoroutine(RelayShoot(2.2f));
 
         }
-        else
-            _shortDistanceAttackParticle.SetActive(true);
-
+        
             _isAttacking = false; 
+
+    }
+    IEnumerator ShortAttack()
+    {
+        yield return new WaitForSeconds(1);
+        _shortDistanceAttackParticle.SetActive(true);
+        _isPushing = false;
 
     }
 

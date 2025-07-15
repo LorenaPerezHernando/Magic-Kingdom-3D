@@ -15,17 +15,22 @@ namespace Magic.UI
         [Header("Interaction")]
         [SerializeField] private UIInteraction _interactionPanel;
 
-        [Header("UI")]
+        [Header("Fight")]
         [SerializeField] private Slider _playerSlider;
+        [SerializeField] private Slider _bossSlider;
         [SerializeField] private GameObject _fightPanel;
+        [SerializeField] private GameObject _deathPanel;
+        
 
         #endregion
 
         void Start()
         {
-
             _interactionSystem.OnShowInteraction += ShowInteraction;
             _interactionSystem.OnHideInteraction += HideInteraction;
+
+            _deathPanel.SetActive(false);
+            _fightPanel.SetActive(false);
         }
 
 
@@ -38,6 +43,11 @@ namespace Magic.UI
         {
             _interactionPanel.Hide();
 
+        }
+
+        public void ShowDeathPanel()
+        {
+            _deathPanel.SetActive(true);
         }
 
         public void ShowFightPanel()
@@ -54,6 +64,11 @@ namespace Magic.UI
         internal void UpdatePlayerHealth(float value)
         {
             _playerSlider.value = value;
+        }
+
+        internal void UpdateBossHealth(float value)
+        {
+            _bossSlider.value = value;
         }
         #endregion
     }

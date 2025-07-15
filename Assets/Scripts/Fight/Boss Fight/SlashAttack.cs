@@ -1,0 +1,87 @@
+using Magic;
+using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.InputSystem.XR;
+
+public class SlashAttack : MonoBehaviour
+{
+    [SerializeField] private float pushForce = 5f;
+    private bool _isPushing = true;
+    private ParticleSystem _particleSlash;
+    private ParticleSystem _particlesChild;
+ 
+    private void Start()
+    {
+        _particleSlash = GetComponent<ParticleSystem>();
+        _particlesChild = GetComponentInChildren<ParticleSystem>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            CharacterController _controller = other.GetComponent<CharacterController>();
+            Animator _animator = other.GetComponent<Animator>();
+                print("Collision con el player");
+
+
+            HealthSystem _playerHealth = other.GetComponent<HealthSystem>();
+
+            if (_playerHealth != null && _animator != null)
+            {
+                _playerHealth.TakeDamage(5f);
+                _animator.SetTrigger("Hit");
+                print("Trigger with Slash");
+                //TODO Particulas de sangre cuando impacta
+            }
+            else
+                print("Health Sys Null");
+
+            if (_isPushing)
+            {
+                //TODO WIND AUDIO & Slap
+                //TODO VFX Particulas player tirando arena/nubes de polvo por el golpe
+                StartCoroutine(Push(_controller, other.transform));
+            }
+
+          
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            CharacterController _controller = other.GetComponent<CharacterController>();
+            Animator _animator = other.GetComponent<Animator>();
+            print("Collision con el player");         
+
+            if (_isPushing)
+            {
+                //TODO WIND AUDIO & Slap
+                //TODO VFX Particulas player tirando arena/nubes de polvo por el golpe
+                StartCoroutine(Push(_controller, other.transform));
+            }
+
+
+        }
+    }
+
+    IEnumerator Push(CharacterController controller, Transform playerTransform)
+    {
+        _isPushing = false;
+        yield return new WaitForSeconds(0.5f);
+        _particleSlash.Play();
+        _particlesChild.Play();
+
+        Vector3 pushDirection = -playerTransform.transform.forward;
+        controller.Move(pushDirection * pushForce);
+        print("Player Pushed");
+        _isPushing = true;
+        yield return new WaitForSeconds(0.5f);
+        gameObject.SetActive(false);
+
+
+    }
+}
