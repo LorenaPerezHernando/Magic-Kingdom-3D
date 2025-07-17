@@ -1,4 +1,4 @@
-#El equilibrio se ha roto.
+# El equilibrio se ha roto.
 
 La ambición de un sacerdote ha corrompido los elementos y desatado una oscuridad que devora memoria, pueblos y espíritus guardianes.
 No eres un héroe, eres una grieta en el destino… y quizás, su única redención.
