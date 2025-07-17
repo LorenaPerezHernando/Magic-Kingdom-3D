@@ -8,8 +8,7 @@ public class SlashAttack : MonoBehaviour
 {
     #region Fields & Properties
     [SerializeField] private float pushForce = 5f;
-    private float _lastPushTime = -1f;
-    [SerializeField] private float _pushCooldown = 1f;
+    [SerializeField] private float _lastPushTime = -1f;
     private bool _isPushing = true;
     private ParticleSystem _particleSlash;
     private ParticleSystem _particlesChild;
