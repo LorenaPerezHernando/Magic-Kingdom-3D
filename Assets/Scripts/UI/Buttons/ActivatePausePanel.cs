@@ -19,8 +19,8 @@ namespace Magic.UI
         #region Unity Callbacks
         private void Update()
         {
-            KeyCode key = (KeyCode)System.Enum.Parse(typeof(KeyCode), _inputKey.ToString().ToUpper());
-            if (Input.GetKeyUp(key))
+            //KeyCode key = (KeyCode)System.Enum.Parse(typeof(KeyCode), _inputKey.ToString().ToUpper());
+            if (Input.GetKeyUp(KeyCode.Escape))
             {
                 ActivateChild();
             }

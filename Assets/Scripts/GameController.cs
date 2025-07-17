@@ -87,6 +87,8 @@ namespace Magic
             {
                 _playerHealth.OnHealthChanged += _uiController.UpdatePlayerHealth;
                 _playerHealth.OnDeath += _uiController.ShowDeathPanel;
+
+                _playerFight.OnHeal += _playerHealth.Heal;
             }
 
             

@@ -1,8 +1,15 @@
+using Magic.VFX;
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerFight : MonoBehaviour
 {
+    public event Action<float> OnHeal;
     private Animator _anim;
+    [SerializeField] private GameObject _healVFX;
+    [SerializeField] private GameObject _tornadoVFXPrefab;
+    [SerializeField] private Transform _tornadoSpawnPoint;
 
     private void Awake()
     {
@@ -14,6 +21,7 @@ public class PlayerFight : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _anim.SetTrigger("Attack");
+            SpawnAttack();
         }
 
         if (Input.GetMouseButtonUp(1))
@@ -21,14 +29,35 @@ public class PlayerFight : MonoBehaviour
             //TODO ATTACK 2
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Q))
         {
-            _anim.SetTrigger("Heal");
+            StartCoroutine(HealVFX());
         }
+       
     }
+
 
     public void Fight()
     {
-        _anim.SetBool("Combat", true); 
+        _anim.SetBool("Combat", true); //Movimiento de combate 
+    }
+
+    private void SpawnAttack()
+    {
+        if (_tornadoVFXPrefab != null && _tornadoSpawnPoint != null)
+        {
+            GameObject tornado = Instantiate(_tornadoVFXPrefab, _tornadoSpawnPoint.position, Quaternion.Euler(-90f, 0,0));
+            tornado.GetComponent<TornadoParticle>().SetDirection(transform.forward);
+        }
+    }
+
+    private IEnumerator HealVFX()
+    {
+        _anim.SetTrigger("Heal");
+        _healVFX.SetActive(true);
+        OnHeal?.Invoke(20f);
+        yield return new WaitForSeconds(1.5f);
+
+        _healVFX?.SetActive(false);
     }
 }
