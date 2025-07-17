@@ -31,7 +31,7 @@ public class PlayerFight : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Q))
         {
-            StartCoroutine(HealVFX());
+            HealVFX();
         }
        
     }
@@ -51,13 +51,12 @@ public class PlayerFight : MonoBehaviour
         }
     }
 
-    private IEnumerator HealVFX()
+    private void HealVFX()
     {
         _anim.SetTrigger("Heal");
+        _healVFX.SetActive(false);
         _healVFX.SetActive(true);
         OnHeal?.Invoke(20f);
-        yield return new WaitForSeconds(1.5f);
 
-        _healVFX?.SetActive(false);
     }
 }
