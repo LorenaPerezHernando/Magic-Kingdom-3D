@@ -51,8 +51,8 @@ Escucha al mundo roto. Ayúdalo a recordar lo que fue. O acepta lo que ya no pod
 
 ---
 
-# Libera. Recuerda. Reconecta.
+### Libera. Recuerda. Reconecta.
 
-## Una aventura emocional, mística y profundamente humana.
+### Una aventura emocional, mística y profundamente humana.
 
-## **¿Te atreves a recordar lo que el mundo olvidó?**
+### **¿Te atreves a recordar lo que el mundo olvidó?**
