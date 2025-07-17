@@ -20,6 +20,8 @@ namespace Magic
         public PlayerInteraction InteractionSystem => _interactionSystem;
         public HealthSystem PlayerHealthSystem => _playerHealth;
         public PlayerFight PlayerFight => _playerFight;
+        [Header("Bosses")]                               
+        public Boss1Fight Boss1Fight => _boss1Fight;                                                                                                                                    
         [Header("UI")]
         public InventoryManager InventoryManager => _inventoryManager;
         public UIGameController UIGameController => _uiController;
@@ -36,6 +38,8 @@ namespace Magic
         [SerializeField] private PlayerInteraction _interactionSystem;
         [SerializeField] private HealthSystem _playerHealth;
         [SerializeField] private PlayerFight _playerFight;
+        [Header ("Bosses")]
+        [SerializeField] private Boss1Fight _boss1Fight;
         [Header("UI")]
         [SerializeField] private InventoryManager _inventoryManager;
         [SerializeField] private UIGameController _uiController;
@@ -57,17 +61,23 @@ namespace Magic
 
             _activatePausePanel.OnGamePause += () =>
             {
-                _thirdPersonController.SetBlocked();
-                _cameraController.SetBlocked();
+                _thirdPersonController.SetBlocked(true);
+                _cameraController.SetBlocked(true);
+                if(_boss1Fight != null)
+                    _boss1Fight.SetBlocked(true);
                 Cursor.visible = true;
+
               
 
             };
             _activatePausePanel.OnGameResume += () =>
             {
-                _thirdPersonController.SetBlocked();
-                _cameraController.SetBlocked();
+                _thirdPersonController.SetBlocked(false);
+                _cameraController.SetBlocked(false);
+                if(_boss1Fight != null)
+                    _boss1Fight.SetBlocked(false);
                 Cursor.visible = false;
+
             };
 
 

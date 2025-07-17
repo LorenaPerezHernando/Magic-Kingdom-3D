@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f44a5c898f2d6c46869cb185eb65467, type: 3}
   m_Name: Healing Flower
   m_EditorClassIdentifier: 
-  itemName: Healing Daisy
-  itemType: 1
-  icon: {fileID: 21300000, guid: d9d461c54e539ed4ea590c3c7985c06a, type: 3}
-  prefab: {fileID: 3541476589131549880, guid: 6f05b5278411b004e89a101bd97672fb, type: 3}
-  description: 'Heal '
-  maxStack: 10
+  _id: 1
+  _itemName: Healing Flower
+  _itemType: 1
+  _icon: {fileID: 21300000, guid: 37af1a84945916f42b72337f3799150c, type: 3}
+  _prefab: {fileID: 3541476589131549880, guid: 6f05b5278411b004e89a101bd97672fb, type: 3}
+  _description: Heal 20HP
+  _maxStack: 10

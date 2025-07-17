@@ -206,9 +206,9 @@ public class ThirdPersonController : MonoBehaviour
         }
     }
 
-    public void SetBlocked()
+    public void SetBlocked(bool value)
     {
-        IsBlocked = !IsBlocked;
+        IsBlocked = value;
         //print($"[ThirdPersonController] Movement blocked: {(IsBlocked ? "YES" : "NO")}");
     }
 

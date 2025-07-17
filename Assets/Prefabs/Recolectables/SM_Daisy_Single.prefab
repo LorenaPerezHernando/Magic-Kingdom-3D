@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5384300729996966177}
+  - component: {fileID: 7560823755904773118}
   - component: {fileID: 627070900235385227}
   - component: {fileID: 6679133223738734465}
   - component: {fileID: 2214853628072493086}
@@ -27,13 +28,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3541476589131549880}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -25.421022, y: 0.010987923, z: 1.162343}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7560823755904773118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3541476589131549880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe8954a54cff1a4fbd72c13703eb961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _item: {fileID: 11400000, guid: c26c7ec428563bf499e90a5aac124bc6, type: 2}
+  _amount: 1
+  _info:
+    Type: 'Healing Flower '
+    Action: Pick Up
 --- !u!33 &627070900235385227
 MeshFilter:
   m_ObjectHideFlags: 0

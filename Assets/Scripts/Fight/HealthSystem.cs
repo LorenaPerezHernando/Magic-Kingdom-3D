@@ -32,6 +32,7 @@ namespace Magic
         {
             _currentHealth = Mathf.Min(_currentHealth + amount, _maxHealth);
             OnHealthChanged.Invoke(_currentHealth);
+            Debug.Log("Se ha curado: " + amount);
         }
 
         public void SetHealth(float value)

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4174991979910550378}
+  - component: {fileID: 5748722142050661851}
   - component: {fileID: 1585176678799552869}
   - component: {fileID: 6030603127819485064}
   - component: {fileID: 4031645662082193500}
@@ -27,13 +28,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5977749771801095694}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -24.996805, y: 0.06732531, z: 1.9119109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5748722142050661851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5977749771801095694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe8954a54cff1a4fbd72c13703eb961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _item: {fileID: 11400000, guid: 977280f1cb990a049a5af6b3254b6178, type: 2}
+  _info:
+    Type: Research Flower
+    Action: Pick Up
 --- !u!33 &1585176678799552869
 MeshFilter:
   m_ObjectHideFlags: 0

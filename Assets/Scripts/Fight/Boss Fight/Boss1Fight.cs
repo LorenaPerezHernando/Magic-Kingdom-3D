@@ -11,6 +11,7 @@ public class Boss1Fight : MonoBehaviour
     [SerializeField] private GameObject _prefabMagicSphere;
     [SerializeField] private GameObject _shortDistanceAttackParticle;
     [Header("Fighting Variables")]
+    private bool _isBlocked = false;
     [SerializeField] private float _distance;
     [SerializeField] private float _speed;
     [SerializeField] private float _timeToAttack = 10; 
@@ -19,6 +20,7 @@ public class Boss1Fight : MonoBehaviour
     private bool _isPushing = false;
     private GameObject _player;
     private Animator _anim;
+    private Coroutine _attackRoutine;
     #endregion
     #region Unity Callbacks
     private void Awake()
@@ -31,14 +33,15 @@ public class Boss1Fight : MonoBehaviour
 
     void Update()
     {
+        if (_isBlocked) return;
         _distance = Vector3.Distance(transform.position, _player.transform.position);
-        if(_distance < 9)
+        if(_distance < 9 && !_isBlocked)
         {
             _startFight=true;
             //TODO Music Intensifies 
         }
 
-        if (_startFight)
+        if (_startFight && !_isBlocked)
         {
             transform.LookAt(_player.transform.position);
 
@@ -53,8 +56,8 @@ public class Boss1Fight : MonoBehaviour
             }
 
             if (!_isAttacking)
-            {               
-                StartCoroutine(AttackCorrutine());
+            {
+                _attackRoutine = StartCoroutine(AttackCorrutine()); 
             }
             else
             {
@@ -73,13 +76,34 @@ public class Boss1Fight : MonoBehaviour
 
     }
     #endregion
+
+    #region Public Methods
+    public void SetBlocked(bool value)
+    {
+        _isBlocked = value;
+        _startFight = false;
+        if (_isBlocked && _attackRoutine != null)
+        {
+            StopCoroutine(_attackRoutine);
+            _attackRoutine = null;
+        }
+        _isAttacking = false;
+        _anim.SetBool("Walk", false);
+    }
+    #endregion
     #region Private Methods
 
     private IEnumerator AttackCorrutine()
     {
         _isAttacking = true;
 
+
         yield return new WaitForSeconds(_timeToAttack);
+        if (_isBlocked)
+        {
+            _isAttacking = false;
+            yield break;
+        }
         if (_distance > 2.5 && _distance < 10)
         {
             //TODO AUDIO VFX 
