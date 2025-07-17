@@ -36,7 +36,10 @@ namespace Magic.UI
 
         #region Public Methods
 
-
+        internal void VictoryOnFightWithBoss1()
+        {
+            //TODO VICTORY
+        }
         public void ShowInteraction(string message)
         {
             _interactionPanel.Show(message);

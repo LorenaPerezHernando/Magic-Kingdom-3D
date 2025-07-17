@@ -21,8 +21,9 @@ namespace Magic
         public HealthSystem PlayerHealthSystem => _playerHealth;
         public PlayerFight PlayerFight => _playerFight;
         [Header("Bosses")]                               
-        public Boss1Fight Boss1Fight => _boss1Fight;                                                                                                                                    
-        [Header("UI")]
+        public Boss1Fight Boss1Fight => _boss1Fight;  
+        public HealthSystem BossHealth => _bossHealth;                                                                                                                                  
+        [Header("UI")]                                                                           
         public InventoryManager InventoryManager => _inventoryManager;
         public UIGameController UIGameController => _uiController;
         public ActivatePausePanel ActivatePausePanel => _activatePausePanel;
@@ -40,6 +41,7 @@ namespace Magic
         [SerializeField] private PlayerFight _playerFight;
         [Header ("Bosses")]
         [SerializeField] private Boss1Fight _boss1Fight;
+        [SerializeField] private HealthSystem _bossHealth;
         [Header("UI")]
         [SerializeField] private InventoryManager _inventoryManager;
         [SerializeField] private UIGameController _uiController;
@@ -52,7 +54,9 @@ namespace Magic
         #region Unity Callbacks
         private void Start()
         {
-
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        
             _interactionSystem.OnShowInteraction += msg => OnShowInteraction?.Invoke(msg);
             _interactionSystem.OnHideInteraction += () => OnHideInteraction?.Invoke();
 
@@ -63,9 +67,9 @@ namespace Magic
             {
                 _thirdPersonController.SetBlocked(true);
                 _cameraController.SetBlocked(true);
-                if(_boss1Fight != null)
                     _boss1Fight.SetBlocked(true);
                 Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
 
               
 
@@ -74,9 +78,9 @@ namespace Magic
             {
                 _thirdPersonController.SetBlocked(false);
                 _cameraController.SetBlocked(false);
-                if(_boss1Fight != null)
-                    _boss1Fight.SetBlocked(false);
+                _boss1Fight.SetBlocked(false);
                 Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked ;
 
             };
 
@@ -90,6 +94,16 @@ namespace Magic
 
                 _playerFight.OnHeal += _playerHealth.Heal;
             }
+
+            if(_bossHealth != null)
+            {
+                _bossHealth.OnHealthChanged += _uiController.UpdateBossHealth;
+                _bossHealth.OnDeath += _uiController.VictoryOnFightWithBoss1;
+            }
+
+
+
+            
 
             
         }
