@@ -1,5 +1,6 @@
 using Magic.Boss;
 using Magic.Interact;
+using Magic.Inventory;
 using Magic.UI;
 using System;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace Magic
         public HealthSystem PlayerHealthSystem => _playerHealth;
         public PlayerFight PlayerFight => _playerFight;
         [Header("UI")]
+        public InventoryManager InventoryManager => _inventoryManager;
         public UIGameController UIGameController => _uiController;
         public ActivatePausePanel ActivatePausePanel => _activatePausePanel;
         [Header("Scene Objects")]
@@ -35,6 +37,7 @@ namespace Magic
         [SerializeField] private HealthSystem _playerHealth;
         [SerializeField] private PlayerFight _playerFight;
         [Header("UI")]
+        [SerializeField] private InventoryManager _inventoryManager;
         [SerializeField] private UIGameController _uiController;
         [SerializeField] private ActivatePausePanel _activatePausePanel;
         [Header("Scene Objects")]
@@ -45,6 +48,7 @@ namespace Magic
         #region Unity Callbacks
         private void Start()
         {
+
             _interactionSystem.OnShowInteraction += msg => OnShowInteraction?.Invoke(msg);
             _interactionSystem.OnHideInteraction += () => OnHideInteraction?.Invoke();
 
