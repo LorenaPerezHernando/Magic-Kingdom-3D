@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Research Flower
   m_EditorClassIdentifier: 
   itemName: Research Flower
-  itemType: 1
+  itemType: 2
   icon: {fileID: 21300000, guid: 545132ab53262184bbb0c188b4de199f, type: 3}
   prefab: {fileID: 5977749771801095694, guid: 91d9efae9f413a846b93fcdf2098b86c, type: 3}
   description: Research Guardian Habilities

@@ -11,6 +11,7 @@ public class InventoryUIController : MonoBehaviour
     private void Start()
     {
         GameController.Instance.InventoryManager.OnItemAdded += CreateSlot;
+        GameController.Instance.InventoryManager.OnItemUsed += RefreshUI;
 
         foreach (var item in GameController.Instance.InventoryManager.Items)
         {
@@ -23,7 +24,6 @@ public class InventoryUIController : MonoBehaviour
     {
         Debug.Log("Creando slot para: " + item.itemName);
         GameObject slotGO = Instantiate(_slotPrefab, _contentParent);
-        Debug.Log("Instanciado: " + slotGO.name);
         slotGO.GetComponent<InventorySlotUI>().Set(item);
     }
 

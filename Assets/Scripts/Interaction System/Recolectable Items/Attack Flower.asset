@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Attack Flower
   m_EditorClassIdentifier: 
   itemName: Attack Rose
-  itemType: 0
+  itemType: 3
   icon: {fileID: 21300000, guid: 37af1a84945916f42b72337f3799150c, type: 3}
   prefab: {fileID: 298858497171660632, guid: dcd8d4f295c0b3e47a6284b61fa7639d, type: 3}
   description: Reinforces Attacks

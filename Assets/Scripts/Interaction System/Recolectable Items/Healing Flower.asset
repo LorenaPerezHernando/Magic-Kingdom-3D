@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Healing Flower
   m_EditorClassIdentifier: 
   itemName: Healing Daisy
-  itemType: 0
+  itemType: 1
   icon: {fileID: 21300000, guid: d9d461c54e539ed4ea590c3c7985c06a, type: 3}
   prefab: {fileID: 3541476589131549880, guid: 6f05b5278411b004e89a101bd97672fb, type: 3}
   description: 'Heal '

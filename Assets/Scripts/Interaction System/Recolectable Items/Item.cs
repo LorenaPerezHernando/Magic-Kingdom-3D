@@ -4,6 +4,7 @@ namespace Magic.Inventory
 {
     public enum ItemType
     {
+        Default,
         Healing,
         Research,
         Attack
