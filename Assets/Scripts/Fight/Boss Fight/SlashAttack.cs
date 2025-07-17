@@ -8,6 +8,8 @@ public class SlashAttack : MonoBehaviour
 {
     #region Fields & Properties
     [SerializeField] private float pushForce = 5f;
+    private float _lastPushTime = -1f;
+    [SerializeField] private float _pushCooldown = 1f;
     private bool _isPushing = true;
     private ParticleSystem _particleSlash;
     private ParticleSystem _particlesChild;
@@ -56,15 +58,16 @@ public class SlashAttack : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            CharacterController _controller = other.GetComponent<CharacterController>();
-            Animator _animator = other.GetComponent<Animator>();
             print("Collision con el player");         
 
             if (_isPushing)
             {
+                CharacterController _controller = other.GetComponent<CharacterController>();
+               // Animator _animator = other.GetComponent<Animator>();
                 //TODO WIND AUDIO & Slap
                 //TODO VFX Particulas player tirando arena/nubes de polvo por el golpe
                 StartCoroutine(Push(_controller, other.transform));
+                _lastPushTime = Time.time;
             }
 
 
@@ -83,9 +86,11 @@ public class SlashAttack : MonoBehaviour
         Vector3 pushDirection = -playerTransform.transform.forward;
         controller.Move(pushDirection * pushForce);
         print("Player Pushed");
-        _isPushing = true;
         yield return new WaitForSeconds(0.5f);
-        gameObject.SetActive(false);
+
+        _particleSlash.Stop();
+        _particlesChild.Stop();
+        _isPushing = true;
 
 
     }
