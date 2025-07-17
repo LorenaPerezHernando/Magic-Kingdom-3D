@@ -35,6 +35,8 @@ namespace Magic.UI
 
 
         #region Public Methods
+
+
         public void ShowInteraction(string message)
         {
             _interactionPanel.Show(message);
