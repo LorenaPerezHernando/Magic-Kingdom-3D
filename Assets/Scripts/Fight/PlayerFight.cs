@@ -11,6 +11,8 @@ public class PlayerFight : MonoBehaviour
     [SerializeField] private GameObject _tornadoVFXPrefab;
     [SerializeField] private Transform _tornadoSpawnPoint;
 
+    public bool isBlocked = false;
+
     private void Awake()
     {
         _anim = GetComponent<Animator>();
@@ -18,22 +20,31 @@ public class PlayerFight : MonoBehaviour
 
     private void Update()
     {
+        if (isBlocked) return;
         if (Input.GetMouseButtonUp(0))
         {
+            if (isBlocked) return;
             _anim.SetTrigger("Attack");
             SpawnAttack();
         }
 
         if (Input.GetMouseButtonUp(1))
         {
+            if (isBlocked) return;
             //TODO ATTACK 2
         }
 
         if (Input.GetKeyUp(KeyCode.Q))
         {
+            if (isBlocked) return;
             HealVFX();
         }
        
+    }
+    public void SetBlocked(bool value)
+    {
+        isBlocked = value;
+
     }
 
 
@@ -44,6 +55,7 @@ public class PlayerFight : MonoBehaviour
 
     private void SpawnAttack()
     {
+        
         if (_tornadoVFXPrefab != null && _tornadoSpawnPoint != null)
         {
             GameObject tornado = Instantiate(_tornadoVFXPrefab, _tornadoSpawnPoint.position, Quaternion.Euler(-90f, 0,0));

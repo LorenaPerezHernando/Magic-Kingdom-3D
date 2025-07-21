@@ -67,10 +67,12 @@ namespace Magic
             {
                 _thirdPersonController.SetBlocked(true);
                 _cameraController.SetBlocked(true);
-                    _boss1Fight.SetBlocked(true);
+                _playerHealth.SetBlocked(true);
+                _playerFight.SetBlocked(true);
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
 
+                _boss1Fight.SetBlocked(true);
               
 
             };
@@ -78,10 +80,12 @@ namespace Magic
             {
                 _thirdPersonController.SetBlocked(false);
                 _cameraController.SetBlocked(false);
-                _boss1Fight.SetBlocked(false);
+                _playerHealth.SetBlocked(false);
+                _playerFight.SetBlocked(false);
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked ;
 
+                _boss1Fight.SetBlocked(false);
             };
 
 

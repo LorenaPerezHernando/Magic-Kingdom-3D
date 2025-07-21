@@ -11,6 +11,8 @@ namespace Magic
         [SerializeField] private float _currentHealth;
         public event Action <float> OnHealthChanged;
         public event Action OnDeath;
+
+        public bool isBlocked = false;
         #endregion
         #region Unity CallBacks
         void Awake()
@@ -19,8 +21,14 @@ namespace Magic
         }
         #endregion
         #region Public Methods
+        public void SetBlocked(bool value)
+        {
+            isBlocked = value;
+            
+        }
         public void TakeDamage(float damageAmount)
         {
+            if (isBlocked) return;
             _currentHealth -= damageAmount;
             OnHealthChanged?.Invoke(_currentHealth);
             if (_currentHealth <= 0)
@@ -30,6 +38,7 @@ namespace Magic
         }
         public void Heal(float amount)
         {
+            if (isBlocked) return;
             _currentHealth = Mathf.Min(_currentHealth + amount, _maxHealth);
             OnHealthChanged.Invoke(_currentHealth);
             Debug.Log("Se ha curado: " + amount);
@@ -37,6 +46,7 @@ namespace Magic
 
         public void SetHealth(float value)
         {
+            if (isBlocked) return;
             _currentHealth = value;
             _currentHealth = Mathf.Min(_currentHealth, _maxHealth);
             OnHealthChanged?.Invoke(_currentHealth);
@@ -69,6 +79,7 @@ namespace Magic
 
         internal void RevivedHealth()
         {
+            if (isBlocked) return;
             OnHealthChanged?.Invoke(_maxHealth);
             _currentHealth = _maxHealth;
         }
@@ -78,6 +89,8 @@ namespace Magic
             yield return new WaitForSeconds(3f);
             Destroy(gameObject);
         }
+
+       
         #endregion
     }
 }
