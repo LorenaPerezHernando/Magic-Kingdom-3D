@@ -1,15 +1,15 @@
 fileFormatVersion: 2
 guid: 3f5b5dff67a942289a9defa416b206f3
 timeCreated: 1436653997
-licenseType: Store
+licenseType: Pro
 NativeFormatImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
-  productId: 309498
-  packageName: Free Slash VFX
-  packageVersion: 1.0
+  productId: 213197
+  packageName: Unity Terrain - URP Demo Scene
+  packageVersion: 1.0.3
   assetPath: Assets/TextMesh Pro/Resources/TMP Settings.asset
-  uploadId: 738318
+  uploadId: 727820
