@@ -184,7 +184,7 @@ Material:
     - _normalStrength: 0
     - _speed: 0.001
     m_Colors:
-    - _Deep_Water_Color: {r: 0.41941082, g: 0.4714051, b: 0.6132076, a: 0}
+    - _Deep_Water_Color: {r: 0, g: 0.71232057, b: 1, a: 0}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
