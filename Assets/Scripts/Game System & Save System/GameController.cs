@@ -1,10 +1,15 @@
 using Magic.Boss;
+using Magic.Data;
 using Magic.Interact;
 using Magic.Inventory;
 using Magic.UI;
 using System;
+using System.Collections;
+using UnityEditor.Overlays;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.SceneManagement;
+using static Magic.Data.SaveData;
+using SaveData = Magic.Data.SaveData;
 
 namespace Magic
 {
@@ -15,6 +20,10 @@ namespace Magic
         public event Action OnHideInteraction;
 
         public event Action OnPush;
+        [Header("Save System")]
+        public GameProgress GameProgress => _gameProgress;
+        public SaveData SaveData => _saveData;
+
         [Header("Player")]
         public ThirdPersonController ThirdPersonController => _thirdPersonController;
         public PlayerInteraction InteractionSystem => _interactionSystem;
@@ -34,6 +43,9 @@ namespace Magic
         #endregion
 
         #region Fields
+        [Header("Save System")]
+        [SerializeField] private GameProgress _gameProgress;
+        [SerializeField] private SaveData _saveData;
         [Header("Player")]
         [SerializeField] private ThirdPersonController _thirdPersonController;
         [SerializeField] private PlayerInteraction _interactionSystem;
@@ -114,11 +126,138 @@ namespace Magic
         #endregion
 
         #region Public Methods
-
         public void TriggerPush()
         {
             OnPush?.Invoke();
         }
+
+        #endregion
+        #region GameProgress
+        public void SavePosition(Vector3 position)
+        {
+            SaveData saveData = SaveSystem.Load() ?? new SaveData();
+
+            saveData.player = new PlayerSaveData
+            {
+                position = position
+            };
+
+            SaveSystem.Save(saveData);
+            Debug.Log("Checkpoint guardado por GameController.");
+        }
+
+        public void AddSpirit()
+        {
+            _gameProgress.spirits++;
+            SaveGame(); 
+        }
+
+        public void CompletePuzzle()
+        {
+            _gameProgress.puzzlesCompleted++;
+            SaveGame();
+        }
+
+        public void DefeatBoss()
+        {
+            _gameProgress.bossesDefeated++;
+            SaveGame();
+        }
+
+        public void FinishedVillage()
+        {
+            _gameProgress.villages++;
+            SaveGame();
+        }
+        #endregion
+
+        #region Load And Save
+        public void NewGame()
+        {
+            _saveData = new SaveData();
+            //TODO 
+            //_thirdPersonController.transform.position = POSICION INICIAL
+        }
+        public void LoadGame()
+        {
+            _saveData = SaveSystem.Load();
+
+            if (SceneManager.GetActiveScene().buildIndex != _saveData.scene)
+            {
+                // Puedes guardar temporalmente el SaveData y cargar escena, luego aplicar
+                StartCoroutine(LoadSceneAndApplySave(_saveData));
+                return;
+            }
+
+            // Ya estás en la escena correcta, aplica los datos directamente
+            ApplySaveData(_saveData);
+
+            // PLAYER
+            _thirdPersonController.transform.position = _saveData.player.position;
+
+            // PROGRESS
+            _gameProgress.spirits = _saveData.progress.spirits;
+            _gameProgress.villages = _saveData.progress.villages;
+            _gameProgress.puzzlesCompleted = _saveData.progress.puzzles;
+            _gameProgress.bossesDefeated = _saveData.progress.bosses;
+
+            // INVENTORY
+            _gameProgress.healingPlants = _saveData.inventory.healingPlants;
+        }
+        public void SaveGame()
+        {
+            _saveData = new SaveData();
+            //ESCENA
+            _saveData.scene = SceneManager.GetActiveScene().buildIndex;
+            // PLAYER
+            _saveData.player = new PlayerSaveData
+            {
+                position = _thirdPersonController.transform.position
+            };
+
+            // PROGRESS
+            _saveData.progress = new GameProgressData
+            {
+                spirits = _gameProgress.spirits,
+                villages = _gameProgress.villages,
+                puzzles = _gameProgress.puzzlesCompleted,
+                bosses = _gameProgress.bossesDefeated
+            };
+
+            // INVENTORY
+            _saveData.inventory = new InventoryData
+            {
+                healingPlants = _gameProgress.healingPlants
+            };
+
+            SaveSystem.Save(_saveData);
+        }
+
+        private IEnumerator LoadSceneAndApplySave(SaveData saveData)
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(saveData.scene);
+
+            while (!asyncLoad.isDone)
+                yield return null;
+
+            yield return new WaitForSeconds(0.1f); // Pequeño delay por seguridad
+
+            ApplySaveData(saveData);
+        }
+        private void ApplySaveData(SaveData saveData)
+        {
+            _thirdPersonController.transform.position = saveData.player.position;
+
+            _gameProgress.spirits = saveData.progress.spirits;
+            _gameProgress.villages = saveData.progress.villages;
+            _gameProgress.puzzlesCompleted = saveData.progress.puzzles;
+            _gameProgress.bossesDefeated = saveData.progress.bosses;
+
+            _gameProgress.healingPlants = saveData.inventory.healingPlants;
+        }
+
+
+       
 
         #endregion
     }
