@@ -23,6 +23,7 @@ namespace Magic
         [Header("Save System")]
         public GameProgress GameProgress => _gameProgress;
         public SaveData SaveData => _saveData;
+        public SceneLoader SceneLoader => _sceneLoader;
 
         [Header("Player")]
         public ThirdPersonController ThirdPersonController => _thirdPersonController;
@@ -46,6 +47,7 @@ namespace Magic
         [Header("Save System")]
         [SerializeField] private GameProgress _gameProgress;
         [SerializeField] private SaveData _saveData;
+        [SerializeField] private SceneLoader _sceneLoader;
         [Header("Player")]
         [SerializeField] private ThirdPersonController _thirdPersonController;
         [SerializeField] private PlayerInteraction _interactionSystem;
@@ -117,10 +119,6 @@ namespace Magic
                 _bossHealth.OnDeath += _uiController.VictoryOnFightWithBoss1;
             }
 
-
-
-            
-
             
         }
         #endregion
@@ -135,15 +133,24 @@ namespace Magic
         #region GameProgress
         public void SavePosition(Vector3 position)
         {
-            SaveData saveData = SaveSystem.Load() ?? new SaveData();
+            _saveData = SaveSystem.Load() ?? new SaveData();
 
-            saveData.player = new PlayerSaveData
+            _saveData.player = new PlayerSaveData
             {
                 position = position
             };
 
-            SaveSystem.Save(saveData);
+            SaveSystem.Save(_saveData);
             Debug.Log("Checkpoint guardado por GameController.");
+        }
+
+        public void LoadScene(int sceneIndex)
+        {
+            if(_sceneLoader != null)
+            {
+                _sceneLoader.LoadSceneByIndex(sceneIndex);
+                
+            }
         }
 
         public void AddSpirit()

@@ -17,6 +17,7 @@ public class BasicDialogue : MonoBehaviour
     [SerializeField] private GameObject _reward;
     [Header("Basic Conversation")]
     [SerializeField] private string[] _basicMensajesIniciales;
+    [SerializeField] private bool _isTalking = false;
     private int _basicCurrentMessageIndex = 0;
     #endregion
 
@@ -30,7 +31,8 @@ public class BasicDialogue : MonoBehaviour
 
     void Update()
     {
-        if((Input.GetMouseButtonDown(0) || Input.GetKeyUp(KeyCode.Return)))
+        if (!_messagePanel.activeInHierarchy) return;
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyUp(KeyCode.Return)))
         {
             LearningConversation();
         }
@@ -49,7 +51,8 @@ public class BasicDialogue : MonoBehaviour
             print("Trigger Enter");
             if(!_hasPlayed)
             {
-            //TODO Bloquear el movimiento y animacion de conversacion 
+                //TODO Bloquear el movimiento y animacion de conversacion 
+                _isTalking = true;
                 _messagePanel?.SetActive(true);
                 LearningConversation();
             }
@@ -63,11 +66,11 @@ public class BasicDialogue : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (!_hasPlayed)
+        if (other.CompareTag("Player"))
         {
+            _isTalking = false;
             _messagePanel.SetActive(false);
             _basicCurrentMessageIndex = 0;
-
         }
     }
 
@@ -95,7 +98,7 @@ public class BasicDialogue : MonoBehaviour
         {
             _messagePanel.SetActive(false);
             _hasPlayed = true; //Flag for next conversation
-            //TODO Reward for talking
+            //TODO Reward for talking _reward.SetActive(true);
         }
     }
 

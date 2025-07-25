@@ -25,7 +25,23 @@ public class TriggerNextProgress : MonoBehaviour
 
 
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            int currentValue = GetValueFromProgress(type);
+            if (currentValue >= _requiredAmount)
+            {
+                Debug.Log($"Acceso permitido: tienes {currentValue} {type}");
+                GetComponent<Collider>().enabled = false;
+            }
+            else
+            {
+                Debug.Log($"Acceso denegado: solo tienes {currentValue} {type}");
+                // TODO DIALGODO DE NO PODER ENTRAR 
+            }
+        }
+    }
     private int GetValueFromProgress(ProgressType type)
     {
         var progress = GameController.Instance.GameProgress;

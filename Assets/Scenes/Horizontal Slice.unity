@@ -4451,6 +4451,7 @@ GameObject:
   - component: {fileID: 518302185}
   - component: {fileID: 518302187}
   - component: {fileID: 518302188}
+  - component: {fileID: 518302189}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -4482,6 +4483,7 @@ MonoBehaviour:
       bosses: 0
     inventory:
       healingPlants: 0
+  _sceneLoader: {fileID: 518302189}
   _thirdPersonController: {fileID: 1194353867}
   _interactionSystem: {fileID: 257849297}
   _playerHealth: {fileID: 1194353871}
@@ -4538,6 +4540,19 @@ MonoBehaviour:
   puzzlesCompleted: 0
   bossesDefeated: 0
   healingPlants: 0
+--- !u!114 &518302189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518302184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf5947b38b2af14687e5584e8c0ae2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneToLoad: 1
 --- !u!1 &552428950
 GameObject:
   m_ObjectHideFlags: 0
@@ -5097,6 +5112,7 @@ MonoBehaviour:
   - 8
   - 7
   - 6
+  _isTalking: 0
 --- !u!4 &595043563
 Transform:
   m_ObjectHideFlags: 0
@@ -8959,14 +8975,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1832662372}
     m_Modifications:
     - target: {fileID: 6112416797066663077, guid: 1d95ac57618c4e940b5458952bc9cf1a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 29.989273
-      objectReference: {fileID: 0}
-    - target: {fileID: 6112416797066663077, guid: 1d95ac57618c4e940b5458952bc9cf1a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.2178
-      objectReference: {fileID: 0}
-    - target: {fileID: 6112416797066663077, guid: 1d95ac57618c4e940b5458952bc9cf1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -150.1
       objectReference: {fileID: 0}
@@ -9010,8 +9018,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Trigger Story '
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7585460555794560670, guid: 1d95ac57618c4e940b5458952bc9cf1a, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -16544,10 +16551,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2117374803}
     m_Modifications:
-    - target: {fileID: 6735707145511934390, guid: e1a90f2a96b1f7841ab23cec024739f7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 167.85109
-      objectReference: {fileID: 0}
     - target: {fileID: 6735707145511934390, guid: e1a90f2a96b1f7841ab23cec024739f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -116.28
