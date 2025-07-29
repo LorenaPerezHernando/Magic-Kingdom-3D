@@ -9,7 +9,7 @@ namespace Magic.Dialogue
     public class DialogueManager : MonoBehaviour
     {
         [Header("Reward Message")]
-        //[SerializeField] private GameObject _rewardPanel;
+        [SerializeField] private GameObject _rewardPanel;       
         [SerializeField] private TextMeshProUGUI _rewardText;
 
         [Header("Dialogue")]
@@ -45,7 +45,7 @@ namespace Magic.Dialogue
             }
             else
             {
-                _panel.SetActive(false);
+                
 
                 if (_currentData.hasReward && _currentData.rewardItem != null)
                 {
@@ -70,12 +70,11 @@ namespace Magic.Dialogue
 
         IEnumerator ShowRewardMessage(string message)
         {
-           // _rewardPanel.SetActive(true);
-           _rewardText.enabled = true;
+            _rewardPanel.SetActive(true);
             _rewardText.text = message;
             yield return new WaitForSeconds(2f);
-            // _rewardPanel.SetActive(false);
-            _rewardText.enabled = false;
+             _rewardPanel.SetActive(false);
+            _panel.SetActive(false);
         }
     }
 }
