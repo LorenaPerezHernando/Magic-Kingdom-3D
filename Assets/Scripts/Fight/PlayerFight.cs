@@ -21,14 +21,14 @@ public class PlayerFight : MonoBehaviour
     private void Update()
     {
         if (isBlocked) return;
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(1))
         {
             if (isBlocked) return;
             _anim.SetTrigger("Attack");
             SpawnAttack();
         }
 
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(0))
         {
             if (isBlocked) return;
             //TODO ATTACK 2
