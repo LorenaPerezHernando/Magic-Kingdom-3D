@@ -59,9 +59,12 @@ namespace Magic
             if(gameObject.CompareTag("Boss"))
             {
                 Animator _anim = GetComponent<Animator>();
+                Boss1Fight bossFight = GetComponent<Boss1Fight>();
+                bossFight.enabled = false;
                 _anim.SetTrigger("Die");
                 //TODO Death Particle
                 OnDeath.Invoke();
+                GameController.Instance.DefeatBoss();
                 StartCoroutine(BossDied());
             }
             if (gameObject.CompareTag("Player"))
@@ -87,7 +90,8 @@ namespace Magic
         IEnumerator BossDied()
         {
             yield return new WaitForSeconds(3f);
-            Destroy(gameObject);
+            //Destroy(gameObject)+
+            Debug.Log("Boss Died, do rewards");
         }
 
        

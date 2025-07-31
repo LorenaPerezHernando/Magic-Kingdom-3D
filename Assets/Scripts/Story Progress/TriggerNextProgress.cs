@@ -4,42 +4,18 @@ using UnityEngine;
 public enum ProgressType { Spirits, Villages, Puzzles, Bosses, HealingPlants }
 public class TriggerNextProgress : MonoBehaviour
 {
+    [Header("Progress")]
     [SerializeField] private ProgressType type;
     [SerializeField] private int _requiredAmount;
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private int _currentValue;
+    [Header("Goal Completed")]
+    [SerializeField] private GameObject[] _objectsToDesactivate;
+    private void Update()
     {
-        if (other.CompareTag("Player"))
+        _currentValue = GetValueFromProgress(type);
+        if(_currentValue >= _requiredAmount)
         {
-            int currentValue = GetValueFromProgress(type);
-            if (currentValue >= _requiredAmount)
-            {
-                Debug.Log($"Acceso permitido: tienes {currentValue} {type}");
-                gameObject.GetComponent<Collider>().isTrigger = true;
-            }
-            else
-            {
-                Debug.Log($"Acceso denegado: solo tienes {currentValue} {type}");
-                // TODO Acción bloqueada
-            }
-        }
-
-
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            int currentValue = GetValueFromProgress(type);
-            if (currentValue >= _requiredAmount)
-            {
-                Debug.Log($"Acceso permitido: tienes {currentValue} {type}");
-                GetComponent<Collider>().enabled = false;
-            }
-            else
-            {
-                Debug.Log($"Acceso denegado: solo tienes {currentValue} {type}");
-                // TODO DIALGODO DE NO PODER ENTRAR 
-            }
+            OpenNextPuzzle();
         }
     }
     private int GetValueFromProgress(ProgressType type)
@@ -55,6 +31,13 @@ public class TriggerNextProgress : MonoBehaviour
             ProgressType.HealingPlants => progress.healingPlants,
             _ => 0
         };
+    }
+
+    private void OpenNextPuzzle()
+    {
+        foreach (var obj in _objectsToDesactivate)
+            obj.SetActive(false);
+        Destroy(gameObject);
     }
 }
 

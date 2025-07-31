@@ -30,6 +30,7 @@ namespace Magic.Dialogue
             _imageTalker.sprite = _currentData.imageTalker;
             _index = 0;
             _panel.SetActive(true);
+            GameController.Instance.PauseGame();
             ShowLine();
         }
 
@@ -48,12 +49,13 @@ namespace Magic.Dialogue
             }
             else
             {
-                
-
                 if (_currentData.hasReward && _currentData.rewardItem != null)
                 {
                     GiveReward(_currentData.rewardItem, _currentData.rewardAmount);
                 }
+                GameController.Instance.ResumeGame();
+                
+                
             }
         }
         void GiveReward(Item item, int amount)
@@ -78,6 +80,12 @@ namespace Magic.Dialogue
             yield return new WaitForSeconds(2f);
              _rewardPanel.SetActive(false);
             _panel.SetActive(false);
+        }
+
+        public void CloseDialogue()
+        {
+            _panel.SetActive(false);
+            GameController.Instance.ResumeGame();
         }
     }
 }

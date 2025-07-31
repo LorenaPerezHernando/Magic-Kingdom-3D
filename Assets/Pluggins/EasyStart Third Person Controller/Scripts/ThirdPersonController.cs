@@ -30,6 +30,7 @@ public class ThirdPersonController : MonoBehaviour
     [SerializeField] private float _gravity = 9.8f;
 
     float jumpElapsedTime = 0;
+    float speed;
 
     [Header("References")]
     [SerializeField] private Animator animator;
@@ -78,7 +79,7 @@ public class ThirdPersonController : MonoBehaviour
             // Calcular velocidad real (sin Y)
             Vector3 horizontalVelocity = cc.velocity;
             horizontalVelocity.y = 0;
-            float speed = horizontalVelocity.magnitude;
+            speed = horizontalVelocity.magnitude;
             float inputMagnitude = new Vector2(inputHorizontal, inputVertical).magnitude;
 
             isSprinting = speed > 0.5f && inputSprint && inputMagnitude > 0.1f;
@@ -114,6 +115,7 @@ public class ThirdPersonController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(IsBlocked) return;
         // Direction base
         Vector3 direction = new Vector3(inputHorizontal, 0, inputVertical);
         if (direction.magnitude > 1f) direction.Normalize();
@@ -209,6 +211,10 @@ public class ThirdPersonController : MonoBehaviour
     public void SetBlocked(bool value)
     {
         IsBlocked = value;
+        speed = 0;
+        inputHorizontal = 0;
+        inputVertical = 0;
+        animator.SetFloat("Speed", 0);
         //print($"[ThirdPersonController] Movement blocked: {(IsBlocked ? "YES" : "NO")}");
     }
 
