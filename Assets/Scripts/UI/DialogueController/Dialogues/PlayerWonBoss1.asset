@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281be76d5cdd09a468f9c0130eaa0aad, type: 3}
   m_Name: PlayerWonBoss1
   m_EditorClassIdentifier: 
-  frases: []
-  imageTalker: {fileID: 0}
+  frases:
+  - Gracias por liberarme de la oscuridad del Nexo
+  - "No se que pas\xF3, pero mis perd\xED el control de mis poderes"
+  imageTalker: {fileID: 21300000, guid: 3319cab8e19a1a04ca5d8aaaf6fb409c, type: 3}
   autoAdvance: 0
-  hasReward: 0
-  rewardItem: {fileID: 0}
+  hasReward: 1
+  rewardItem: {fileID: 11400000, guid: 977280f1cb990a049a5af6b3254b6178, type: 2}
   rewardAmount: 1
