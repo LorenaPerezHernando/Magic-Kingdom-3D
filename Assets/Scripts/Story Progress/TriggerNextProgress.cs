@@ -9,13 +9,17 @@ public class TriggerNextProgress : MonoBehaviour
     [SerializeField] private int _requiredAmount;
     [SerializeField] private int _currentValue;
     [Header("Goal Completed")]
+    [SerializeField] private GameObject[] _objectsToActivate;
     [SerializeField] private GameObject[] _objectsToDesactivate;
+
     private void Update()
     {
         _currentValue = GetValueFromProgress(type);
         if(_currentValue >= _requiredAmount)
         {
-            OpenNextPuzzle();
+            DesactivateObjects();
+            ActivateObjects();
+
         }
     }
     private int GetValueFromProgress(ProgressType type)
@@ -33,11 +37,22 @@ public class TriggerNextProgress : MonoBehaviour
         };
     }
 
-    private void OpenNextPuzzle()
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            ActivateObjects();
+        }
+    }
+    private void ActivateObjects()
+    {
+        foreach (var obj in _objectsToActivate)
+            obj.SetActive(true);
+    }
+    private void DesactivateObjects()
     {
         foreach (var obj in _objectsToDesactivate)
             obj.SetActive(false);
-        Destroy(gameObject);
     }
 }
 

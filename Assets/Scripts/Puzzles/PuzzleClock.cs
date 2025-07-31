@@ -15,7 +15,6 @@ namespace Magic.ClockPuzzle
         [SerializeField] private GameObject _objectToDesactivate;
         private Transform _objectToRotate;
         [SerializeField] private GameObject _targetPos;
-        [SerializeField] private float _target2 = 370;
         [Header("Rotation")]
         [SerializeField] private bool _isRotating = false;
         private float _rotationProgress = 0f;

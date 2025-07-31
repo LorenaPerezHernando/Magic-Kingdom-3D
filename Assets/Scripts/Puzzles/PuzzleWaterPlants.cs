@@ -1,5 +1,6 @@
 using Magic;
 using Magic.Data;
+using System.Collections;
 using UnityEngine;
 
 public class PuzzleWaterPlants : MonoBehaviour
@@ -13,7 +14,9 @@ public class PuzzleWaterPlants : MonoBehaviour
     [SerializeField] private GameObject _smokeVFX;
 
     [Header("Puzzle")]
+    [SerializeField] private GameObject[] _pots;
     [SerializeField] private int _plantsWatered;
+    private GameObject _actualPot;
 
     private void Awake()
     {
@@ -27,7 +30,10 @@ public class PuzzleWaterPlants : MonoBehaviour
     {
         if (other.CompareTag("PotsToWater"))
         {
+            _actualPot = other.gameObject;
             _plantsWatered++;
+            _actualPot.GetComponentInChildren<ParticleSystem>().Stop();
+            StartCoroutine(DelayDeleteRB());
             //TODO sounds
 
             if(_plantsWatered >= 3)
@@ -38,9 +44,23 @@ public class PuzzleWaterPlants : MonoBehaviour
                 _smokeVFX.SetActive(false);               
                 _farmer.LookAt(_player.transform);
                 _farmerDialogue.TriggerDialogue();
+                DesactivateAllPots();
 
                 GameController.Instance.CompletePuzzle();
             }
         }
+    }
+    private void DesactivateAllPots()
+    {
+        foreach (GameObject pot in _pots)
+        {
+            GetComponentInChildren<ParticleSystem>(pot).Stop();
+        }
+    }
+
+    IEnumerator DelayDeleteRB()
+    {
+        yield return new WaitForSeconds(4);
+        _actualPot.GetComponent<Rigidbody>().isKinematic = true;
     }
 }
