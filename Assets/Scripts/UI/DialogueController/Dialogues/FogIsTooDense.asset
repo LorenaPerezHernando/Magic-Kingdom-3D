@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 281be76d5cdd09a468f9c0130eaa0aad, type: 3}
-  m_Name: RewardsWaterFarmer
+  m_Name: FogIsTooDense
   m_EditorClassIdentifier: 
   frases:
-  - Thankyou, you watered my plants
-  - I dont know what i was thinking
-  - 'Here, take on of my flowers '
-  imageTalker: {fileID: 21300000, guid: b9d77cc59a1e1f74494369336ef3a433, type: 3}
+  - The fog is too dense, we cant go through
+  imageTalker: {fileID: 21300000, guid: 27f03b56781517c49a796af440e3ae67, type: 3}
   autoAdvance: 0
-  hasReward: 1
-  rewardItem: {fileID: 11400000, guid: c26c7ec428563bf499e90a5aac124bc6, type: 2}
+  hasReward: 0
+  rewardItem: {fileID: 0}
   rewardAmount: 1

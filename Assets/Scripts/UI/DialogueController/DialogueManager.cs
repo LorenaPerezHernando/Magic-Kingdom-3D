@@ -3,6 +3,7 @@ using UnityEngine;
 using Magic.Inventory;
 using Magic.UI;
 using System.Collections;
+using UnityEngine.UI;
 
 namespace Magic.Dialogue
 {
@@ -13,6 +14,7 @@ namespace Magic.Dialogue
         [SerializeField] private TextMeshProUGUI _rewardText;
 
         [Header("Dialogue")]
+        [SerializeField] private Image _imageTalker;
         public static DialogueManager Instance;
         [SerializeField] private GameObject _panel;
         [SerializeField] private TextMeshProUGUI _text;
@@ -25,6 +27,7 @@ namespace Magic.Dialogue
         {
             print("StartDialogue");
             _currentData = data;
+            _imageTalker.sprite = _currentData.imageTalker;
             _index = 0;
             _panel.SetActive(true);
             ShowLine();

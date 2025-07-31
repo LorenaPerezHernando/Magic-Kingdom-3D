@@ -3,8 +3,6 @@ using UnityEngine;
 
 namespace Magic.Boss
 {
-
-
     public class TriggerFight : MonoBehaviour
     {
         #region Fields & Properties
