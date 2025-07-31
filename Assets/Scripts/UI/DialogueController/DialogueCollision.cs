@@ -10,7 +10,7 @@ public class DialogueCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && !_hasPlayed)
         {
-            _hasPlayed = true;
+            //_hasPlayed = true;
             DialogueManager.Instance.StartDialogue(_dialogueData);
         }
     }
@@ -21,7 +21,7 @@ public class DialogueCollision : MonoBehaviour
         if (!_hasPlayed)
         {
             print("Play Dialogue");
-            _hasPlayed = true;
+            //_hasPlayed = true;
             DialogueManager.Instance.StartDialogue(_dialogueData);
         }
     }

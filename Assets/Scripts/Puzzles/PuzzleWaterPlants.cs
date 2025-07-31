@@ -1,3 +1,5 @@
+using Magic;
+using Magic.Data;
 using UnityEngine;
 
 public class PuzzleWaterPlants : MonoBehaviour
@@ -37,6 +39,7 @@ public class PuzzleWaterPlants : MonoBehaviour
                 _farmer.LookAt(_player.transform);
                 _farmerDialogue.TriggerDialogue();
 
+                GameController.Instance.CompletePuzzle();
             }
         }
     }

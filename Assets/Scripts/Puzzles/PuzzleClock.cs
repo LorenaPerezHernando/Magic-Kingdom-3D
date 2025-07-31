@@ -13,7 +13,7 @@ namespace Magic.ClockPuzzle
         [SerializeField] private float _rotationAmount = 30;
         [Header("Goal")]
         private Transform _objectToRotate;
-        [SerializeField] private float _target1 = 7;
+        [SerializeField] private GameObject _targetPos;
         [SerializeField] private float _target2 = 370;
         [Header("Rotation")]
         [SerializeField] private bool _isRotating = false;
@@ -69,15 +69,16 @@ namespace Magic.ClockPuzzle
                     _rotationProgress = 0f;
                 }
 
-
-
             }
 
-            if (Mathf.Abs(Mathf.DeltaAngle(_objectToRotate.eulerAngles.y, _target1)) < 2f ||
-                    Mathf.Abs(Mathf.DeltaAngle(_objectToRotate.eulerAngles.y, _target2)) < 2f)
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if(other.gameObject == _targetPos)
             {
-                //TODO OBJETIVO CUMPLIDO Particulas, musica
-                Debug.Log("Objetivo Cumplido 1");
+                //TODO Particulas, sonido de completado
+                GameController.Instance.CompletePuzzle();
                 Destroy(gameObject);
             }
         }

@@ -15,7 +15,7 @@ MonoBehaviour:
   frases:
   - Thankyou, you watered my plants
   - I dont know what i was thinking
-  - 'Here, take on of my flowers '
+  - 'Here, take one of my flowers '
   imageTalker: {fileID: 21300000, guid: b9d77cc59a1e1f74494369336ef3a433, type: 3}
   autoAdvance: 0
   hasReward: 1
