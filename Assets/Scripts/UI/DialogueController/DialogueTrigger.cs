@@ -4,7 +4,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private DialogueData _dialogueData;
-    private bool _hasPlayed = false;
+    [SerializeField] private bool _hasPlayed = false;
 
     private void OnTriggerEnter(Collider other)
     {

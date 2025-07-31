@@ -9,9 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6846026376306589792}
+  - component: {fileID: 8381588370726838046}
+  - component: {fileID: 3590894174849703033}
+  - component: {fileID: 8849580045074917698}
   m_Layer: 0
   m_Name: House B
-  m_TagString: Untagged
+  m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23,9 +26,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2233531389182865379}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.112, y: 1.112, z: 1.112}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6498252996002861198}
@@ -72,7 +76,7 @@ Transform:
   - {fileID: 6426986100479601564}
   - {fileID: 3159074774859674116}
   - {fileID: 7725540248045069647}
-  - {fileID: 3393668022869383468}
+  - {fileID: 561284324201502585}
   - {fileID: 2419456747426867444}
   - {fileID: 2513152546527413538}
   - {fileID: 6540052830804118158}
@@ -95,7 +99,7 @@ Transform:
   - {fileID: 380903353968109888}
   - {fileID: 4149713538083973086}
   - {fileID: 3024586822904956493}
-  - {fileID: 5850685061853098033}
+  - {fileID: 4720799097454738348}
   - {fileID: 8908130087509727434}
   - {fileID: 1049803619188125392}
   - {fileID: 1253544851589934414}
@@ -115,7 +119,7 @@ Transform:
   - {fileID: 7925911392896810287}
   - {fileID: 111872130647266483}
   - {fileID: 6218052238373091524}
-  - {fileID: 3376261161638856019}
+  - {fileID: 2493189300655094134}
   - {fileID: 5019908334881758731}
   - {fileID: 4621284685379787464}
   - {fileID: 1261686608280150486}
@@ -179,7 +183,7 @@ Transform:
   - {fileID: 8245412456199796535}
   - {fileID: 9106675540130803146}
   - {fileID: 8790774265863522551}
-  - {fileID: 5888467800949464019}
+  - {fileID: 2269499738078339174}
   - {fileID: 5754178207680252125}
   - {fileID: 8517832526021850848}
   - {fileID: 5456964055906367346}
@@ -210,8 +214,70 @@ Transform:
   - {fileID: 8911106693921294220}
   - {fileID: 5420641408316760525}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8381588370726838046
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233531389182865379}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 14.764515, y: 8.705249, z: 6.882169}
+  m_Center: {x: 5.122454, y: 3.8526232, z: -4.427371}
+--- !u!65 &3590894174849703033
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233531389182865379}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.02, y: 6.32619, z: 10.064253}
+  m_Center: {x: 10.05003, y: 2.6630936, z: -2.8786812}
+--- !u!65 &8849580045074917698
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2233531389182865379}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.35, y: 6.32619, z: 12.070169}
+  m_Center: {x: 3.22, y: 2.6630936, z: -7.56}
 --- !u!1001 &10864942804967785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,7 +334,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157983766941696657, guid: 0bfb40ead124edf48b92fff66e5fc7de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -334,7 +401,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corner Small (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6990881063120001731, guid: 8f97e6b81d87d3d49b2d741f97604e75, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -400,7 +468,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -466,7 +535,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corner Small
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6990881063120001731, guid: 8f97e6b81d87d3d49b2d741f97604e75, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -532,7 +602,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3030156044535918221, guid: 4c9ed76763d7b364195dc3de0422f7bf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -598,7 +669,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3030156044535918221, guid: 4c9ed76763d7b364195dc3de0422f7bf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -664,7 +736,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -730,7 +803,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -796,7 +870,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -862,7 +937,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -928,7 +1004,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3799285843464761673, guid: fedae7ff35385df469845afc611ffe0a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -994,7 +1071,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1060,7 +1138,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1126,7 +1205,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1192,7 +1272,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1258,7 +1339,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1324,7 +1406,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1390,7 +1473,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1456,7 +1540,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof End Corner (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8118221375954347764, guid: 035c487ce0d0ed34c8add7b48b9b4eb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1522,7 +1607,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3799285843464761673, guid: fedae7ff35385df469845afc611ffe0a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1588,7 +1674,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Triangle End Mirror (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -151910671452248918, guid: 4382bb7e987d7a04791ec22af2be8ac5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1654,7 +1741,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3799285843464761673, guid: fedae7ff35385df469845afc611ffe0a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1720,7 +1808,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1786,7 +1875,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2 (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1852,7 +1942,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corner Small (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6990881063120001731, guid: 8f97e6b81d87d3d49b2d741f97604e75, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1918,7 +2009,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8542350826144145381, guid: a369b49670b6386459a32f91c5eb81fc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1984,7 +2076,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2050,7 +2143,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2116,7 +2210,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2182,7 +2277,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corner Small (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6990881063120001731, guid: 8f97e6b81d87d3d49b2d741f97604e75, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2248,7 +2344,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Window
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8499964482856918019, guid: 8b9338082e1cd4c428f25c6464711c9e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2314,7 +2411,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2380,7 +2478,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2446,7 +2545,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2512,7 +2612,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2 (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2578,7 +2679,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2644,7 +2746,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3566560697668622667, guid: b3479c17045e19d4c9124435113c5206, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2710,7 +2813,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157983766941696657, guid: 0bfb40ead124edf48b92fff66e5fc7de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2776,7 +2880,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3220644263113628911, guid: fc027a29513013042a864481ce5099ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2842,7 +2947,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2908,7 +3014,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Corner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8414137683070619697, guid: 63b4776fec377d841a2fff1a1e5a0c7c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2974,7 +3081,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corner Small (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6990881063120001731, guid: 8f97e6b81d87d3d49b2d741f97604e75, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3040,7 +3148,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corner Small (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6990881063120001731, guid: 8f97e6b81d87d3d49b2d741f97604e75, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3106,7 +3215,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3799285843464761673, guid: fedae7ff35385df469845afc611ffe0a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3172,7 +3282,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3238,7 +3349,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (25)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3304,7 +3416,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3370,7 +3483,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3436,7 +3550,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1461139998520005428, guid: 30c0da99349e8c4408a17981c759d227, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3502,7 +3617,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3568,7 +3684,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3634,7 +3751,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Window 2 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2590178871993696697, guid: 52351ead23cd307429489e6875c3b96d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3700,7 +3818,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3766,7 +3885,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3832,7 +3952,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Window 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2590178871993696697, guid: 52351ead23cd307429489e6875c3b96d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3898,7 +4019,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3964,7 +4086,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4030,7 +4153,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4096,7 +4220,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (21)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4162,7 +4287,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Triangle End Mirror (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -151910671452248918, guid: 4382bb7e987d7a04791ec22af2be8ac5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4228,7 +4354,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4294,7 +4421,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4360,7 +4488,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2 (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4426,7 +4555,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Triangle Small End Mirror
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8273926342059204247, guid: 8573c37fe1b220948b65c8e78b07df32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4492,7 +4622,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4558,7 +4689,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4624,7 +4756,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4690,7 +4823,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1461139998520005428, guid: 30c0da99349e8c4408a17981c759d227, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4756,7 +4890,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4822,12 +4957,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
---- !u!4 &3376261161638856019 stripped
+--- !u!4 &2493189300655094134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 883679518025808932, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
   m_PrefabInstance: {fileID: 3376261161638856018}
@@ -4888,12 +5024,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
---- !u!4 &3393668022869383468 stripped
+--- !u!4 &561284324201502585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2941604857733041746, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
   m_PrefabInstance: {fileID: 3393668022869383467}
@@ -4954,7 +5091,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5020,7 +5158,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5086,7 +5225,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5152,7 +5292,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157983766941696657, guid: 0bfb40ead124edf48b92fff66e5fc7de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5218,7 +5359,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5284,7 +5426,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Wall (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6778298464007666262, guid: 97886c9f703b03f42a0d9fe963f20f3f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5350,7 +5493,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5416,7 +5560,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5482,7 +5627,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4117461418771210085, guid: 4ecdf013450b1a34da9b2608d89eb90d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5548,7 +5694,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3691622981622677770, guid: 53955d11d1008ba428fcc2661b3c1177, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5614,7 +5761,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall Window 2 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2590178871993696697, guid: 52351ead23cd307429489e6875c3b96d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5680,7 +5828,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157983766941696657, guid: 0bfb40ead124edf48b92fff66e5fc7de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5746,7 +5895,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5812,7 +5962,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (28)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5878,7 +6029,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1461139998520005428, guid: 30c0da99349e8c4408a17981c759d227, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5944,12 +6096,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Cube
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7741733743756653219, guid: 8052238261030f04283249e0541b5a7c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8052238261030f04283249e0541b5a7c, type: 3}
---- !u!4 &5888467800949464019 stripped
+--- !u!4 &2269499738078339174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2884115742600243465, guid: 8052238261030f04283249e0541b5a7c, type: 3}
   m_PrefabInstance: {fileID: 3997100801868482927}
@@ -6010,7 +6163,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6076,7 +6230,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1461139998520005428, guid: 30c0da99349e8c4408a17981c759d227, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6142,7 +6297,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1461139998520005428, guid: 30c0da99349e8c4408a17981c759d227, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6208,7 +6364,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2 (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6274,7 +6431,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3668297955186245389, guid: 6adb8415aa1282d49992e991a376d77a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6340,7 +6498,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Corner (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8414137683070619697, guid: 63b4776fec377d841a2fff1a1e5a0c7c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6406,7 +6565,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6472,7 +6632,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corner Small (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6990881063120001731, guid: 8f97e6b81d87d3d49b2d741f97604e75, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6538,7 +6699,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Window (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8499964482856918019, guid: 8b9338082e1cd4c428f25c6464711c9e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6604,7 +6766,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157983766941696657, guid: 0bfb40ead124edf48b92fff66e5fc7de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6670,7 +6833,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6538377165129940186, guid: e11af604d435b4948a9016173ef12658, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6736,7 +6900,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3519907728824220627, guid: 21858c2e2cdab9d4a95db6a2764c78e9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6802,7 +6967,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3691622981622677770, guid: 53955d11d1008ba428fcc2661b3c1177, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6868,7 +7034,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1461139998520005428, guid: 30c0da99349e8c4408a17981c759d227, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6934,7 +7101,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7000,7 +7168,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (21)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7066,7 +7235,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7132,7 +7302,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7198,7 +7369,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7264,7 +7436,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7330,7 +7503,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7396,7 +7570,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7462,7 +7637,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3566560697668622667, guid: b3479c17045e19d4c9124435113c5206, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7528,7 +7704,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7594,7 +7771,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7660,7 +7838,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157983766941696657, guid: 0bfb40ead124edf48b92fff66e5fc7de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7726,7 +7905,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (23)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7792,7 +7972,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Corner 2 Small (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3458394368404852868, guid: 38f6a7ae8a62f844d8d7f4885cff4264, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7858,7 +8039,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Triangle End Mirror (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -151910671452248918, guid: 4382bb7e987d7a04791ec22af2be8ac5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7924,12 +8106,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2 (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10d241d231f356548980d6667e176c63, type: 3}
---- !u!4 &5850685061853098033 stripped
+--- !u!4 &4720799097454738348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1203141512174898076, guid: 10d241d231f356548980d6667e176c63, type: 3}
   m_PrefabInstance: {fileID: 5850685061853098032}
@@ -7990,7 +8173,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157983766941696657, guid: 0bfb40ead124edf48b92fff66e5fc7de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8056,7 +8240,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8122,7 +8307,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3566560697668622667, guid: b3479c17045e19d4c9124435113c5206, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8188,7 +8374,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6538377165129940186, guid: e11af604d435b4948a9016173ef12658, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8254,7 +8441,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8320,7 +8508,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8386,7 +8575,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Corner (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8414137683070619697, guid: 63b4776fec377d841a2fff1a1e5a0c7c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8452,7 +8642,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof End Corner
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8118221375954347764, guid: 035c487ce0d0ed34c8add7b48b9b4eb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8518,7 +8709,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Triangle Small End Mirror (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8273926342059204247, guid: 8573c37fe1b220948b65c8e78b07df32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8584,7 +8776,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3566560697668622667, guid: b3479c17045e19d4c9124435113c5206, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8650,7 +8843,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corner Small (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6990881063120001731, guid: 8f97e6b81d87d3d49b2d741f97604e75, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8716,7 +8910,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8782,7 +8977,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof End Corner (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8118221375954347764, guid: 035c487ce0d0ed34c8add7b48b9b4eb2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8848,7 +9044,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8914,7 +9111,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3220644263113628911, guid: fc027a29513013042a864481ce5099ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8980,7 +9178,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3691622981622677770, guid: 53955d11d1008ba428fcc2661b3c1177, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9046,7 +9245,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9112,7 +9312,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9178,7 +9379,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6538377165129940186, guid: e11af604d435b4948a9016173ef12658, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9244,7 +9446,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9310,7 +9513,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Corner Small (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6990881063120001731, guid: 8f97e6b81d87d3d49b2d741f97604e75, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9376,7 +9580,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Triangle End Mirror
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -151910671452248918, guid: 4382bb7e987d7a04791ec22af2be8ac5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9442,7 +9647,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3566560697668622667, guid: b3479c17045e19d4c9124435113c5206, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9508,7 +9714,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9574,7 +9781,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9640,7 +9848,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9706,7 +9915,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9772,7 +9982,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157983766941696657, guid: 0bfb40ead124edf48b92fff66e5fc7de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9838,7 +10049,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Cube (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7741733743756653219, guid: 8052238261030f04283249e0541b5a7c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9904,7 +10116,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9970,7 +10183,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2 (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10036,7 +10250,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10102,7 +10317,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Corner (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8414137683070619697, guid: 63b4776fec377d841a2fff1a1e5a0c7c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10168,7 +10384,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Wall
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6778298464007666262, guid: 97886c9f703b03f42a0d9fe963f20f3f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10234,7 +10451,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2 (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10300,7 +10518,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3566560697668622667, guid: b3479c17045e19d4c9124435113c5206, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10366,7 +10585,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1461139998520005428, guid: 30c0da99349e8c4408a17981c759d227, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10432,7 +10652,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3220644263113628911, guid: fc027a29513013042a864481ce5099ad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10498,7 +10719,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10564,7 +10786,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10630,7 +10853,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4117461418771210085, guid: 4ecdf013450b1a34da9b2608d89eb90d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10696,7 +10920,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10762,7 +10987,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3668297955186245389, guid: 6adb8415aa1282d49992e991a376d77a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10828,7 +11054,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Window (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8499964482856918019, guid: 8b9338082e1cd4c428f25c6464711c9e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10894,7 +11121,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10960,7 +11188,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11026,7 +11255,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Corner 2 Small
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3458394368404852868, guid: 38f6a7ae8a62f844d8d7f4885cff4264, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11092,7 +11322,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11158,7 +11389,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11224,7 +11456,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11290,7 +11523,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 2 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7593679896717465318, guid: 10d241d231f356548980d6667e176c63, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11356,7 +11590,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11422,7 +11657,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3691622981622677770, guid: 53955d11d1008ba428fcc2661b3c1177, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11488,7 +11724,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11554,7 +11791,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157983766941696657, guid: 0bfb40ead124edf48b92fff66e5fc7de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11620,7 +11858,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3566560697668622667, guid: b3479c17045e19d4c9124435113c5206, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11686,7 +11925,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3799285843464761673, guid: fedae7ff35385df469845afc611ffe0a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11752,7 +11992,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11818,7 +12059,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Roof Half (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6455814004344171010, guid: 79e371fd9bfdcd9489d4fda01be2f14f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11884,7 +12126,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3353220306856188053, guid: 801ad9bdc68cbb0489afe57540ec81e6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11950,7 +12193,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6538377165129940186, guid: e11af604d435b4948a9016173ef12658, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12016,7 +12260,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12082,7 +12327,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Half Wall 1 (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6619628563997396183, guid: a891d3b1acb215147a3842895dccd5aa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12148,7 +12394,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall 1 (24)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4499249381523627890, guid: 0c38d5d10aa52644ba19d807da4e31d1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

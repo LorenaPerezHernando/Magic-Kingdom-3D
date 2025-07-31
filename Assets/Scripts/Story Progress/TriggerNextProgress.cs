@@ -14,7 +14,7 @@ public class TriggerNextProgress : MonoBehaviour
             if (currentValue >= _requiredAmount)
             {
                 Debug.Log($"Acceso permitido: tienes {currentValue} {type}");
-                // TODO Acción permitida
+                gameObject.GetComponent<Collider>().isTrigger = true;
             }
             else
             {
