@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &439335627377719066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 502976269239498157}
+  - component: {fileID: 4795105702215180567}
+  - component: {fileID: 6423547754063529458}
+  - component: {fileID: 124675154271130269}
+  - component: {fileID: 2000998298294089542}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &502976269239498157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439335627377719066}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.855091, y: 4.2131433, z: 9.478235}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4795105702215180567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439335627377719066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb5814f5f5a36141aef217bf0ce1c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameProgress: {fileID: 124675154271130269}
+  _saveData:
+    scene: 0
+    player:
+      position: {x: 0, y: 0, z: 0}
+    progress:
+      spirits: 0
+      villages: 0
+      puzzles: 0
+      bosses: 0
+    inventory:
+      healingPlants: 0
+  _sceneLoader: {fileID: 2000998298294089542}
+  _thirdPersonController: {fileID: 0}
+  _interactionSystem: {fileID: 0}
+  _playerHealth: {fileID: 0}
+  _playerFight: {fileID: 0}
+  _boss1Fight: {fileID: 0}
+  _bossHealth: {fileID: 0}
+  _inventoryManager: {fileID: 6423547754063529458}
+  _uiController: {fileID: 0}
+  _activatePausePanel: {fileID: 0}
+  _triggerFight: {fileID: 0}
+  _cameraController: {fileID: 0}
+--- !u!114 &6423547754063529458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439335627377719066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6b803a856fa3541827ebe3f4e60260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _items: []
+--- !u!114 &124675154271130269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439335627377719066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209f3c13b4c489146ac90ac017abca1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spirits: 0
+  villages: 0
+  puzzlesCompleted: 0
+  bossesDefeated: 0
+  healingPlants: 0
+--- !u!114 &2000998298294089542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439335627377719066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf5947b38b2af14687e5584e8c0ae2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneToLoad: 1

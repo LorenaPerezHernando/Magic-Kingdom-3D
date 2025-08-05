@@ -10014,120 +10014,6 @@ Transform:
   - {fileID: 961188345}
   m_Father: {fileID: 868210040}
   m_LocalEulerAnglesHint: {x: 0, y: -348.147, z: 0.5}
---- !u!1 &518302184
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 518302186}
-  - component: {fileID: 518302185}
-  - component: {fileID: 518302187}
-  - component: {fileID: 518302188}
-  - component: {fileID: 518302189}
-  m_Layer: 0
-  m_Name: GameController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &518302185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518302184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eb5814f5f5a36141aef217bf0ce1c32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameProgress: {fileID: 518302188}
-  _saveData:
-    scene: 0
-    player:
-      position: {x: 0, y: 0, z: 0}
-    progress:
-      spirits: 0
-      villages: 0
-      puzzles: 0
-      bosses: 0
-    inventory:
-      healingPlants: 0
-  _sceneLoader: {fileID: 518302189}
-  _thirdPersonController: {fileID: 1194353867}
-  _interactionSystem: {fileID: 257849297}
-  _playerHealth: {fileID: 1194353871}
-  _playerFight: {fileID: 1194353872}
-  _boss1Fight: {fileID: 2089483492}
-  _bossHealth: {fileID: 2089483493}
-  _inventoryManager: {fileID: 518302187}
-  _uiController: {fileID: 183572172}
-  _activatePausePanel: {fileID: 571532782}
-  _triggerFight: {fileID: 1871290275}
-  _cameraController: {fileID: 1826328402}
---- !u!4 &518302186
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518302184}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.855091, y: 4.2131433, z: 9.478235}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &518302187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518302184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6b803a856fa3541827ebe3f4e60260, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _items: []
---- !u!114 &518302188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518302184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209f3c13b4c489146ac90ac017abca1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spirits: 0
-  villages: 0
-  puzzlesCompleted: 0
-  bossesDefeated: 0
-  healingPlants: 0
---- !u!114 &518302189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518302184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf5947b38b2af14687e5584e8c0ae2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sceneToLoad: 1
 --- !u!1 &543975788 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 307427076335157329, guid: 5e11f91bdcc8d484080c46bf90646030, type: 3}
@@ -27294,6 +27180,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.35, y: 1.32, z: 4.719874}
   m_Center: {x: -1.32, y: 2.7, z: 1.8602866}
+--- !u!1001 &5694189718739695103
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 439335627377719066, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_Name
+      value: GameController
+      objectReference: {fileID: 0}
+    - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.855091
+      objectReference: {fileID: 0}
+    - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.2131433
+      objectReference: {fileID: 0}
+    - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.478235
+      objectReference: {fileID: 0}
+    - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4795105702215180567, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: _boss1Fight
+      value: 
+      objectReference: {fileID: 2089483492}
+    - target: {fileID: 4795105702215180567, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: _bossHealth
+      value: 
+      objectReference: {fileID: 2089483493}
+    - target: {fileID: 4795105702215180567, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: _playerFight
+      value: 
+      objectReference: {fileID: 1194353872}
+    - target: {fileID: 4795105702215180567, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: _playerHealth
+      value: 
+      objectReference: {fileID: 1194353871}
+    - target: {fileID: 4795105702215180567, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: _triggerFight
+      value: 
+      objectReference: {fileID: 1871290275}
+    - target: {fileID: 4795105702215180567, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: _uiController
+      value: 
+      objectReference: {fileID: 183572172}
+    - target: {fileID: 4795105702215180567, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: _cameraController
+      value: 
+      objectReference: {fileID: 1826328402}
+    - target: {fileID: 4795105702215180567, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: _interactionSystem
+      value: 
+      objectReference: {fileID: 257849297}
+    - target: {fileID: 4795105702215180567, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: _activatePausePanel
+      value: 
+      objectReference: {fileID: 571532782}
+    - target: {fileID: 4795105702215180567, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: _thirdPersonController
+      value: 
+      objectReference: {fileID: 1194353867}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
 --- !u!4 &6118933426389374858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8067401161451011852, guid: dcd8d4f295c0b3e47a6284b61fa7639d, type: 3}
@@ -32362,7 +32345,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 410087041}
   - {fileID: 1125318638}
-  - {fileID: 518302186}
+  - {fileID: 5694189718739695103}
   - {fileID: 832575519}
   - {fileID: 183572171}
   - {fileID: 178629419}

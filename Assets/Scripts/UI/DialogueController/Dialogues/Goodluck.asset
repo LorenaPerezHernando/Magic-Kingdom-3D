@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 281be76d5cdd09a468f9c0130eaa0aad, type: 3}
-  m_Name: VillageBrumaStart
+  m_Name: Goodluck
   m_EditorClassIdentifier: 
   frases:
-  - I feel theres something wrong here Aeynia.
-  imageTalker: {fileID: 21300000, guid: 27f03b56781517c49a796af440e3ae67, type: 3}
+  - Good luck on your journey, Aenya
+  imageTalker: {fileID: 21300000, guid: 3319cab8e19a1a04ca5d8aaaf6fb409c, type: 3}
   hasReward: 0
   rewardItem: {fileID: 0}
   rewardAmount: 1

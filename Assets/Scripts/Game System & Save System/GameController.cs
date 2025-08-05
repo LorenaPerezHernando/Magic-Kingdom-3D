@@ -180,25 +180,29 @@ namespace Magic
         public void AddSpirit()
         {
             _gameProgress.spirits++;
-            SaveGame(); 
+            SaveGame();
+            Debug.Log("Spirits +1");
         }
 
         public void CompletePuzzle()
         {
             _gameProgress.puzzlesCompleted++;
             SaveGame();
+            Debug.Log("Puzzle + 1");
         }
 
         public void DefeatBoss()
         {
             _gameProgress.bossesDefeated++;
             SaveGame();
+            Debug.Log("Boss +1");
         }
 
         public void FinishedVillage()
         {
             _gameProgress.villages++;
             SaveGame();
+            Debug.Log("Village +1");
         }
         #endregion
 
@@ -260,7 +264,7 @@ namespace Magic
             {
                 healingPlants = _gameProgress.healingPlants
             };
-
+            Debug.Log("Saved Data");
             SaveSystem.Save(_saveData);
         }
 

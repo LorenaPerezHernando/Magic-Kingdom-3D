@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: CinematicBossRewards
   m_EditorClassIdentifier: 
   frases:
-  - ...entiendo
-  - Muchas gracias por liberarme
-  - "Me gustar\xEDa agradecertelo"
-  - Te voy a presentar a alguien
+  - ...I undestand
+  - Thank you for setting me free.
+  - "I\u2019d like to show my gratitude"
+  - I want to introduce you to someone.
   imageTalker: {fileID: 21300000, guid: 3319cab8e19a1a04ca5d8aaaf6fb409c, type: 3}
   hasReward: 0
   rewardItem: {fileID: 0}

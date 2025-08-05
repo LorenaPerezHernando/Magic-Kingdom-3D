@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: RewardsWaterFarmer
   m_EditorClassIdentifier: 
   frases:
-  - Thankyou, you watered my plants
-  - I dont know what i was thinking
-  - 'Here, take one of my flowers '
+  - Thankyou, you watered my plants.
+  - I dont know what i was thinking...
+  - Here, take one of my flowers.
   imageTalker: {fileID: 21300000, guid: b9d77cc59a1e1f74494369336ef3a433, type: 3}
-  autoAdvance: 0
   hasReward: 1
   rewardItem: {fileID: 11400000, guid: c26c7ec428563bf499e90a5aac124bc6, type: 2}
   rewardAmount: 1

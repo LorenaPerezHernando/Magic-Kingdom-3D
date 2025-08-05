@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frases:
   - Arrgg
-  - "\xBFQue ha pasado?"
-  - "Perd\xED el control...esa niebla..."
-  - "Me olvide de qui\xE9n era "
+  - 'What happened? '
+  - I lost control...that fog...
+  - It made me forget who i was.
   imageTalker: {fileID: 21300000, guid: 3319cab8e19a1a04ca5d8aaaf6fb409c, type: 3}
   hasReward: 0
   rewardItem: {fileID: 11400000, guid: 977280f1cb990a049a5af6b3254b6178, type: 2}
