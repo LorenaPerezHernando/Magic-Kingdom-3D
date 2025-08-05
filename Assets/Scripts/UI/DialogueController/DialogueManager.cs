@@ -30,7 +30,7 @@ namespace Magic.Dialogue
             _imageTalker.sprite = _currentData.imageTalker;
             _index = 0;
             _panel.SetActive(true);
-            GameController.Instance.PauseGame();
+            GameController.Instance?.PauseGame();
             ShowLine();
         }
 
@@ -53,7 +53,7 @@ namespace Magic.Dialogue
                 {
                     GiveReward(_currentData.rewardItem, _currentData.rewardAmount);
                 }
-                GameController.Instance.ResumeGame();
+                GameController.Instance?.ResumeGame();
                 
                 
             }
@@ -85,7 +85,7 @@ namespace Magic.Dialogue
         public void CloseDialogue()
         {
             _panel.SetActive(false);
-            GameController.Instance.ResumeGame();
+            GameController.Instance?.ResumeGame();
         }
     }
 }
