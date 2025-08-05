@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 281be76d5cdd09a468f9c0130eaa0aad, type: 3}
-  m_Name: PlayerWonBoss1
+  m_Name: CinematicBossRewards
   m_EditorClassIdentifier: 
   frases:
-  - Arrgg
-  - "\xBFQue ha pasado?"
-  - "Perd\xED el control...esa niebla..."
-  - "Me olvide de qui\xE9n era "
+  - ...entiendo
+  - Muchas gracias por liberarme
+  - "Me gustar\xEDa agradecertelo"
+  - Te voy a presentar a alguien
   imageTalker: {fileID: 21300000, guid: 3319cab8e19a1a04ca5d8aaaf6fb409c, type: 3}
   hasReward: 0
-  rewardItem: {fileID: 11400000, guid: 977280f1cb990a049a5af6b3254b6178, type: 2}
+  rewardItem: {fileID: 0}
   rewardAmount: 1

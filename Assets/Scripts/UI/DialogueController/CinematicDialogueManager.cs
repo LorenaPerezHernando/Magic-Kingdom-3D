@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Playables;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections;
@@ -9,17 +8,18 @@ public class CinematicDialogueManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject panel;
     [SerializeField] private TextMeshProUGUI text;
-    [SerializeField] private Image imageTalker;
-    private DialogueData _data;
+    [SerializeField] private Image imageUI;
 
+    [Header("Typing palabra a palabra")]
+    [SerializeField] private float wordsPerSecond = 6f;
+    [SerializeField] private bool allowInstantFinishSignal = true;
+
+     private DialogueData _data;
     private int _index;
     private bool _active;
 
-    private void Update()
-    {
-        //if (_active && Input.GetMouseButtonDown(0))
-        //    Continue();
-    }
+    private bool _isTyping;
+    private Coroutine _typingRoutine;
 
     public void StartDialogue(DialogueData data)
     {
@@ -27,19 +27,54 @@ public class CinematicDialogueManager : MonoBehaviour
         _index = 0;
         _active = true;
 
-        if (imageTalker) imageTalker.sprite = _data.imageTalker;
+        if (imageUI && _data.imageTalker) imageUI.sprite = _data.imageTalker;
         panel.SetActive(true);
-        ShowLine();
-
+        ShowCurrentLine();
     }
 
-    private void ShowLine()
+    public void ShowNextLine()
     {
-        if (_index < _data.frases.Length && _active)
+        if (!_active || _data == null) return;
+        if (_isTyping) return;
+        _index++;
+        ShowCurrentLine();
+    }
+
+    public void FinishTypingInstantSignal()
+    {
+        if (!allowInstantFinishSignal) return;
+        if (_isTyping) FinishTypingInstant();
+    }
+
+    public void EndDialogue()
+    {
+        _active = false;
+        //if (_typingRoutine != null) { StopCoroutine(_typingRoutine); _typingRoutine = null; }
+        _isTyping = false;
+        panel.SetActive(false);
+    }
+
+    private void ShowCurrentLine()
+    {
+        if (_typingRoutine != null) { StopCoroutine(_typingRoutine); _typingRoutine = null; }
+        _isTyping = false;
+
+        if (_data == null || !_active)
         {
-            text.text = _data.frases[_index];
-            
-            StartCoroutine(ContinueLines());
+            EndDialogue();
+            return;
+        }
+
+        if (_index < _data.frases.Length)
+        {
+            string line = _data.frases[_index];
+            text.text = line;
+            text.ForceMeshUpdate();
+            text.maxVisibleWords = 0;
+
+            if (imageUI && _data.imageTalker) imageUI.sprite = _data.imageTalker;
+
+            _typingRoutine = StartCoroutine(TypeWordsRoutine());
         }
         else
         {
@@ -47,22 +82,39 @@ public class CinematicDialogueManager : MonoBehaviour
         }
     }
 
-    IEnumerator ContinueLines()
+    private IEnumerator TypeWordsRoutine()
     {
-        yield return new WaitForSeconds(1);
-        _index++;
-        ShowLine();
+        _isTyping = true;
+
+        int totalWords = text.textInfo.wordCount;
+        if (totalWords <= 0)
+        {
+            _isTyping = false;
+            yield break;
+        }
+
+        float delay = 1f / Mathf.Max(0.0001f, wordsPerSecond);
+
+        for (int i = 1; i <= totalWords; i++)
+        {
+            text.maxVisibleWords = i;
+
+            float t = 0f;
+            while (t < delay)
+            {
+                t += Time.deltaTime;
+                yield return null;
+            }
+        }
+
+        _isTyping = false;
     }
-    //public void Continue()
-    //{
-    //    _index++;
-    //    ShowLine();
-    //}
 
-    public void EndDialogue()
+    private void FinishTypingInstant()
     {
-        _active = false;
-        panel.SetActive(false);
-
+        if (_typingRoutine != null) { StopCoroutine(_typingRoutine); _typingRoutine = null; }
+        text.ForceMeshUpdate();
+        text.maxVisibleWords = text.textInfo.wordCount;
+        _isTyping = false;
     }
 }
