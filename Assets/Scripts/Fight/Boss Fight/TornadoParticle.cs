@@ -44,7 +44,7 @@ namespace Magic.VFX
             {
                 HealthSystem bossHealth = other.GetComponent<HealthSystem>();
 
-                bossHealth.TakeDamage(20f);
+                bossHealth.TakeDamage(5f);
                 print("Boss ha recibido 20 de daño del Tornado.");
             }
         }
