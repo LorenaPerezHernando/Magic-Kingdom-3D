@@ -17,4 +17,9 @@ public class SceneLoader : MonoBehaviour
             Debug.LogWarning("indice no esta en Build");
         }
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
