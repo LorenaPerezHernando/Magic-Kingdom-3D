@@ -90,7 +90,7 @@ namespace Magic
         IEnumerator BossDied()
         {
             yield return new WaitForSeconds(3f);
-            //Destroy(gameObject)+
+            GameController.Instance.LoadScene(3); //TODO Poner la escena que es
             Debug.Log("Boss Died, do rewards");
         }
 

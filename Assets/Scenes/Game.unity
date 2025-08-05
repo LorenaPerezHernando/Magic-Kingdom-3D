@@ -27192,6 +27192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 439335627377719066, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 502976269239498157, guid: 98743ba5b8e81b845958d883852c691d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -29.855091
