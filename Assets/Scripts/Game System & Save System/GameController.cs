@@ -68,42 +68,62 @@ namespace Magic
         #region Unity Callbacks
         private void Start()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        
-            _interactionSystem.OnShowInteraction += msg => OnShowInteraction?.Invoke(msg);
-            _interactionSystem.OnHideInteraction += () => OnHideInteraction?.Invoke();
+            int sceneGame = SceneManager.GetActiveScene().buildIndex;
 
-            _triggerFight.OnStartFight += _uiController.ShowFightPanel;
-            _triggerFight.OnStartFight += _playerFight.Fight;
-
-            _activatePausePanel.OnGamePause += () =>
+            if(sceneGame == 1)
             {
-                _thirdPersonController.SetBlocked(true);
-                _cameraController.SetBlocked(true);
-                _playerHealth.SetBlocked(true);
-                _playerFight.SetBlocked(true);
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-
-                _boss1Fight.SetBlocked(true);
-              
-
-            };
-            _activatePausePanel.OnGameResume += () =>
-            {
-                _thirdPersonController.SetBlocked(false);
-                _cameraController.SetBlocked(false);
-                _playerHealth.SetBlocked(false);
-                _playerFight.SetBlocked(false);
+                Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked ;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
 
-                _boss1Fight.SetBlocked(false);
-            };
+            if (_interactionSystem != null)
+            {
+                _interactionSystem.OnShowInteraction += msg => OnShowInteraction?.Invoke(msg);
+                _interactionSystem.OnHideInteraction += () => OnHideInteraction?.Invoke();
+            }
+
+            if(_triggerFight != null)
+            {
+                _triggerFight.OnStartFight += _uiController.ShowFightPanel;
+                _triggerFight.OnStartFight += _playerFight.Fight;
+            }
+
+            if (_activatePausePanel != null) 
+            {
+                _activatePausePanel.OnGamePause += () =>
+                {
+                    _thirdPersonController.SetBlocked(true);
+                    _cameraController.SetBlocked(true);
+                    _playerHealth.SetBlocked(true);
+                    _playerFight.SetBlocked(true);
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+
+                    _boss1Fight.SetBlocked(true);
 
 
-            
+                };
+                _activatePausePanel.OnGameResume += () =>
+                {
+                    _thirdPersonController.SetBlocked(false);
+                    _cameraController.SetBlocked(false);
+                    _playerHealth.SetBlocked(false);
+                    _playerFight.SetBlocked(false);
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
+
+                    _boss1Fight.SetBlocked(false);
+                };
+
+            }
+
+
+
 
             if (_playerHealth != null)
             {
@@ -127,11 +147,14 @@ namespace Magic
 
         public void PauseGame()
         {
-
-            _thirdPersonController.SetBlocked(true);
-            _cameraController.SetBlocked(true);
-            _playerHealth.SetBlocked(true);
-            _playerFight.SetBlocked(true);
+            if(_thirdPersonController != null) 
+                _thirdPersonController.SetBlocked(true);
+            if(_cameraController != null)
+                _cameraController.SetBlocked(true);
+            if(_playerHealth != null)
+                _playerHealth.SetBlocked(true);
+            if(_playerFight != null)
+                _playerFight.SetBlocked(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             
@@ -223,9 +246,12 @@ namespace Magic
                 StartCoroutine(LoadSceneAndApplySave(_saveData));
                 return;
             }
+            else
+            {
+                print("No hay partida guardada");
+            }
 
-            // Ya estás en la escena correcta, aplica los datos directamente
-            ApplySaveData(_saveData);
+                ApplySaveData(_saveData);
 
             // PLAYER
             _thirdPersonController.transform.position = _saveData.player.position;

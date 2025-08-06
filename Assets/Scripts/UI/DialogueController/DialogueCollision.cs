@@ -9,7 +9,6 @@ public class DialogueCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("Collision");
         if (collision.gameObject.CompareTag("Player") && !_hasPlayed)
         {
             print("Collision");
