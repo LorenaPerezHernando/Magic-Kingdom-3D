@@ -15,8 +15,8 @@ MonoBehaviour:
   frases:
   - I cannot leave this place. My duty is here.
   - But you shouldn't face this alone.
-  - Go with her, spirit. Guider her...protect her.
-  - Aenya, may my guardian spirit aid you in your mission.
+  - Go with her. Guider her...protect her.
+  - Aenya, may my guardian spirit aid you in your mision.
   imageTalker: {fileID: 21300000, guid: 3319cab8e19a1a04ca5d8aaaf6fb409c, type: 3}
   hasReward: 0
   rewardItem: {fileID: 0}
