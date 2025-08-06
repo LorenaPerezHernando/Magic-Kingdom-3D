@@ -40,7 +40,10 @@ namespace Magic.UI
             }
 
             else
+            {
                 OnGameResume?.Invoke();
+                HideAll();
+            }
             
 
             //print("Activate Button: " + (newState ? "YES" : "NO"));

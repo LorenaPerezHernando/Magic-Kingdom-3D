@@ -10,7 +10,7 @@ namespace Magic.UI
     public class UIGameController : MonoBehaviour
     {
         #region Fields
-        private PlayerInteraction _interactionSystem => GameController.Instance.InteractionSystem;
+        private PlayerInteraction _interactionSystem;
 
         [Header("Interaction")]
         [SerializeField] private UIInteraction _interactionPanel;
@@ -20,10 +20,16 @@ namespace Magic.UI
         [SerializeField] private Slider _bossSlider;
         [SerializeField] private GameObject _fightPanel;
         [SerializeField] private GameObject _deathPanel;
-        
+
 
         #endregion
-
+        private void Awake()
+        {
+            _interactionSystem = GameController.Instance.InteractionSystem;
+            if (_interactionSystem == null)
+                _interactionSystem = FindAnyObjectByType<PlayerInteraction>();
+        
+        }
         void Start()
         {
             _interactionSystem.OnShowInteraction += ShowInteraction;

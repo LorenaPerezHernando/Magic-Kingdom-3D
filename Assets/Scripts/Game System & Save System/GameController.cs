@@ -93,10 +93,10 @@ namespace Magic
                 _triggerFight.OnStartFight += _playerFight.Fight;
             }
 
-            if (_activatePausePanel != null) 
-            {
+
                 _activatePausePanel.OnGamePause += () =>
                 {
+                    print("Game on Pause");
                     _thirdPersonController.SetBlocked(true);
                     _cameraController.SetBlocked(true);
                     _playerHealth.SetBlocked(true);
@@ -110,6 +110,7 @@ namespace Magic
                 };
                 _activatePausePanel.OnGameResume += () =>
                 {
+                    print("Resumen Game"); 
                     _thirdPersonController.SetBlocked(false);
                     _cameraController.SetBlocked(false);
                     _playerHealth.SetBlocked(false);
@@ -120,7 +121,7 @@ namespace Magic
                     _boss1Fight.SetBlocked(false);
                 };
 
-            }
+            
 
 
 
