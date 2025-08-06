@@ -6,7 +6,8 @@ public class AudioController : MonoBehaviour
 
     #region Fields
     [Header("FX General")]
-    [SerializeField] private AudioSource _stepSounds;
+    [SerializeField] private AudioSource _walk;
+    [SerializeField] private AudioSource _run;
     [Header("FX Battle")]
     [SerializeField] private AudioSource _bossScream;
     [SerializeField] private AudioSource _bossLaugh;
@@ -20,6 +21,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AudioSource _citizenWateringSound;
     [SerializeField] private AudioSource _grabObject;
     [SerializeField] private AudioSource _movingClock;
+    [SerializeField] private AudioSource _clock; 
    
     [Space(10)]
 
@@ -35,7 +37,8 @@ public class AudioController : MonoBehaviour
     public void PlayCalmMusic() => _calmMusic.Play();
     public void PlayBattleMusic() => _battleMusic.Play();
 
-    public void PlayStepSounds() => _stepSounds.Play();
+    public void PlayWalkingSounds() => _walk.Play();
+    public void PlayRunSounds() => _run.Play();
 
     public void PlayBossScream() => _bossScream.Play();
     public void PlayBossLaugh() => _bossLaugh.Play();
@@ -50,5 +53,6 @@ public class AudioController : MonoBehaviour
     public void PlayCitizenWateringSound() => _citizenWateringSound.Play();
     public void PlayGrabObject() => _grabObject.Play();
     public void PlayMovingClock() => _movingClock.Play();
+    public void PlayClock() => _clock.Play();
 
 }
