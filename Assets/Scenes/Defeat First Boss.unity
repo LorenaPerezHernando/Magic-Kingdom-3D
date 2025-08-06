@@ -217,15 +217,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5299146926960630741, guid: 1fac3eff67dbb7b42880341e04ed9d02, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
+      value: 0.6509804
       objectReference: {fileID: 0}
     - target: {fileID: 5299146926960630741, guid: 1fac3eff67dbb7b42880341e04ed9d02, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.9490936
+      value: 0.580495
       objectReference: {fileID: 0}
     - target: {fileID: 5299146926960630741, guid: 1fac3eff67dbb7b42880341e04ed9d02, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.5943395
+      value: 0.39607844
       objectReference: {fileID: 0}
     - target: {fileID: 5299146926960630741, guid: 1fac3eff67dbb7b42880341e04ed9d02, type: 3}
       propertyPath: VelocityModule.speedModifier.scalar
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 38912
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4226635284
+    rgba: 4293744148
   m_fontColor: {r: 0.07903154, g: 0.33858082, b: 0.9308176, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3892,7 +3892,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3734529037
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -4915,15 +4915,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5299146926960630741, guid: 1fac3eff67dbb7b42880341e04ed9d02, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 1
+      value: 0.6509804
       objectReference: {fileID: 0}
     - target: {fileID: 5299146926960630741, guid: 1fac3eff67dbb7b42880341e04ed9d02, type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.9490936
+      value: 0.5803922
       objectReference: {fileID: 0}
     - target: {fileID: 5299146926960630741, guid: 1fac3eff67dbb7b42880341e04ed9d02, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.5943395
+      value: 0.39607844
       objectReference: {fileID: 0}
     - target: {fileID: 5299146926960630741, guid: 1fac3eff67dbb7b42880341e04ed9d02, type: 3}
       propertyPath: VelocityModule.speedModifier.scalar
