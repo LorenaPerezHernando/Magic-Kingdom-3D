@@ -1,3 +1,4 @@
+using Magic;
 using Magic.VFX;
 using System;
 using System.Collections;
@@ -25,6 +26,7 @@ public class PlayerFight : MonoBehaviour
         {
             if (isBlocked) return;
             _anim.SetTrigger("Attack");
+            GameController.Instance.AudioController.PlayPlayerTornadoSound();
             SpawnAttack();
         }
 

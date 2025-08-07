@@ -32,8 +32,9 @@ namespace Magic
         public PlayerFight PlayerFight => _playerFight;
         [Header("Bosses")]                               
         public Boss1Fight Boss1Fight => _boss1Fight;  
-        public HealthSystem BossHealth => _bossHealth;                                                                                                                                  
-        [Header("UI")]                                                                           
+        public HealthSystem BossHealth => _bossHealth;
+        [Header("UI")]
+        public AudioController AudioController => _audioController;
         public InventoryManager InventoryManager => _inventoryManager;
         public UIGameController UIGameController => _uiController;
         public ActivatePausePanel ActivatePausePanel => _activatePausePanel;
@@ -57,6 +58,7 @@ namespace Magic
         [SerializeField] private Boss1Fight _boss1Fight;
         [SerializeField] private HealthSystem _bossHealth;
         [Header("UI")]
+        [SerializeField] private AudioController _audioController;
         [SerializeField] private InventoryManager _inventoryManager;
         [SerializeField] private UIGameController _uiController;
         [SerializeField] private ActivatePausePanel _activatePausePanel;

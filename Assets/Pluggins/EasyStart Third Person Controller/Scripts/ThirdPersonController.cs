@@ -88,14 +88,17 @@ public class ThirdPersonController : MonoBehaviour
             if (inputMagnitude < 0.1f || speed < 0.2f)
             {
                 speedValue = 0f; // Idle
+                GameController.Instance.AudioController.StopMovementSounds();
             }
             else if (!isSprinting)
             {
                 speedValue = 0.5f; // Walk
+                GameController.Instance.AudioController.PlayWalkingSounds();
             }
             else
             {
                 speedValue = 1f; // Run
+                GameController.Instance.AudioController.PlayRunSounds();
             }
             animator.SetFloat("Speed", speedValue, 0.2f, Time.deltaTime);
 

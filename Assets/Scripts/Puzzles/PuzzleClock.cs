@@ -41,6 +41,7 @@ namespace Magic.ClockPuzzle
                 _isRotating = true;
 
                 GameController.Instance.TriggerPush();
+                GameController.Instance.AudioController.PlayMovingClock();
             }
 
         }
@@ -81,6 +82,8 @@ namespace Magic.ClockPuzzle
                     Destroy(_objectToDesactivate);
                 //TODO Particulas, sonido de completado
                 GameController.Instance.CompletePuzzle();
+                GameController.Instance.AudioController.PlayProgressSound();
+                GameController.Instance.AudioController.PlayClock();
                 Destroy(gameObject);
             }
         }

@@ -3,9 +3,11 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
     const float MAX_VOLUME = 0.1f;
+   
 
     #region Fields
     [Header("FX General")]
+    private AudioSource _currentMovementSound;
     [SerializeField] private AudioSource _walk;
     [SerializeField] private AudioSource _run;
     [Header("FX Battle")]
@@ -15,6 +17,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AudioSource _bossMagicPower;
     [SerializeField] private AudioSource _playerHealingPower;
     [SerializeField] private AudioSource _playerTornadoSound;
+    [SerializeField] private AudioSource _playertired;
     [Header("FX Puzzles")]
     [SerializeField] private AudioSource _progressSound;
     [SerializeField] private AudioSource _puzzleCompletedSound;
@@ -26,6 +29,7 @@ public class AudioController : MonoBehaviour
     [Space(10)]
 
     [Header("Music")]
+    private AudioSource _currentMusic;
     [SerializeField] private AudioSource _calmMusic;
     [SerializeField] private AudioSource _battleMusic;
     #endregion
@@ -34,11 +38,16 @@ public class AudioController : MonoBehaviour
         _calmMusic.Play();
     }
 
-    public void PlayCalmMusic() => _calmMusic.Play();
-    public void PlayBattleMusic() => _battleMusic.Play();
+    public void PlayCalmMusic() => SwitchMusic(_calmMusic);
+    public void PlayBattleMusic() => SwitchMusic(_battleMusic);
 
-    public void PlayWalkingSounds() => _walk.Play();
-    public void PlayRunSounds() => _run.Play();
+    public void PlayWalkingSounds() => SwitchToMovementSound(_walk);
+    public void PlayRunSounds() => SwitchToMovementSound(_run);
+    public void StopMovementSounds()
+    {
+        _currentMovementSound.Stop();
+        _currentMovementSound = null;
+    }
 
     public void PlayBossScream() => _bossScream.Play();
     public void PlayBossLaugh() => _bossLaugh.Play();
@@ -47,12 +56,36 @@ public class AudioController : MonoBehaviour
 
     public void PlayPlayerHealingPower() => _playerHealingPower.Play();
     public void PlayPlayerTornadoSound() => _playerTornadoSound.Play();
+    public void PlayPlayerTired() => _playertired.Play();
+   
 
     public void PlayProgressSound() => _progressSound.Play();
     public void PlayPuzzleCompletedSound() => _puzzleCompletedSound.Play();
     public void PlayCitizenWateringSound() => _citizenWateringSound.Play();
+    public void StopCitizenWateringSound() => _citizenWateringSound.Stop();
     public void PlayGrabObject() => _grabObject.Play();
     public void PlayMovingClock() => _movingClock.Play();
     public void PlayClock() => _clock.Play();
+
+    private void SwitchMusic(AudioSource next)
+    {
+        if (_currentMusic != null && _currentMusic.isPlaying)
+            _currentMusic.Stop();
+
+        next.Play();
+        _currentMusic = next;
+    }
+
+    private void SwitchToMovementSound(AudioSource next)
+    {
+        if (_currentMovementSound == next)
+            return;
+
+        if (_currentMovementSound != null && _currentMovementSound.isPlaying)
+            _currentMovementSound.Stop();
+
+        next.Play();
+        _currentMovementSound = next;
+    }
 
 }

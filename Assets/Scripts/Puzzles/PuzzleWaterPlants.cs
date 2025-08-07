@@ -25,6 +25,10 @@ public class PuzzleWaterPlants : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         
     }
+    private void Start()
+    {
+        GameController.Instance.AudioController.PlayCitizenWateringSound();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,8 +37,9 @@ public class PuzzleWaterPlants : MonoBehaviour
             _actualPot = other.gameObject;
             _plantsWatered++;
             _actualPot.GetComponentInChildren<ParticleSystem>().Stop();
+            GameController.Instance.AudioController.PlayProgressSound();
             StartCoroutine(DelayDeleteRB());
-            //TODO sounds
+            
 
             if(_plantsWatered >= 3)
             {
@@ -47,6 +52,8 @@ public class PuzzleWaterPlants : MonoBehaviour
                 DesactivateAllPots();
 
                 GameController.Instance.CompletePuzzle();
+                GameController.Instance.AudioController.StopCitizenWateringSound();
+                GameController.Instance.AudioController.PlayPuzzleCompletedSound();
             }
         }
     }
