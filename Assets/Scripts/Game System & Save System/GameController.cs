@@ -95,7 +95,7 @@ namespace Magic
                 _triggerFight.OnStartFight += _playerFight.Fight;
             }
 
-
+            if(_activatePausePanel != null)
                 _activatePausePanel.OnGamePause += () =>
                 {
                     print("Game on Pause");
@@ -110,6 +110,7 @@ namespace Magic
 
 
                 };
+            if(_activatePausePanel != null)
                 _activatePausePanel.OnGameResume += () =>
                 {
                     print("Resumen Game"); 
