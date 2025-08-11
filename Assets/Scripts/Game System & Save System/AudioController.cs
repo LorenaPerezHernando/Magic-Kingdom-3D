@@ -1,15 +1,17 @@
 using UnityEngine;
 
+public enum MoveState { None, Walk, Run }
 public class AudioController : MonoBehaviour
 {
     const float MAX_VOLUME = 0.1f;
    
 
     #region Fields
-    [Header("FX General")]
-    private AudioSource _currentMovementSound;
+    [Header("FX Movement")]
     [SerializeField] private AudioSource _walk;
     [SerializeField] private AudioSource _run;
+    private AudioSource _currentMovementSound;
+    private MoveState _currentMoveState = MoveState.None;
     [Header("FX Battle")]
     [SerializeField] private AudioSource _bossScream;
     [SerializeField] private AudioSource _bossLaugh;
@@ -43,7 +45,7 @@ public class AudioController : MonoBehaviour
 
     public void PlayWalkingSounds() => SwitchToMovementSound(_walk);
     public void PlayRunSounds() => SwitchToMovementSound(_run);
-    public void StopMovementSounds()
+    public void StopMovSounds()
     {
         _currentMovementSound.Stop();
         _currentMovementSound = null;
@@ -76,16 +78,51 @@ public class AudioController : MonoBehaviour
         _currentMusic = next;
     }
 
+    public void SetMovementState(MoveState state)
+    {
+        if (state == _currentMoveState) return; // evitar retrigger
+
+        _currentMoveState = state;
+
+        if (state == MoveState.None)
+        {
+            StopMovementSounds();
+            return;
+        }
+
+        var next = state == MoveState.Run ? _run : _walk;
+        SwitchToMovementSound(next);
+    }
+
+    public void StopMovementSounds()
+    {
+        if (_currentMovementSound != null)
+        {
+            _currentMovementSound.Stop();
+            _currentMovementSound = null;
+        }
+    }
+
     private void SwitchToMovementSound(AudioSource next)
     {
-        if (_currentMovementSound == next)
-            return;
+        if (next == null) return;
 
+        // si ya es el mismo, asegúrate de que suena
+        if (_currentMovementSound == next)
+        {
+            if (!_currentMovementSound.isPlaying)
+                _currentMovementSound.Play();
+            return;
+        }
+
+        // apagar el anterior
         if (_currentMovementSound != null && _currentMovementSound.isPlaying)
             _currentMovementSound.Stop();
 
-        next.Play();
+        // encender el nuevo
         _currentMovementSound = next;
+        if (!_currentMovementSound.isPlaying)
+            _currentMovementSound.Play();
     }
 
 }
