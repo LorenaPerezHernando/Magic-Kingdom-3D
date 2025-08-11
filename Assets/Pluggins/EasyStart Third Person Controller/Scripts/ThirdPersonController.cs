@@ -74,7 +74,7 @@ public class ThirdPersonController : MonoBehaviour
             isCrouching = !isCrouching;
 
         //Animator
-        if ( cc.isGrounded && animator != null )
+        if (cc.isGrounded && animator != null )
         {
             // Calcular velocidad real (sin Y)
             Vector3 horizontalVelocity = cc.velocity;
