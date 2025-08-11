@@ -49,6 +49,7 @@ public class ThirdPersonController : MonoBehaviour
     bool inputSprint;
 
     public bool IsBlocked = false;
+    private MoveState _lastMoveState = MoveState.None;
 
     void Start()
     {
@@ -84,22 +85,29 @@ public class ThirdPersonController : MonoBehaviour
 
             isSprinting = speed > 0.5f && inputSprint && inputMagnitude > 0.1f;
             float speedValue = 0f;
+            MoveState newState;
 
             if (inputMagnitude < 0.1f || speed < 0.2f)
             {
                 speedValue = 0f; // Idle
-                GameController.Instance.AudioController.StopMovementSounds();
+                newState = MoveState.None;
             }
             else if (!isSprinting)
             {
                 speedValue = 0.5f; // Walk
-                GameController.Instance.AudioController.PlayWalkingSounds();
+                newState = MoveState.Walk;
             }
             else
             {
                 speedValue = 1f; // Run
-                GameController.Instance.AudioController.PlayRunSounds();
+                newState = MoveState.Run;
             }
+            if (newState != _lastMoveState)
+            {
+                GameController.Instance.AudioController.SetMovementState(newState);
+                _lastMoveState = newState;
+            }
+
             animator.SetFloat("Speed", speedValue, 0.2f, Time.deltaTime);
 
         }
