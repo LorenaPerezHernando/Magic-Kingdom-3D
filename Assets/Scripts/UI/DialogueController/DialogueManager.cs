@@ -57,7 +57,6 @@ namespace Magic.Dialogue
             }
             else
             {
-                // Fin del diálogo
                 StartCoroutine(CompleteDialogue());
             }
         }
@@ -97,9 +96,10 @@ namespace Magic.Dialogue
         {
             if (_rewardPanel == null || _rewardText == null) yield break;
 
+            _rewardPanel.transform.SetAsLastSibling();
             _rewardPanel.SetActive(true);
             _rewardText.text = message;
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSecondsRealtime(2.5f);
             _rewardPanel.SetActive(false);
         }
 

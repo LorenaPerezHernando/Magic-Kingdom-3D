@@ -5097,6 +5097,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3871625832788136467}
+  - {fileID: 8214804444687739016}
   - {fileID: 6548873975081724846}
   - {fileID: 3089488718790004560}
   - {fileID: 1747733136793847097}
@@ -5157,6 +5158,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionPanel: {fileID: 5877774788788459312}
+  _portraitImage: {fileID: 0}
+  _nameText: {fileID: 0}
+  _storyText: {fileID: 0}
+  _heartsUI: {fileID: 0}
+  _starsUI: {fileID: 0}
+  _attack1Row: {fileID: 0}
+  _attack1Icon: {fileID: 0}
+  _attack1Name: {fileID: 0}
+  _attack1Desc: {fileID: 0}
+  _attack2Row: {fileID: 0}
+  _attack2Icon: {fileID: 0}
+  _attack2Name: {fileID: 0}
+  _attack2Desc: {fileID: 0}
   _playerSlider: {fileID: 4291489838452923233}
   _bossSlider: {fileID: 7857619550377635250}
   _fightPanel: {fileID: 1909440201435419592}
@@ -8913,14 +8927,14 @@ RectTransform:
   m_GameObject: {fileID: 7308606738016868623}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.8345, z: 1}
+  m_LocalScale: {x: 0.97643, y: 0.5693881, z: 0.97643}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6548873975081724846}
+  m_Father: {fileID: 4648842481227516551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.056301, y: 251.822}
+  m_AnchoredPosition: {x: 0.6671567, y: -84.84001}
   m_SizeDelta: {x: 668.0212, y: 77.568}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6238168510358735625
@@ -10417,7 +10431,6 @@ RectTransform:
   m_LocalScale: {x: 0.97643, y: 0.3103778, z: 0.97643}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8214804444687739016}
   - {fileID: 5410417201095960261}
   - {fileID: 8390126659980970957}
   m_Father: {fileID: 4648842481227516551}
