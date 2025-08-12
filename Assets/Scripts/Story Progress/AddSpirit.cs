@@ -4,10 +4,10 @@ using Magic.Dialogue;
 
 public class AddSpirit : MonoBehaviour
 {
+    [SerializeField] private SpiritInfo spiritInfo;
     private void OnTriggerEnter(Collider other)
     {
-        DialogueManager.Instance.ShowRewardMessage("You have received the Sage Spirit");
-        GameController.Instance.AddSpirit();
-        Destroy(this);
+        GameController.Instance?.AddSpirit(spiritInfo);
+        Destroy(gameObject);
     }
 }

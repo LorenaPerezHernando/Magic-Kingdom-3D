@@ -10,62 +10,57 @@ namespace Magic.Dialogue
     public class DialogueManager : MonoBehaviour
     {
         [Header("Reward Message")]
-        [SerializeField] private GameObject _rewardPanel;       
+        [SerializeField] private GameObject _rewardPanel;
         [SerializeField] private TextMeshProUGUI _rewardText;
 
         [Header("Dialogue")]
         [SerializeField] private Image _imageTalker;
-        public static DialogueManager Instance;
         [SerializeField] private GameObject _panel;
         [SerializeField] private TextMeshProUGUI _text;
+
+        public static DialogueManager Instance;
+
         private DialogueData _currentData;
         private int _index;
+        private bool _isCompleting;
 
         private void Awake() => Instance = this;
 
         public void StartDialogue(DialogueData data)
         {
-            print("StartDialogue");
+            if (data == null) return;
+
             _currentData = data;
-            _imageTalker.sprite = _currentData.imageTalker;
+            if (_imageTalker != null) _imageTalker.sprite = _currentData.imageTalker;
+
             _index = 0;
+            _isCompleting = false;
+
             _panel.SetActive(true);
             GameController.Instance?.PauseGame();
             ShowLine();
         }
 
-        void Update()
+        private void Update()
         {
-            if (_panel.activeInHierarchy && Input.GetMouseButtonDown(0))
+            if (_panel.activeInHierarchy && !_isCompleting && Input.GetMouseButtonDown(0))
                 Continue();
         }
 
-        void ShowLine()
+        private void ShowLine()
         {
-            print("ShowLine");
-            if (_index < _currentData.frases.Length)
+            if (_currentData == null) return;
+
+            if (_currentData.frases != null && _index < _currentData.frases.Length)
             {
                 _text.text = _currentData.frases[_index];
             }
             else
             {
-                if (_currentData.hasReward && _currentData.rewardItem != null)
-                {
-                    GiveReward(_currentData.rewardItem, _currentData.rewardAmount);
-                }
-                GameController.Instance?.ResumeGame();
-                
-                
+                // Fin del diálogo
+                StartCoroutine(CompleteDialogue());
             }
         }
-        void GiveReward(Item item, int amount)
-        {
-            InventoryManager.Instance.AddItem(item, amount);
-
-
-            StartCoroutine(ShowRewardMessage($"Has recibido {item.name}"));
-        }
-
 
         public void Continue()
         {
@@ -73,20 +68,47 @@ namespace Magic.Dialogue
             ShowLine();
         }
 
+        private IEnumerator CompleteDialogue()
+        {
+            if (_isCompleting) yield break;
+            _isCompleting = true;
+
+            if (_currentData.hasReward)
+            {
+                if (_currentData.rewardItem != null)
+                {
+                    InventoryManager.Instance.AddItem(_currentData.rewardItem, _currentData.rewardAmount);
+                    yield return ShowRewardMessage($"Has recibido {_currentData.rewardItem.name}");
+                }
+                else if (!string.IsNullOrEmpty(_currentData.rewardText))
+                {
+                    yield return ShowRewardMessage(_currentData.rewardText);
+                }
+            }
+
+            _panel.SetActive(false);
+            GameController.Instance?.ResumeGame();
+
+            _isCompleting = false;
+            _currentData = null;
+        }
+
         public IEnumerator ShowRewardMessage(string message)
         {
+            if (_rewardPanel == null || _rewardText == null) yield break;
+
             _rewardPanel.SetActive(true);
             _rewardText.text = message;
-            yield return new WaitForSeconds(3f);
-             _rewardPanel.SetActive(false);
-            _panel.SetActive(false);
+            yield return new WaitForSeconds(2.5f);
+            _rewardPanel.SetActive(false);
         }
 
         public void CloseDialogue()
         {
             _panel.SetActive(false);
             GameController.Instance?.ResumeGame();
+            _isCompleting = false;
+            _currentData = null;
         }
     }
 }
-

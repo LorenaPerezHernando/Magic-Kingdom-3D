@@ -5,6 +5,7 @@ using Magic.Inventory;
 using Magic.UI;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,6 +39,7 @@ namespace Magic
         public InventoryManager InventoryManager => _inventoryManager;
         public UIGameController UIGameController => _uiController;
         public ActivatePausePanel ActivatePausePanel => _activatePausePanel;
+        public List<SpiritsPlayer> playerSpirits = new();
         [Header("Scene Objects")]
         public TriggerFight TriggerFight => _triggerFight;
         public CameraController CameraController => _cameraController;
@@ -66,7 +68,7 @@ namespace Magic
         [SerializeField] private TriggerFight _triggerFight;
         [SerializeField] private CameraController _cameraController;
         #endregion
-
+        public event Action<SpiritsPlayer> OnSpiritAdded;
         #region Unity Callbacks
         private void Start()
         {
@@ -204,12 +206,26 @@ namespace Magic
             }
         }
 
-        public void AddSpirit()
+        public void AddSpirit(SpiritInfo spirit)
         {
             _gameProgress.spirits++;
+
+            SpiritsPlayer added = playerSpirits.Find(s => s.spiritInfo == spirit);
+            if (added == null)
+            {
+                added = new SpiritsPlayer(spirit);
+                playerSpirits.Add(added);
+                Debug.Log($"Spirit {spirit.spiritName} added!");
+            }
+            OnSpiritAdded?.Invoke(added);
             SaveGame();
-            Debug.Log("Spirits +1");
         }
+
+        public SpiritsPlayer GetSpirit(SpiritInfo spirit)
+        {
+            return playerSpirits.Find(s => s.spiritInfo == spirit);
+        }
+
 
         public void CompletePuzzle()
         {

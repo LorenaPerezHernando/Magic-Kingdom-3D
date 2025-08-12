@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783fbba2cdaf46b419a1c0e36b6a7048, type: 3}
+  m_Name: SageOwl
+  m_EditorClassIdentifier: 
+  id: 0
+  spiritName: 
+  powerName: Wisdom
+  icon: {fileID: 21300000, guid: 274677957a766a34b8fb115d03f08f3e, type: 3}
+  portrait: {fileID: 21300000, guid: 274677957a766a34b8fb115d03f08f3e, type: 3}
+  story: 
+  attacks:
+  - name: 
+    description: 
+    icon: {fileID: 0}
+  heartSprite: {fileID: 21300000, guid: 37af1a84945916f42b72337f3799150c, type: 3}
+  starsSprite: {fileID: 21300000, guid: d9d461c54e539ed4ea590c3c7985c06a, type: 3}

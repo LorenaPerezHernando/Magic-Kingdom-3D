@@ -9,5 +9,6 @@ public class DialogueData : ScriptableObject
     public Sprite imageTalker;
     public bool hasReward;
     public Item rewardItem;
-    public int rewardAmount = 1;  
+    public int rewardAmount = 1;
+    [TextArea] public string rewardText;
 }
