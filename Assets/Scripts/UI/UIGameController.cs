@@ -22,6 +22,16 @@ namespace Magic.UI
         [SerializeField] private TextMeshProUGUI _storyText;
         [SerializeField] private UIUpgradeIcons _heartsUI;
         [SerializeField] private UIUpgradeIcons _starsUI;
+        [Header("Spirits Powers")]
+        [SerializeField] private GameObject _attack1Row;         // el contenedor de la fila (para poder ocultarla)
+        [SerializeField] private Image _attack1Icon;
+        [SerializeField] private TextMeshProUGUI _attack1Name;
+        [SerializeField] private TextMeshProUGUI _attack1Desc;
+
+        [SerializeField] private GameObject _attack2Row;
+        [SerializeField] private Image _attack2Icon;
+        [SerializeField] private TextMeshProUGUI _attack2Name;
+        [SerializeField] private TextMeshProUGUI _attack2Desc;
 
         [Header("Fight")]
         [SerializeField] private Slider _playerSlider;
@@ -61,11 +71,50 @@ namespace Magic.UI
         #region Public Methods
         public void UpdateSpiritUI(SpiritsPlayer spirit)
         {
+            if (spirit == null || spirit.spiritInfo == null) return;
+
             _portraitImage.sprite = spirit.spiritInfo.portrait;
-            _nameText.text = spirit.spiritInfo?.name;
+            _nameText.text = string.IsNullOrEmpty(spirit.spiritInfo.spiritName)
+                ? spirit.spiritInfo.name
+                : spirit.spiritInfo.spiritName;
             _storyText.text = spirit.spiritInfo.story;
+
             _heartsUI.UpdateIcons(spirit.spiritInfo.heartSprite, spirit.affection);
-            _starsUI.UpdateIcons(spirit.spiritInfo.starsSprite, spirit.level);
+            _starsUI.UpdateIcons(spirit.spiritInfo.starsSprite, spirit.level); 
+
+            var pool = spirit.spiritInfo.attacks;
+            if (pool == null || pool.Length == 0)
+            {
+                _attack1Row?.SetActive(false);
+                _attack2Row?.SetActive(false);
+                return;
+            }
+
+            // Attack 1
+            int i1 = Mathf.Clamp(spirit.selectedAttack1, 0, pool.Length - 1);
+
+            // Attack 2 
+            int i2 = Mathf.Clamp(spirit.selectedAttack2, 0, pool.Length - 1);
+            if (pool.Length > 1 && i2 == i1) i2 = (i1 + 1) % pool.Length;
+
+            var a1 = pool[i1];
+            _attack1Row?.SetActive(true);
+            if (_attack1Icon) _attack1Icon.sprite = a1.icon;
+            if (_attack1Name) _attack1Name.text = string.IsNullOrEmpty(a1.name) ? "Attack 1" : a1.name;
+            if (_attack1Desc) _attack1Desc.text = string.IsNullOrEmpty(a1.description) ? "" : a1.description;
+
+            if (pool.Length >= 2)
+            {
+                var a2 = pool[i2];
+                _attack2Row?.SetActive(true);
+                if (_attack2Icon) _attack2Icon.sprite = a2.icon;
+                if (_attack2Name) _attack2Name.text = string.IsNullOrEmpty(a2.name) ? "Attack 2" : a2.name;
+                if (_attack2Desc) _attack2Desc.text = string.IsNullOrEmpty(a2.description) ? "" : a2.description;
+            }
+            else
+            {
+                _attack2Row?.SetActive(false);
+            }
         }
 
         internal void VictoryOnFightWithBoss1()
