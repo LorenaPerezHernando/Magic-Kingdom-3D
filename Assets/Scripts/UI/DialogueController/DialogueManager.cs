@@ -73,11 +73,11 @@ namespace Magic.Dialogue
             ShowLine();
         }
 
-        IEnumerator ShowRewardMessage(string message)
+        public IEnumerator ShowRewardMessage(string message)
         {
             _rewardPanel.SetActive(true);
             _rewardText.text = message;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(3f);
              _rewardPanel.SetActive(false);
             _panel.SetActive(false);
         }
