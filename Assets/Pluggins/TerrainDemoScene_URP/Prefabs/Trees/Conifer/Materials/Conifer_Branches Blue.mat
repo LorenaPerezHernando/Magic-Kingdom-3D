@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Conifer_Branches 1
+  m_Name: Conifer_Branches Blue
   m_Shader: {fileID: -6465566751694194690, guid: d4fdc026464a42041be7fe785babd90e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 21b32960189125946817a5a98817c4b3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 85a29d61543e03447acfbd4eb59ff7cd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SubsurfaceTex:
@@ -81,7 +81,7 @@ Material:
     - BACKFACE_NORMAL_MODE: 1
     - Diffusion_Profile: 3.5648174
     - EFFECT_BILLBOARD: 0
-    - EFFECT_EXTRA_TEX: 1
+    - EFFECT_EXTRA_TEX: 0
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 1
     - _AlphaClipThreshold: 0.15
@@ -164,10 +164,10 @@ Material:
     m_Colors:
     - Diffusion_Profile_Asset: {r: 2.2888926e+38, g: 1.2389358e-26, b: 7.69327e-37, a: 0.00018220427}
     - _AO_Remap: {r: 0.22, g: 0.6, b: 0, a: 0}
-    - _Color: {r: 0.31719527, g: 0.18511918, b: 0.5031446, a: 1}
+    - _Color: {r: 0.28112006, g: 0.5219253, b: 0.8679245, a: 1}
     - _DoubleSidedConstants: {r: -1, g: -1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HueVariationColor: {r: 0.23198372, g: 0.1016771, b: 0.3333333, a: 0.50980395}
+    - _HueVariationColor: {r: 0.101960756, g: 0.13605285, b: 0.3333333, a: 1}
     - _Smoothness_Remap: {r: 0.1, g: 0.3, b: 0, a: 0}
     - _SubsurfaceColor: {r: 0.6509434, g: 0.6281874, b: 0.41390175, a: 1}
   m_BuildTextureStacks: []
