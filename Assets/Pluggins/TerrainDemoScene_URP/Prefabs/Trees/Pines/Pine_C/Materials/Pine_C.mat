@@ -176,10 +176,10 @@ Material:
     m_Colors:
     - Diffusion_Profile_Asset: {r: 2.2888926e+38, g: 1.2389358e-26, b: 7.69327e-37, a: 0.00018220427}
     - _AO_Remap: {r: 0, g: 0.6, b: 0, a: 0}
-    - _Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+    - _Color: {r: 0.3679244, g: 0.42351016, b: 1, a: 1}
     - _DoubleSidedConstants: {r: -1, g: -1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HueVariationColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 0.64705884}
+    - _HueVariationColor: {r: 0, g: 0.0029905112, b: 0.8490566, a: 0.64705884}
     - _Smoothness_Remap: {r: 0, g: 0.5, b: 0, a: 0}
     - _SubsurfaceColor: {r: 0.89444643, g: 0.9433962, b: 0.91586196, a: 1}
   m_BuildTextureStacks: []
