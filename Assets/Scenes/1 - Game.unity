@@ -14051,13 +14051,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291282433}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.6616455, z: -0, w: 0.74981683}
-  m_LocalPosition: {x: 31.75, y: 5.48, z: -8.3}
+  m_LocalRotation: {x: 0, y: 0.7187333, z: 0, w: 0.69528586}
+  m_LocalPosition: {x: 27.5, y: 5.4799995, z: -8.731361}
   m_LocalScale: {x: 1.0074373, y: 1.0074373, z: 1.0074373}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 868210040}
-  m_LocalEulerAnglesHint: {x: 0, y: 82.851, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 91.9, z: 0}
 --- !u!212 &1291282435
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22981,7 +22981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1758041776427964289, guid: 7273f01151c50ae49893771b9e6147ad, type: 3}
       propertyPath: m_Volume
-      value: 0.695
+      value: 0.096
       objectReference: {fileID: 0}
     - target: {fileID: 1758041776427964289, guid: 7273f01151c50ae49893771b9e6147ad, type: 3}
       propertyPath: m_Resource
@@ -23106,6 +23106,10 @@ PrefabInstance:
     - target: {fileID: 8338094403319795298, guid: 7273f01151c50ae49893771b9e6147ad, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871126822831412398, guid: 7273f01151c50ae49893771b9e6147ad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8871126822831412398, guid: 7273f01151c50ae49893771b9e6147ad, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25556,7 +25560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447400425112035993, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.9118004
+      value: 1.9118042
       objectReference: {fileID: 0}
     - target: {fileID: 476208597092636737, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -25660,7 +25664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 867286792484401517, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.5598145
+      value: -2.5598068
       objectReference: {fileID: 0}
     - target: {fileID: 867286792484401517, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -25978,7 +25982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734247171147729794, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2734247171147729794, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26626,7 +26630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814619166571061173, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.9083557
+      value: 0.9083252
       objectReference: {fileID: 0}
     - target: {fileID: 5814619166571061173, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -26704,7 +26708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6076132476058407555, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.499939
+      value: 3.4999237
       objectReference: {fileID: 0}
     - target: {fileID: 6116739470872226859, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -26779,6 +26783,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6809230977682409631, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6809230977682409631, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -26793,6 +26801,10 @@ PrefabInstance:
     - target: {fileID: 6914549004072130266, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941349228048035025, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6941349228048035025, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -26996,7 +27008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8214804444687739016, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -7.832855
+      value: -7.8328247
       objectReference: {fileID: 0}
     - target: {fileID: 8214804444687739016, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -27128,7 +27140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8840680959381248437, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.0000038
+      value: -2.0000114
       objectReference: {fileID: 0}
     - target: {fileID: 8966386680585996371, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -27153,6 +27165,10 @@ PrefabInstance:
     - target: {fileID: 9057997568377233225, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9097531934479129530, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9097531934479129530, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_StaticEditorFlags

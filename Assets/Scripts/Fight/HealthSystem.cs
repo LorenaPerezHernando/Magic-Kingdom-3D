@@ -29,6 +29,11 @@ namespace Magic
         public void TakeDamage(float damageAmount)
         {
             if (isBlocked) return;
+            if (gameObject.CompareTag("Boss"))
+            {
+                Animator _anim = GetComponent<Animator>();
+                _anim.SetTrigger("Receive Hit");
+            }
             _currentHealth -= damageAmount;
             OnHealthChanged?.Invoke(_currentHealth);
             if (_currentHealth <= 0)
