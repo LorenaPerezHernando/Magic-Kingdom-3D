@@ -207,6 +207,11 @@ namespace Magic
             }
         }
 
+        public void PlayerDied()
+        {
+            _uiController.ShowDeathPanel();
+        }
+
         public void AddSpirit(SpiritInfo spirit)
         {
             _gameProgress.spirits++;

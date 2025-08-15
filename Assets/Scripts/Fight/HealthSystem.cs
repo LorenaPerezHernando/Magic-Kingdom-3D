@@ -72,9 +72,9 @@ namespace Magic
             {
                 Animator _anim = GetComponent<Animator>();
                 _anim.SetTrigger("Die");
-                //TODO logica de morirse del player
-                //¿Tienes objetos para revivir? == Revivir
-                //Todo panel de muerte
+                GameController.Instance.PlayerDied();
+
+                // TODO ¿Tienes objetos para revivir? == Revivir
             }
             
             //Destroy(gameObject);
