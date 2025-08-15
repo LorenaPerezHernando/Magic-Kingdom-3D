@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.3148807, g: 0.41996932, b: 0.5471698, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 9c8d61f4d6a342419833b314e8ab7026, type: 2}
-  m_HaloStrength: 0.5
+  m_HaloStrength: 0.543
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -17033,6 +17033,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1832662372}
     m_Modifications:
+    - target: {fileID: 2312758632826350144, guid: 563010d4802b70348b068c7771d88ad3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312758632826350144, guid: 563010d4802b70348b068c7771d88ad3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312758632826350144, guid: 563010d4802b70348b068c7771d88ad3, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.9598956
+      objectReference: {fileID: 0}
     - target: {fileID: 2557180391395501700, guid: 563010d4802b70348b068c7771d88ad3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -17043,7 +17055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5120431817451865091, guid: 563010d4802b70348b068c7771d88ad3, type: 3}
       propertyPath: InitialModule.startColor.maxColor.a
-      value: 0.30588236
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6459549821971883003, guid: 563010d4802b70348b068c7771d88ad3, type: 3}
       propertyPath: m_LocalScale.x
@@ -17096,6 +17108,10 @@ PrefabInstance:
     - target: {fileID: 6459549821971883003, guid: 563010d4802b70348b068c7771d88ad3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792728158625720553, guid: 563010d4802b70348b068c7771d88ad3, type: 3}
+      propertyPath: _moveSpeed
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6792728158625720553, guid: 563010d4802b70348b068c7771d88ad3, type: 3}
       propertyPath: '_destinations.Array.data[0]'
@@ -19561,6 +19577,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 127701505}
     m_Modifications:
+    - target: {fileID: 1478427479773813977, guid: e1a90f2a96b1f7841ab23cec024739f7, type: 3}
+      propertyPath: _objectsToDesactivate.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1478427479773813977, guid: e1a90f2a96b1f7841ab23cec024739f7, type: 3}
+      propertyPath: '_objectsToDesactivate.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1107505065}
     - target: {fileID: 6735707145511934390, guid: e1a90f2a96b1f7841ab23cec024739f7, type: 3}
       propertyPath: m_LocalScale.x
       value: 167.85107
