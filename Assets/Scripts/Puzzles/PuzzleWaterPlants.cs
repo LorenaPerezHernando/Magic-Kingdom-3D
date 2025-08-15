@@ -41,7 +41,7 @@ public class PuzzleWaterPlants : MonoBehaviour
             StartCoroutine(DelayDeleteRB());
             
 
-            if(_plantsWatered >= 5)
+            if(_plantsWatered >= 3)
             {
                 print("Rewards");
                 _farmerAnim.SetBool("Idle", true);
@@ -49,11 +49,11 @@ public class PuzzleWaterPlants : MonoBehaviour
                 _smokeVFX.SetActive(false);               
                 _farmer.LookAt(_player.transform);
                 _farmerDialogue.TriggerDialogue();
-                DesactivateAllPots();
 
                 GameController.Instance.CompletePuzzle();
                 GameController.Instance.AudioController.StopCitizenWateringSound();
                 GameController.Instance.AudioController.PlayPuzzleCompletedSound();
+                DesactivateAllPots();
             }
         }
     }
