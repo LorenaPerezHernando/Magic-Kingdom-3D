@@ -51,12 +51,33 @@ public class ThirdPersonController : MonoBehaviour
     public bool IsBlocked = false;
     private MoveState _lastMoveState = MoveState.None;
 
+    private AudioController _audio;
+    private AudioController Audio
+    {
+        get
+        {
+            if (_audio == null)
+            {
+                var gc = GameController.Instance;
+                if (gc != null) _audio = gc.AudioController;
+            }
+            return _audio;
+        }
+    }
+    void Awake()
+    {
+        if (cc == null) cc = GetComponent<CharacterController>();
+        if (animator == null) animator = GetComponent<Animator>();
+    }
+
+
     void Start()
     {
-        cc = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
+        //cc = GetComponent<CharacterController>();
+        //animator = GetComponent<Animator>();
 
-        GameController.Instance.OnPush += TriggerPushAnimation;
+        if (GameController.Instance != null)
+            GameController.Instance.OnPush += TriggerPushAnimation;
     }
 
 
@@ -104,9 +125,15 @@ public class ThirdPersonController : MonoBehaviour
             }
             if (newState != _lastMoveState)
             {
-                GameController.Instance.AudioController.SetMovementState(newState);
-                _lastMoveState = newState;
+                var audio = Audio; 
+                if (audio != null)
+                {
+                    audio.SetMovementState(newState);
+                    _lastMoveState = newState;
+                }
+               
             }
+
 
             animator.SetFloat("Speed", speedValue, 0.2f, Time.deltaTime);
 
@@ -199,7 +226,8 @@ public class ThirdPersonController : MonoBehaviour
 
     private void TriggerPushAnimation()
     {
-        animator.SetTrigger("Push");
+        if (animator != null)
+            animator.SetTrigger("Push");
     }
 
     //This function makes the character end his jump if he hits his head on something

@@ -14,6 +14,7 @@ using SaveData = Magic.Data.SaveData;
 
 namespace Magic
 {
+    [DefaultExecutionOrder(-1000)]
     public class GameController : Singleton<GameController>
     {
         #region Properties

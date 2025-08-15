@@ -20034,9 +20034,21 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 938894209217341020, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: _pausePanel
+      value: 
+      objectReference: {fileID: 7008183970015641191}
     - target: {fileID: 1099517245367956105, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169045482560380576, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: m_fontSize
+      value: 42.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169045482560380576, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 42.5
       objectReference: {fileID: 0}
     - target: {fileID: 1866497233583750310, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_IsActive
@@ -20072,7 +20084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734247171147729794, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2782346790325823555, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_IsActive
@@ -20088,11 +20100,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3386724078829674041, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 13.844116
+      value: 13.844177
       objectReference: {fileID: 0}
     - target: {fileID: 3386724078829674041, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: -59.999985
       objectReference: {fileID: 0}
     - target: {fileID: 4052641139536209111, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_SizeDelta.x
@@ -20194,6 +20206,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5410417201095960261, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 545.8937
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410417201095960261, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 215.067
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410417201095960261, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 56.007458
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410417201095960261, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -29.2406
+      objectReference: {fileID: 0}
     - target: {fileID: 5998575970568296536, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_text
       value: 'Healing Power
@@ -20241,6 +20269,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7739289766948734984, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891611900456050829, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -20306,6 +20338,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iconSlots: []
+--- !u!1 &7008183970015641191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9097531934479129530, guid: 52449f9c6795d3f4abad5b83f015011d, type: 3}
+  m_PrefabInstance: {fileID: 7008183970015641186}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &7237618478500830114
 ParticleSystem:
   m_ObjectHideFlags: 0

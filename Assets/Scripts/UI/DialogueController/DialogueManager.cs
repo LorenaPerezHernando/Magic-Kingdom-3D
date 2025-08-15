@@ -17,6 +17,8 @@ namespace Magic.Dialogue
         [SerializeField] private Image _imageTalker;
         [SerializeField] private GameObject _panel;
         [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private GameObject _pausePanel;
+
 
         public static DialogueManager Instance;
 
@@ -37,6 +39,7 @@ namespace Magic.Dialogue
             _isCompleting = false;
 
             _panel.SetActive(true);
+            _pausePanel.SetActive(false);
             GameController.Instance?.PauseGame();
             ShowLine();
         }
@@ -106,6 +109,7 @@ namespace Magic.Dialogue
         public void CloseDialogue()
         {
             _panel.SetActive(false);
+            _pausePanel.SetActive(true);
             GameController.Instance?.ResumeGame();
             _isCompleting = false;
             _currentData = null;

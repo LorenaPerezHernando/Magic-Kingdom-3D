@@ -27,13 +27,13 @@ public class PuzzleWaterPlants : MonoBehaviour
     }
     private void Start()
     {
-        GameController.Instance.AudioController.PlayCitizenWateringSound();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PotsToWater"))
         {
+            GameController.Instance.AudioController.PlayCitizenWateringSound();
             _actualPot = other.gameObject;
             _plantsWatered++;
             _actualPot.GetComponentInChildren<ParticleSystem>().Stop();
