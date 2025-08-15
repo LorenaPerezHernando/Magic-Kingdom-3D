@@ -8397,7 +8397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2335006321418232433, guid: fa671180f9fc6a94aac23ebf93485664, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2335006321418232433, guid: fa671180f9fc6a94aac23ebf93485664, type: 3}
       propertyPath: m_Center.z

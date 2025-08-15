@@ -104,12 +104,13 @@ namespace Magic.Dialogue
             _rewardText.text = message;
             yield return new WaitForSecondsRealtime(2.5f);
             _rewardPanel.SetActive(false);
+            _pausePanel.SetActive(true);
         }
 
         public void CloseDialogue()
         {
-            _panel.SetActive(false);
             _pausePanel.SetActive(true);
+            _panel.SetActive(false);
             GameController.Instance?.ResumeGame();
             _isCompleting = false;
             _currentData = null;
