@@ -8,6 +8,6 @@ public class AddSpirit : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         GameController.Instance?.AddSpirit(spiritInfo);
-        Destroy(gameObject);
+        Destroy(this);
     }
 }

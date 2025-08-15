@@ -17,7 +17,8 @@ MonoBehaviour:
   - She has been affected by the inestability of the Nexus.
   - Use my power to help her water de plants.
   - 'CLICK RIGHT BUTTON TO USE THE POWER '
-  imageTalker: {fileID: 21300000, guid: 27f03b56781517c49a796af440e3ae67, type: 3}
+  imageTalker: {fileID: 21300000, guid: 274677957a766a34b8fb115d03f08f3e, type: 3}
   hasReward: 0
   rewardItem: {fileID: 0}
   rewardAmount: 1
+  rewardText: 

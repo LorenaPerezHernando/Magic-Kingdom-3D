@@ -19,7 +19,7 @@ MonoBehaviour:
   - People are trapped in illusions
   - Only you can set them free
   - Take my spirit, it will guide you through the trials ahead .
-  imageTalker: {fileID: 21300000, guid: 274677957a766a34b8fb115d03f08f3e, type: 3}
+  imageTalker: {fileID: 21300000, guid: d41792513a979b14eb365b630b486082, type: 3}
   hasReward: 1
   rewardItem: {fileID: 0}
   rewardAmount: 1

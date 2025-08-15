@@ -199,6 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueData: {fileID: 11400000, guid: 54b1032c0ce1cb54496c03dd5fd95e76, type: 2}
   _hasPlayed: 0
+  hasRewardText: 0
+  rewardText: 
 --- !u!114 &2816693597182887063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b938b4ea6a6a8e409958463bd13d973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spiritInfo: {fileID: 0}
 --- !u!135 &1380885641102961331
 SphereCollider:
   m_ObjectHideFlags: 0

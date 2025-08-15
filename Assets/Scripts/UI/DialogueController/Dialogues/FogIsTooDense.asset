@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frases:
   - The fog is too dense, we cant go through.
-  imageTalker: {fileID: 21300000, guid: 27f03b56781517c49a796af440e3ae67, type: 3}
+  imageTalker: {fileID: 21300000, guid: 6fc13c8fe4c5c3c42aa47eaf11a2d52e, type: 3}
   hasReward: 0
   rewardItem: {fileID: 0}
   rewardAmount: 1
+  rewardText: 

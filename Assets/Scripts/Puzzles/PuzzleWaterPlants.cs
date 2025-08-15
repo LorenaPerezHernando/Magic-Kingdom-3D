@@ -41,7 +41,7 @@ public class PuzzleWaterPlants : MonoBehaviour
             StartCoroutine(DelayDeleteRB());
             
 
-            if(_plantsWatered >= 3)
+            if(_plantsWatered >= 5)
             {
                 print("Rewards");
                 _farmerAnim.SetBool("Idle", true);

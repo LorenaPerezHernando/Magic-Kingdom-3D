@@ -44,6 +44,8 @@ public class TriggerNextProgress : MonoBehaviour
             ActivateObjects();
         }
     }
+
+
     private void ActivateObjects()
     {
         foreach (var obj in _objectsToActivate)
