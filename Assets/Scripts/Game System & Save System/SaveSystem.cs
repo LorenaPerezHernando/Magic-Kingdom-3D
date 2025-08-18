@@ -7,21 +7,32 @@ namespace Magic.Data
 
     public class SaveSystem : MonoBehaviour
     {
-        private static string savePath = Path.Combine(Application.persistentDataPath, "save.json");
+        private static string SavePath => Path.Combine(Application.persistentDataPath, "save.json");
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+        [DllImport("__Internal")] private static extern void SyncFiles();
+#endif
 
         public static void Save(SaveData data)
         {
             try
             {
-                Directory.CreateDirectory(Path.GetDirectoryName(savePath)!);
+                var dir = Path.GetDirectoryName(SavePath);
+                if (!string.IsNullOrEmpty(dir))
+                    Directory.CreateDirectory(dir);
 
                 string json = JsonUtility.ToJson(data, true);
-                File.WriteAllText(savePath, json);
-                Debug.Log("Game Saved to: " + savePath);
+                File.WriteAllText(SavePath, json);
+              
+#if UNITY_WEBGL && !UNITY_EDITOR
+                SyncFiles();
+#endif
+
+                Debug.Log("Game Saved to: " + SavePath);
             }
             catch (System.Exception e)
             {
-                Debug.LogError($"[SaveSystem] Error guardando en {savePath}\n{e}");
+                Debug.LogError($"[SaveSystem] Error guardando en {SavePath}\n{e}");
             }
         }
 
@@ -29,21 +40,18 @@ namespace Magic.Data
         {
             try
             {
-                if (File.Exists(savePath))
+                if (File.Exists(SavePath))
                 {
-                    string json = File.ReadAllText(savePath);
-                    SaveData data = JsonUtility.FromJson<SaveData>(json);
-                    return data;
+                    string json = File.ReadAllText(SavePath);
+                    return JsonUtility.FromJson<SaveData>(json);
                 }
-                else
-                {
-                    Debug.LogWarning("Save file not found, returning new data.");
-                    return new SaveData();
-                }
+
+                Debug.LogWarning("Save file not found, returning new data.");
+                return new SaveData();
             }
             catch (System.Exception e)
             {
-                Debug.LogError($"[SaveSystem] Error cargando {savePath}\n{e}");
+                Debug.LogError($"[SaveSystem] Error cargando {SavePath}\n{e}");
                 return new SaveData();
             }
         }
@@ -52,16 +60,22 @@ namespace Magic.Data
         {
             try
             {
-                if (File.Exists(savePath))
+                if (File.Exists(SavePath))
                 {
-                    File.Delete(savePath);
-                    Debug.Log("Save file deleted.");
+                    File.Delete(SavePath);
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+                    SyncFiles();
+#endif
+
+                    Debug.Log("Save file deleted: " + SavePath);
                 }
             }
             catch (System.Exception e)
             {
-                Debug.LogError($"[SaveSystem] Error borrando {savePath}\n{e}");
+                Debug.LogError($"[SaveSystem] Error borrando {SavePath}\n{e}");
             }
         }
     }
 }
+
