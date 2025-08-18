@@ -9,9 +9,6 @@ namespace Magic.Data
     {
         private static string SavePath => Path.Combine(Application.persistentDataPath, "save.json");
 
-#if UNITY_WEBGL && !UNITY_EDITOR
-        [DllImport("__Internal")] private static extern void SyncFiles();
-#endif
 
         public static void Save(SaveData data)
         {
@@ -24,9 +21,6 @@ namespace Magic.Data
                 string json = JsonUtility.ToJson(data, true);
                 File.WriteAllText(SavePath, json);
               
-#if UNITY_WEBGL && !UNITY_EDITOR
-                SyncFiles();
-#endif
 
                 Debug.Log("Game Saved to: " + SavePath);
             }
@@ -63,10 +57,6 @@ namespace Magic.Data
                 if (File.Exists(SavePath))
                 {
                     File.Delete(SavePath);
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-                    SyncFiles();
-#endif
 
                     Debug.Log("Save file deleted: " + SavePath);
                 }
