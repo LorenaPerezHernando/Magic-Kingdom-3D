@@ -15,14 +15,26 @@ void PseudoSubsurface_half (half3 WorldPosition, half3 WorldNormal, half3 SSRadi
 	
 #endif
 
-    half NdotL = dot(WorldNormal, -1 * dir);
-    half alpha = SSRadius;
-    half theta_m = acos(-alpha); // boundary of the lighting function
+    // PseudoSubsurface.hlsl  (función Custom de tu Shader Graph)
 
-    half theta = max(0, NdotL + alpha) - alpha;
-    half normalizer = (2 + alpha) / (2 * (1 + alpha));
-    half wrapped  = (pow(((theta + alpha) / (1 + alpha)), 1 + alpha)) * normalizer;
-	half shadow = lerp (1, atten, ShadowResponse);
-    ssAmount = abs(color * shadow  * wrapped);
+    half NdotL = dot(WorldNormal, -dir);
+    half alpha = SSRadius;
+
+// wrap básico
+    half theta = max(0.0, NdotL + alpha) - alpha;
+    half normalizer = (2.0 + alpha) / (2.0 * (1.0 + alpha));
+
+// base y exponente seguros
+    half denom = max((half) 1e-5, 1.0 + alpha); // evita /0
+    half baseTerm = (theta + alpha) / denom;
+    baseTerm = saturate(baseTerm); // clamp [0..1]
+    half exponent = max((half) 1e-5, 1.0 + alpha); // evita pow(x,0)
+
+// pow sin NaNs
+    half wrapped = pow(max(baseTerm, (half) 1e-5), exponent) * normalizer;
+
+    half shadow = lerp(1.0, atten, ShadowResponse);
+    ssAmount = abs(color * shadow * wrapped);
+
 
 }
