@@ -6,7 +6,6 @@ using Magic.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static Magic.Data.SaveData;
