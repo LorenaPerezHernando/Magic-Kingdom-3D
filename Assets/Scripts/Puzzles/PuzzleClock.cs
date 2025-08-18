@@ -12,7 +12,7 @@ namespace Magic.ClockPuzzle
         [SerializeField] private float _rotationSpeed = 2f;
         [SerializeField] private float _rotationAmount = 30;
         [Header("Goal")]
-        [SerializeField] private GameObject _objectToDesactivate;
+        [SerializeField] private GameObject[] _objectToDesactivate;
         private Transform _objectToRotate;
         [SerializeField] private GameObject _targetPos;
         [Header("Rotation")]
@@ -79,7 +79,14 @@ namespace Magic.ClockPuzzle
             if(other.gameObject == _targetPos)
             {
                 if(_objectToDesactivate != null)
-                    Destroy(_objectToDesactivate);
+                {
+                    foreach (var obj in _objectToDesactivate)
+                    {
+                        if (obj != null)
+                            Destroy(obj);
+                    }
+                }
+                    
                 //TODO Particulas, sonido de completado
                 GameController.Instance.CompletePuzzle();
                 GameController.Instance.AudioController.PlayProgressSound();

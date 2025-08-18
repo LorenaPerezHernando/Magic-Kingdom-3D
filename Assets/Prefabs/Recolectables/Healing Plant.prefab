@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5135228902333331388
+--- !u!1 &5969211856182324329
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6836974368412613997}
-  - component: {fileID: 1103294828270694095}
-  - component: {fileID: 5861240808266355815}
-  - component: {fileID: -1403764593973413683}
-  - component: {fileID: 4597345069769149324}
+  - component: {fileID: 5790265275481171109}
+  - component: {fileID: 7048925303921972992}
+  - component: {fileID: 2118659511328637468}
+  - component: {fileID: 4835511215042003104}
+  - component: {fileID: 4422444622345467814}
   m_Layer: 0
-  m_Name: Plant_2 (1)
+  m_Name: Healing Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6836974368412613997
+--- !u!4 &5790265275481171109
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135228902333331388}
+  m_GameObject: {fileID: 5969211856182324329}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.689, y: 0.665, z: 6.7661}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -25.292473, y: -3, z: 12.639524}
   m_LocalScale: {x: 3.0683002, y: 7.096058, z: 3.0683002}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2499839772989161761}
-  - {fileID: 4334938514043266158}
+  - {fileID: 1544381586701407052}
+  - {fileID: 8473493153040242709}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1103294828270694095
+--- !u!33 &7048925303921972992
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135228902333331388}
+  m_GameObject: {fileID: 5969211856182324329}
   m_Mesh: {fileID: 2249256485575104852, guid: a0e7a870f4004e01b8a79bf29e6f2b8b, type: 3}
---- !u!23 &5861240808266355815
+--- !u!23 &2118659511328637468
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135228902333331388}
+  m_GameObject: {fileID: 5969211856182324329}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -90,13 +90,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-1403764593973413683
+--- !u!114 &4835511215042003104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135228902333331388}
+  m_GameObject: {fileID: 5969211856182324329}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebe8954a54cff1a4fbd72c13703eb961, type: 3}
@@ -107,13 +107,13 @@ MonoBehaviour:
   _info:
     Type: 'Healing Flower '
     Action: Grab
---- !u!65 &4597345069769149324
+--- !u!65 &4422444622345467814
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5135228902333331388}
+  m_GameObject: {fileID: 5969211856182324329}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -128,13 +128,13 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.29347396, y: 0.21962102, z: 0.33283705}
   m_Center: {x: 0.0075206533, y: 0.084008224, z: -0.011435486}
---- !u!1001 &3413916807545553969
+--- !u!1001 &1783182349486872156
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6836974368412613997}
+    m_TransformParent: {fileID: 5790265275481171109}
     m_Modifications:
     - target: {fileID: 995748760415143184, guid: 9c42b9547d5567b4a991086a01e8a8af, type: 3}
       propertyPath: m_LocalScale.x
@@ -197,18 +197,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c42b9547d5567b4a991086a01e8a8af, type: 3}
---- !u!4 &2499839772989161761 stripped
+--- !u!4 &1544381586701407052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 995748760415143184, guid: 9c42b9547d5567b4a991086a01e8a8af, type: 3}
-  m_PrefabInstance: {fileID: 3413916807545553969}
+  m_PrefabInstance: {fileID: 1783182349486872156}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3601005741674193278
+--- !u!1001 &8666747677439925509
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6836974368412613997}
+    m_TransformParent: {fileID: 5790265275481171109}
     m_Modifications:
     - target: {fileID: 995748760415143184, guid: 9c42b9547d5567b4a991086a01e8a8af, type: 3}
       propertyPath: m_LocalScale.x
@@ -271,8 +271,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c42b9547d5567b4a991086a01e8a8af, type: 3}
---- !u!4 &4334938514043266158 stripped
+--- !u!4 &8473493153040242709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 995748760415143184, guid: 9c42b9547d5567b4a991086a01e8a8af, type: 3}
-  m_PrefabInstance: {fileID: 3601005741674193278}
+  m_PrefabInstance: {fileID: 8666747677439925509}
   m_PrefabAsset: {fileID: 0}

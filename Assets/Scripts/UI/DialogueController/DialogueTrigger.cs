@@ -6,10 +6,10 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private DialogueData _dialogueData;
     [SerializeField] private bool _hasPlayed = false;
 
-    [Header("Optional Reward Toast")]
-    [SerializeField] private bool hasRewardText = false;
-    [TextArea]
-    [SerializeField] private string rewardText;
+    //[Header("Optional Reward Toast")]
+    //[SerializeField] private bool hasRewardText = false;
+    //[TextArea]
+    //[SerializeField] private string rewardText;
 
     private void OnTriggerEnter(Collider other)
     {
