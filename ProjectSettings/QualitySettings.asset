@@ -154,19 +154,20 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 11400000, guid: 4b83569d67af61e458304325a23e5dfd, type: 2}
-    terrainQualityOverrides: 250
-    terrainPixelError: 1
+    customRenderPipeline: {fileID: 11400000, guid: 758559729899d1340bf85e82688a079f, type: 2}
+    terrainQualityOverrides: 251
+    terrainPixelError: 10
     terrainDetailDensityScale: 1
     terrainBasemapDistance: 400
     terrainDetailDistance: 60
-    terrainTreeDistance: 1000
-    terrainBillboardStart: 30
+    terrainTreeDistance: 300
+    terrainBillboardStart: 20
     terrainFadeLength: 5
-    terrainMaxTrees: 50
+    terrainMaxTrees: 20
     excludedTargetPlatforms:
     - Android
     - iPhone
+    - Standalone
   m_TextureMipmapLimitGroupNames: []
   m_PerPlatformDefaultQuality:
     Android: 0

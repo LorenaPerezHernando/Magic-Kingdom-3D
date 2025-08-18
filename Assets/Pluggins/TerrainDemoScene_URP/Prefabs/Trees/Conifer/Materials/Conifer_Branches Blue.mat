@@ -49,11 +49,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 7b24d7997f7027e47b59fb9f777457d6, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ExtraTex:
-        m_Texture: {fileID: 2800000, guid: edcd0e8c7fd488c4389ffd92c72e9c8a, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -111,7 +111,7 @@ Material:
     - _HueVariationKwToggle: 1
     - _Metallic: 0
     - _Mip_Bias: 0
-    - _NormalMapKwToggle: 1
+    - _NormalMapKwToggle: 0
     - _OldHueVarBehavior: 0
     - _OpaqueCullMode: 2
     - _QueueControl: 0
@@ -168,7 +168,7 @@ Material:
     - _DoubleSidedConstants: {r: -1, g: -1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _HueVariationColor: {r: 0.101960756, g: 0.13605285, b: 0.3333333, a: 1}
-    - _Smoothness_Remap: {r: 0.1, g: 0.3, b: 0, a: 0}
+    - _Smoothness_Remap: {r: 0.1, g: 0.06, b: 0, a: 0}
     - _SubsurfaceColor: {r: 0.6509434, g: 0.6281874, b: 0.41390175, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
