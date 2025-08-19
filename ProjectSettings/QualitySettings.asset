@@ -141,7 +141,7 @@ QualitySettings:
     adaptiveVsyncExtraA: 0
     adaptiveVsyncExtraB: 0
     lodBias: 1
-    maximumLODLevel: 1
+    maximumLODLevel: 3
     enableLODCrossFade: 1
     streamingMipmapsActive: 0
     streamingMipmapsAddAllCameras: 1
@@ -161,7 +161,7 @@ QualitySettings:
     terrainBasemapDistance: 400
     terrainDetailDistance: 60
     terrainTreeDistance: 300
-    terrainBillboardStart: 20
+    terrainBillboardStart: 100
     terrainFadeLength: 5
     terrainMaxTrees: 20
     excludedTargetPlatforms:
