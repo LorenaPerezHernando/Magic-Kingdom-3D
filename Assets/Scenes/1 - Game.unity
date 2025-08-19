@@ -24049,6 +24049,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1963642380}
     m_Modifications:
+    - target: {fileID: 425797958840048915, guid: f0702830c1970764693293a91df9e61c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 62d7bd9877d2b5242b27ab405872a5d8, type: 2}
     - target: {fileID: 425797958840048916, guid: f0702830c1970764693293a91df9e61c, type: 3}
       propertyPath: m_Name
       value: WaterPlane
