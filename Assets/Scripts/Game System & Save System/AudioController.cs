@@ -68,6 +68,7 @@ public class AudioController : MonoBehaviour
     public void PlayGrabObject() => _grabObject.Play();
     public void PlayMovingClock() => _movingClock.Play();
     public void PlayClock() => _clock.Play();
+    public void StopClock() => _clock.Stop();
 
     private void SwitchMusic(AudioSource next)
     {
