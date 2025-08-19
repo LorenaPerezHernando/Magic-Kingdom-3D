@@ -2,16 +2,16 @@
     "scene": 1,
     "player": {
         "position": {
-            "x": -139.69967651367188,
-            "y": 2.969602584838867,
-            "z": -35.671424865722659
+            "x": 58.37420654296875,
+            "y": 3.775315046310425,
+            "z": -88.44929504394531
         }
     },
     "progress": {
         "spirits": 1,
         "villages": 0,
-        "puzzles": 0,
-        "bosses": 0
+        "puzzles": 6,
+        "bosses": 1
     },
     "inventory": {
         "healingPlants": 0

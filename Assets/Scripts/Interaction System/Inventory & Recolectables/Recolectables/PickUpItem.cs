@@ -14,6 +14,7 @@ namespace Magic.Recolectable
         public void Interact()
         {
             GameController.Instance.InventoryManager.AddItem(_item, _amount);
+            GameController.Instance.AudioController.PlayGrabObject();
             Destroy(gameObject);
         }
 
