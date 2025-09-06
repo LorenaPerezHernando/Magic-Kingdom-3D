@@ -79,7 +79,11 @@ namespace Magic.UI
             if (GameController.Instance.GameProgress.spirits == 0 ||  spirit == null || spirit.spiritInfo == null)
             {
                 _spiritsPanel.SetActive(false);
-                _buttonOwlImage.sprite = _interrogationImage;
+                foreach (var btn in spiritButtons)
+                {
+                    //if (btn == null) continue;  
+                    btn.LockedButtonImage();
+                }
                 _portraitImage.sprite = _interrogationImage;
                 _nameText.text = "??";
                 _storyText.text = "??";
@@ -96,9 +100,9 @@ namespace Magic.UI
             print("Spirit not null");
             foreach (var btn in spiritButtons) //Imagenes botones 
             {
-                if (btn.spiritId == spirit.spiritInfo.id)
+                if (btn.spiritInfo == spirit.spiritInfo)
                 {
-                    btn.ChangeButtonImage(spirit.spiritInfo.icon != null ? spirit.spiritInfo.icon : spirit.spiritInfo.portrait);
+                    btn.ChangeButtonImage(spirit.spiritInfo.icon ?? spirit.spiritInfo.portrait);
                 }
             }
 
