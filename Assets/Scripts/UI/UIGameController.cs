@@ -15,8 +15,11 @@ namespace Magic.UI
 
         [Header("Interaction")]
         [SerializeField] private UIInteraction _interactionPanel;
+        [SerializeField] private Sprite _interrogationImage;
 
         [Header("Spirits")]
+        [SerializeField] private Image _buttonOwlImage;
+        [SerializeField] private GameObject _spiritsPanel;
         [SerializeField] private Image _portraitImage;
         [SerializeField] private TextMeshProUGUI _nameText;
         [SerializeField] private TextMeshProUGUI _storyText;
@@ -50,6 +53,7 @@ namespace Magic.UI
         }
         void Start()
         {
+            UpdateSpiritUI();
             _interactionSystem.OnShowInteraction += ShowInteraction;
             _interactionSystem.OnHideInteraction += HideInteraction;
 
@@ -69,10 +73,29 @@ namespace Magic.UI
         }
 
         #region Public Methods
-        public void UpdateSpiritUI(SpiritsPlayer spirit)
+        public void UpdateSpiritUI(SpiritsPlayer spirit = null)
         {
-            if (spirit == null || spirit.spiritInfo == null) return;
+            if (GameController.Instance.GameProgress.spirits == 0 ||  spirit == null || spirit.spiritInfo == null)
+            {
+                _spiritsPanel.SetActive(false);
+                _buttonOwlImage.sprite = _interrogationImage;
+                _portraitImage.sprite = _interrogationImage;
+                _nameText.text = "??";
+                _storyText.text = "??";
 
+
+                _attack1Icon.sprite = _interrogationImage;
+                _attack1Name.text = "??";
+                _attack1Desc.text = "??";
+                _attack2Icon.sprite = _interrogationImage;
+                _attack2Name.text = "??";
+                _attack2Desc.text = "??";
+                return;
+            }
+            print("Spirit not null");
+
+            _spiritsPanel.SetActive(true);
+            _buttonOwlImage.sprite = spirit.spiritInfo.portrait;
             _portraitImage.sprite = spirit.spiritInfo.portrait;
             _nameText.text = string.IsNullOrEmpty(spirit.spiritInfo.spiritName)
                 ? spirit.spiritInfo.name
