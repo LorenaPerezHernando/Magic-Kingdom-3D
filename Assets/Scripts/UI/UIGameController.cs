@@ -18,6 +18,7 @@ namespace Magic.UI
         [SerializeField] private Sprite _interrogationImage;
 
         [Header("Spirits")]
+        [SerializeField] private SpiritsButton[] spiritButtons;
         [SerializeField] private Image _buttonOwlImage;
         [SerializeField] private GameObject _spiritsPanel;
         [SerializeField] private Image _portraitImage;
@@ -93,9 +94,16 @@ namespace Magic.UI
                 return;
             }
             print("Spirit not null");
+            foreach (var btn in spiritButtons) //Imagenes botones 
+            {
+                if (btn.spiritId == spirit.spiritInfo.id)
+                {
+                    btn.ChangeButtonImage(spirit.spiritInfo.icon != null ? spirit.spiritInfo.icon : spirit.spiritInfo.portrait);
+                }
+            }
+
 
             _spiritsPanel.SetActive(true);
-            _buttonOwlImage.sprite = spirit.spiritInfo.portrait;
             _portraitImage.sprite = spirit.spiritInfo.portrait;
             _nameText.text = string.IsNullOrEmpty(spirit.spiritInfo.spiritName)
                 ? spirit.spiritInfo.name
